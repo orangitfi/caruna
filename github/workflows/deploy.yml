@@ -1,0 +1,141 @@
+# Deployment Pipeline Template
+#
+# Generic deployment workflow that teams can copy into their projects.
+# Builds a Docker image, pushes it to GitHub Container Registry, and
+# deploys it through dev → staging → prod using GitHub Environments for
+# gate approvals.
+#
+# Required GitHub Environments (configure protection rules as needed):
+#   dev, staging, prod
+#
+# Usage:
+#   Copy this file to .github/workflows/deploy.yml in your project and
+#   update the env block below to match your image name and context.
+
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
+        description: "The git reference (branch/tag) to check out and deploy"
+      environment:
+        required: false
+        type: string
+        default: "dev"
+        description: "Target environment (dev | staging | prod)"
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy to"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - staging
+          - prod
+
+permissions:
+  contents: read
+  packages: write  # Required to push to GitHub Container Registry
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}/app  # <-- update to your image name
+
+jobs:
+  # ── 1. Build & push Docker image ──────────────────────────────────────────
+  build-and-push:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    outputs:
+      image-tag: ${{ steps.meta.outputs.version }}
+      image-digest: ${{ steps.build-push.outputs.digest }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,prefix=
+            type=raw,value=latest,enable=${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build and push Docker image
+        id: build-push
+        uses: docker/build-push-action@v6
+        with:
+          context: .        # <-- update to your build context
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ── 2. Deploy to dev ───────────────────────────────────────────────────────
+  deploy-dev:
+    name: Deploy to Dev
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: inputs.environment == 'dev'
+    environment:
+      name: dev
+
+    steps:
+      - name: Deploy to dev
+        run: |
+          echo "Deploying ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-and-push.outputs.image-tag }} to dev"
+          # Replace the echo above with your actual deployment command, e.g.:
+          # kubectl set image deployment/app \
+          #   app=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-and-push.outputs.image-tag }} \
+          #   --namespace dev
+
+  # ── 3. Deploy to staging ───────────────────────────────────────────────────
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: inputs.environment == 'staging'
+    environment:
+      name: staging
+
+    steps:
+      - name: Deploy to staging
+        run: |
+          echo "Deploying ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-and-push.outputs.image-tag }} to staging"
+          # Replace with your staging deployment command
+
+  # ── 4. Deploy to production ────────────────────────────────────────────────
+  deploy-prod:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: build-and-push
+    if: inputs.environment == 'prod'
+    environment:
+      name: prod
+
+    steps:
+      - name: Deploy to production
+        run: |
+          echo "Deploying ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ needs.build-and-push.outputs.image-tag }} to production"
+          # Replace with your production deployment command
+
