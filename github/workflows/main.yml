@@ -1,0 +1,42 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  code-quality:
+    uses: ./.github/workflows/code-quality.yml
+    with:
+      ref: ${{ github.ref }}
+
+  tests:
+    uses: ./.github/workflows/tests.yml
+    needs: code-quality
+    with:
+      ref: ${{ github.ref }}
+
+  build:
+    uses: ./.github/workflows/build.yml
+    needs: tests
+    with:
+      ref: ${{ github.ref }}
+
+  publish:
+    permissions:
+      # required for all workflows
+      security-events: write
+      # only required for workflows in private repositories
+      actions: read
+      contents: write
+    if: ${{ success() }}
+    needs: build
+    uses: ./.github/workflows/publish.yml
+    with:
+      ref: ${{ github.ref }}
+    secrets:
+      DOCKER_USER: ${{ secrets.DOCKER_USER }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      COSIGN_KEY: ${{ secrets.COSIGN_KEY }}
+      COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}

@@ -1,0 +1,60 @@
+```mermaid
+graph TB
+    subgraph Security["Security Architecture"]
+        subgraph IAM["IAM"]
+            TaskRole["ECS Task Role"]
+            ExecRole["ECS Execution Role"]
+            SecretsPolicy["Secrets Access Policy"]
+        end
+
+        subgraph Encryption["Encryption"]
+            KMS["KMS Key"]
+            Secrets["Secrets Manager"]
+            AppSecrets["App Secrets"]
+            DBSecrets["DB Secrets"]
+        end
+
+        subgraph Network["Network Security"]
+            SG_ALB["ALB Security Group"]
+            SG_ECS["ECS Security Group"]
+            NACL["Network ACLs"]
+        end
+
+        subgraph Monitoring["Security Monitoring"]
+            CloudTrail["CloudTrail"]
+            Config["AWS Config"]
+            GuardDuty["GuardDuty"]
+        end
+    end
+
+    %% IAM Connections
+    TaskRole --> SecretsPolicy
+    ExecRole --> SecretsPolicy
+    SecretsPolicy --> Secrets
+
+    %% Encryption Connections
+    KMS --> Secrets
+    Secrets --> AppSecrets
+    Secrets --> DBSecrets
+    AppSecrets --> TaskRole
+    DBSecrets --> TaskRole
+
+    %% Network Security
+    SG_ALB --> NACL
+    SG_ECS --> NACL
+
+    %% Security Monitoring
+    CloudTrail --> Config
+    Config --> GuardDuty
+
+    %% Styling
+    classDef iam fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white
+    classDef encryption fill:#D13212,stroke:#232F3E,stroke-width:2px,color:white
+    classDef network fill:#60A5FA,stroke:#232F3E,stroke-width:2px,color:white
+    classDef monitoring fill:#7FBA00,stroke:#232F3E,stroke-width:2px,color:white
+    
+    class TaskRole,ExecRole,SecretsPolicy iam
+    class KMS,Secrets,AppSecrets,DBSecrets encryption
+    class SG_ALB,SG_ECS,NACL network
+    class CloudTrail,Config,GuardDuty monitoring
+``` 

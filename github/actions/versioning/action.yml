@@ -1,0 +1,48 @@
+name: "Version Composite"
+description: "Composite action that determines a GitVersion-based version and exposes it as an output."
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Fetch all history for all tags and branches...
+      shell: bash
+      run: |
+        git fetch --prune --unshallow
+        git fetch --tags
+
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.10.2
+      with:
+        versionSpec: "5.x"
+        includePrerelease: true
+
+    - name: Run GitVersion
+      id: gitversion
+      uses: gittools/actions/gitversion/execute@v0.10.2
+      continue-on-error: true
+      with:
+        useConfigFile: true
+        configFilePath: GitVersion.yml
+
+    - name: Set main version
+      shell: bash
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "CUSTOM_VERSION=${{ steps.gitversion.outputs.majorMinorPatch }}" >> $GITHUB_ENV
+
+    - name: Set development version
+      shell: bash
+      if: github.ref != 'refs/heads/main'
+      run: |
+        echo "CUSTOM_VERSION=${{ steps.gitversion.outputs.majorMinorPatch }}-dev${{ github.run_number }}" >> $GITHUB_ENV
+
+    - name: Create and Push Tag
+      if: github.ref == 'refs/heads/main' && steps.gitversion.outputs.semVer != ''
+      shell: bash
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git tag -a "${{ env.CUSTOM_VERSION }}" -m "Main version ${{ env.CUSTOM_VERSION }}"
+        git push origin "${{ env.CUSTOM_VERSION }}"

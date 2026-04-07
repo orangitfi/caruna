@@ -1,0 +1,28 @@
+# This workflow handles the build process for the project
+# It can be called by other workflows with an optional ref parameter
+name: Build
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        required: true
+        type: string
+        default: "main"
+
+jobs:
+  # Job to handle dependency installation and build process
+  lock_file:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository code
+      - uses: actions/checkout@v4
+      
+      # Setup the environment using our custom setup action
+      - uses: ./.github/actions/setup
+      
+      # Install Node.js dependencies from package.json
+      - run: npm install
+      
+      # Run the build script defined in package.json
+      - run: npm run build

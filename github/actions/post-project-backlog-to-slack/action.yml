@@ -1,0 +1,238 @@
+name: "Post GitHub Project backlog snapshot to Slack"
+description: "Fetches Project v2 items with Status and posts a snapshot to Slack via Incoming Webhook"
+
+inputs:
+  github_token:
+    description: "GitHub token with read access to Projects v2 (GraphQL)"
+    required: true
+  slack_webhook_url:
+    description: "Slack Incoming Webhook URL"
+    required: true
+  owner:
+    description: "GitHub org/user login that owns the Project"
+    required: true
+  project_number:
+    description: "Project v2 number (visible in the Project URL)"
+    required: true
+  project_url:
+    description: "Project URL to link in Slack"
+    required: true
+  title:
+    description: "Slack message title"
+    required: false
+    default: "Backlog snapshot"
+  max_items:
+    description: "Max items to include per status bucket"
+    required: false
+    default: "10"
+  statuses:
+    description: "Comma-separated statuses to include (must match Project Status values)"
+    required: false
+    default: "Backlog,Ready,In Progress,In Review"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Fetch project items (GraphQL)
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github_token }}
+        OWNER: ${{ inputs.owner }}
+        PROJECT_NUMBER: ${{ inputs.project_number }}
+      run: |
+        set -euo pipefail
+
+        QUERY='
+        query($owner:String!, $number:Int!) {
+          organization(login:$owner) {
+            projectV2(number:$number) {
+              title
+              url
+              items(first: 100) {
+                nodes {
+                  content {
+                    ... on Issue {
+                      title
+                      url
+                      number
+                      repository { nameWithOwner }
+                      state
+                    }
+                  }
+                  fieldValues(first: 20) {
+                    nodes {
+                      ... on ProjectV2ItemFieldSingleSelectValue {
+                        name
+                        field {
+                          ... on ProjectV2SingleSelectField {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          user(login:$owner) {
+            projectV2(number:$number) {
+              title
+              url
+              items(first: 100) {
+                nodes {
+                  content {
+                    ... on Issue {
+                      title
+                      url
+                      number
+                      repository { nameWithOwner }
+                      state
+                    }
+                  }
+                  fieldValues(first: 20) {
+                    nodes {
+                      ... on ProjectV2ItemFieldSingleSelectValue {
+                        name
+                        field {
+                          ... on ProjectV2SingleSelectField {
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }'
+
+        # Try org project first; if null, fall back to user project
+        curl -sS -X POST https://api.github.com/graphql \
+          -H "Authorization: bearer ${GH_TOKEN}" \
+          -H "Content-Type: application/json" \
+          -d "$(jq -n --arg q "$QUERY" --arg owner "$OWNER" --argjson number "$PROJECT_NUMBER" \
+            '{query:$q, variables:{owner:$owner, number:$number}}')" \
+          > project.json
+
+        # Extract whichever exists
+        jq -e '
+          .data.organization.projectV2 // .data.user.projectV2
+        ' project.json > project_extracted.json
+
+    - name: Build Slack Block Kit payload
+      shell: bash
+      env:
+        STATUSES: ${{ inputs.statuses }}
+        MAX_ITEMS: ${{ inputs.max_items }}
+        TITLE: ${{ inputs.title }}
+        PROJECT_URL: ${{ inputs.project_url }}
+      run: |
+        set -euo pipefail
+
+        python3 - <<'PY'
+        import json, os
+
+        statuses = [s.strip() for s in os.environ["STATUSES"].split(",") if s.strip()]
+        max_items = int(os.environ["MAX_ITEMS"])
+        title = os.environ["TITLE"]
+        project_url = os.environ["PROJECT_URL"]
+
+        data = json.load(open("project_extracted.json", "r", encoding="utf-8"))
+        items = data.get("items", {}).get("nodes", []) or []
+
+        def get_status(field_values):
+          # Project Status is a single-select field commonly named "Status"
+          for fv in field_values or []:
+            if fv and fv.get("field") and fv["field"].get("name") == "Status":
+              return fv.get("name")
+          return None
+
+        buckets = {s: [] for s in statuses}
+        other = []
+
+        for it in items:
+          content = (it or {}).get("content")
+          if not content:
+            continue
+          if content.get("state") != "OPEN":
+            continue
+
+          fvs = ((it or {}).get("fieldValues") or {}).get("nodes") or []
+          status = get_status(fvs)
+
+          entry = {
+            "repo": (content.get("repository") or {}).get("nameWithOwner", ""),
+            "number": content.get("number"),
+            "title": content.get("title", "").strip(),
+            "url": content.get("url"),
+            "status": status or "Unspecified",
+          }
+
+          if status in buckets:
+            buckets[status].append(entry)
+          else:
+            other.append(entry)
+
+        # Build Slack blocks
+        blocks = []
+        blocks.append({
+          "type": "header",
+          "text": {"type": "plain_text", "text": title[:150]}
+        })
+        blocks.append({
+          "type": "context",
+          "elements": [
+            {"type": "mrkdwn", "text": f"*Project:* <{project_url}|Open board>"},
+            {"type": "mrkdwn", "text": f"*Open issues scanned:* {sum(len(v) for v in buckets.values()) + len(other)}"}
+          ]
+        })
+        blocks.append({"type": "divider"})
+
+        def add_bucket(name, entries):
+          if not entries:
+            blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": f"*{name}*: _none_ ✅"}})
+            return
+          # limit
+          shown = entries[:max_items]
+          lines = []
+          for e in shown:
+            # Example: org/repo#123 – Title (Status)
+            lines.append(f"• <{e['url']}|{e['repo']}#{e['number']}> — {e['title']}")
+          more = len(entries) - len(shown)
+          if more > 0:
+            lines.append(f"…and *{more}* more")
+          blocks.append({"type": "section", "text": {"type": "mrkdwn", "text": f"*{name}* ({len(entries)}):\n" + "\n".join(lines)}})
+
+        for s in statuses:
+          add_bucket(s, buckets[s])
+
+        if other:
+          add_bucket("Other/Unspecified Status", other)
+
+        # Action buttons (links only; no state changes via webhook)
+        blocks.append({"type": "divider"})
+        blocks.append({
+          "type": "actions",
+          "elements": [
+            {"type": "button", "text": {"type": "plain_text", "text": "Open Project"}, "url": project_url},
+          ]
+        })
+
+        payload = {"blocks": blocks}
+
+        with open("slack_payload.json", "w", encoding="utf-8") as f:
+          json.dump(payload, f, ensure_ascii=False)
+
+        PY
+
+    - name: Post to Slack (Incoming Webhook)
+      shell: bash
+      env:
+        SLACK_WEBHOOK_URL: ${{ inputs.slack_webhook_url }}
+      run: |
+        set -euo pipefail
+        curl -sS -X POST -H 'Content-type: application/json' \
+          --data-binary @slack_payload.json \
+          "$SLACK_WEBHOOK_URL" >/dev/null

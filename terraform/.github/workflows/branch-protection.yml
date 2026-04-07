@@ -1,0 +1,126 @@
+name: Branch Protection
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - develop
+  pull_request:
+    branches:
+      - main
+      - staging
+      - develop
+
+jobs:
+  enforce-branch-protection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch protection
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const branch = context.ref.replace('refs/heads/', '');
+            const isMainBranch = branch === 'main';
+            const isStagingBranch = branch === 'staging';
+            const isDevelopBranch = branch === 'develop';
+            
+            // Get the event type
+            const eventName = context.eventName;
+            
+            // For direct pushes to protected branches
+            if (eventName === 'push' && (isMainBranch || isStagingBranch || isDevelopBranch)) {
+              core.setFailed(`Direct pushes to ${branch} branch are not allowed. Please create a pull request instead.`);
+            }
+            
+            // For pull requests to protected branches
+            if (eventName === 'pull_request') {
+              const pr = context.payload.pull_request;
+              const targetBranch = pr.base.ref;
+              
+              // Check if PR is to a protected branch
+              if (isMainBranch || isStagingBranch || isDevelopBranch) {
+                // Verify PR has required reviewers
+                const reviews = await github.rest.pulls.listReviews({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  pull_number: pr.number
+                });
+                
+                const approvedReviews = reviews.data.filter(review => review.state === 'APPROVED');
+                
+                if (approvedReviews.length === 0) {
+                  core.setFailed(`Pull request to ${targetBranch} requires at least one approval.`);
+                }
+                
+                // Check if branch is up to date
+                if (pr.behind_by > 0) {
+                  core.setFailed(`Branch is ${pr.behind_by} commits behind ${targetBranch}. Please update your branch.`);
+                }
+                
+                // Check for merge conflicts
+                if (pr.mergeable === false) {
+                  core.setFailed('Pull request has merge conflicts. Please resolve them before merging.');
+                }
+              }
+            }
+
+  terraform-plan:
+    needs: enforce-branch-protection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: "1.0.0"
+          
+      - name: Terraform Init
+        run: terraform init
+        working-directory: environments/staging
+        
+      - name: Terraform Plan
+        run: terraform plan
+        working-directory: environments/staging
+
+  run-tests:
+    needs: enforce-branch-protection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.19'
+          
+      - name: Run Tests
+        run: |
+          go test -v ./tests/...
+
+  check-documentation:
+    needs: enforce-branch-protection
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Check Documentation
+        run: |
+          # Check if CHANGELOG.md is updated
+          if git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep -q "CHANGELOG.md"; then
+            echo "CHANGELOG.md has been updated"
+          else
+            echo "Warning: CHANGELOG.md has not been updated"
+          fi
+          
+          # Check if README.md exists in modified modules
+          for file in $(git diff --name-only ${{ github.event.before }} ${{ github.event.after }}); do
+            if [[ $file == modules/*/main.tf ]]; then
+              module_dir=$(dirname $file)
+              if [ ! -f "$module_dir/README.md" ]; then
+                echo "Error: README.md missing in $module_dir"
+                exit 1
+              fi
+            fi
+          done 

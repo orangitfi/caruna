@@ -1,0 +1,60 @@
+```mermaid
+graph TB
+    subgraph Monitoring["Monitoring & Cost Management"]
+        subgraph Metrics["Metrics Collection"]
+            ContainerInsights["Container Insights"]
+            CustomMetrics["Custom Metrics"]
+            ALBMetrics["ALB Metrics"]
+        end
+
+        subgraph Alarms["Alarms & Notifications"]
+            CloudWatch["CloudWatch Alarms"]
+            SNS["SNS Topics"]
+            Email["Email Notifications"]
+            Slack["Slack Notifications"]
+        end
+
+        subgraph Cost["Cost Management"]
+            Budget["AWS Budget"]
+            Anomaly["Cost Anomaly Detection"]
+            Reports["Cost Reports"]
+        end
+
+        subgraph Dashboards["Dashboards"]
+            ECSDashboard["ECS Dashboard"]
+            CostDashboard["Cost Dashboard"]
+            SecurityDashboard["Security Dashboard"]
+        end
+    end
+
+    %% Metrics Collection
+    ContainerInsights --> CloudWatch
+    CustomMetrics --> CloudWatch
+    ALBMetrics --> CloudWatch
+
+    %% Alarms & Notifications
+    CloudWatch --> SNS
+    SNS --> Email
+    SNS --> Slack
+
+    %% Cost Management
+    Budget --> SNS
+    Anomaly --> SNS
+    Reports --> CostDashboard
+
+    %% Dashboards
+    CloudWatch --> ECSDashboard
+    CostDashboard --> Reports
+    SecurityDashboard --> CloudWatch
+
+    %% Styling
+    classDef metrics fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white
+    classDef alarms fill:#D13212,stroke:#232F3E,stroke-width:2px,color:white
+    classDef cost fill:#60A5FA,stroke:#232F3E,stroke-width:2px,color:white
+    classDef dashboards fill:#7FBA00,stroke:#232F3E,stroke-width:2px,color:white
+    
+    class ContainerInsights,CustomMetrics,ALBMetrics metrics
+    class CloudWatch,SNS,Email,Slack alarms
+    class Budget,Anomaly,Reports cost
+    class ECSDashboard,CostDashboard,SecurityDashboard dashboards
+``` 

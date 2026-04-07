@@ -1,0 +1,103 @@
+name: "Docker Build and Publish"
+description: "Build and publish a Docker image using raw Docker commands"
+# This action builds and publishes a Docker image with security features like SBOM
+#
+# Example usage in your workflow:
+#
+# jobs:
+#   build-and-publish:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: ./.github/actions/docker-build-publish
+#         with:
+#           working-directory: '.'
+#           dockerfile-path: './Dockerfile'
+#           docker-registry: 'ghcr.io'
+#           docker-repository: 'myorg'
+#           docker-image-name: 'myapp'
+#           docker-tag: ${{ github.sha }}
+#           docker-user: ${{ secrets.DOCKER_USER }}
+#           docker-password: ${{ secrets.DOCKER_PASSWORD }}
+
+#
+# Required inputs:
+# - working-directory: Directory containing your source code and Dockerfile
+# - dockerfile-path: Path to your Dockerfile relative to working-directory
+# - docker-registry: Container registry (e.g., ghcr.io, docker.io)
+# - docker-repository: Your repository/organization name
+# - docker-image-name: Name for your Docker image
+# - docker-tag: Version tag for the image
+# - docker-user: Username for registry authentication
+# - docker-password: Password/token for registry authentication
+
+inputs:
+  working-directory:
+    description: "Path to the directory containing Dockerfile and source code"
+    required: true
+  dockerfile-path:
+    description: "Relative path to the Dockerfile (from working directory)"
+    required: true
+  docker-registry:
+    description: "Docker registry (e.g. docker.io, ghcr.io)"
+    required: true
+  docker-repository:
+    description: "Docker repository (e.g. samibister)"
+    required: true
+  docker-image-name:
+    description: "Name of the Docker image (e.g., myorg/myimage)"
+    required: true
+  docker-tag:
+    description: "Docker image tag (e.g., latest, 1.0.0, commit-SHA)"
+    required: true
+  docker-user:
+    description: "Docker username"
+    required: true
+  docker-password:
+    description: "Docker password or token"
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Run Docker Build
+      shell: bash
+      run: |
+        docker build -f ${{ inputs.dockerfile-path }} -t ${{ inputs.docker-registry }}/${{ inputs.docker-repository }}/${{ inputs.docker-image-name }}:${{ inputs.docker-tag }}-test .
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Generaate SBOM with Syft
+      shell: bash
+      run: |
+        syft ${{ inputs.docker-registry }}/${{ inputs.docker-repository }}/${{ inputs.docker-image-name }}:${{ inputs.docker-tag }}-test -o json > sbom.json
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Run Security Scan with Grype
+      shell: bash
+      run: |
+        grype sbom:sbom.json --only-fixed --fail-on high
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Docker Login
+      shell: bash
+      run: |
+        echo "${{ inputs.docker-password }}" | docker login -u "${{ inputs.docker-user }}" --password-stdin "${{ inputs.docker-registry }}"
+
+    - name: Docker Push
+      shell: bash
+      run: |
+        docker push ${{ inputs.docker-registry }}/${{ inputs.docker-repository }}/${{ inputs.docker-image-name }}:${{ inputs.docker-tag }}
+      working-directory: ${{ inputs.working-directory }}
+
+    - name: Docker Logout
+      shell: bash
+      run: |
+        docker logout "${{ inputs.docker-registry }}"
+
+    - name: Remove sbom.json
+      shell: bash
+      run: |
+        rm sbom.json
+      working-directory: ${{ inputs.working-directory }}

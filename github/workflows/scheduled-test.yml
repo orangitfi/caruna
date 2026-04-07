@@ -1,0 +1,141 @@
+# Scheduled Test Workflow
+#
+# This workflow runs comprehensive security testing on containerized applications.
+# It performs three types of security checks:
+# 1. Code-level security scanning with Syft/Grype
+# 2. Dockerfile linting with Hadolint
+# 3. Container image security scanning with full SBOM generation
+#
+# Project Structure Assumptions:
+# - Source code is in ./src directory
+# - Dockerfile is in the repository root
+# - Docker build context is the repository root
+#
+# Triggers:
+# - Scheduled: Daily at 2 AM UTC
+# - Manual: Via workflow_dispatch (can specify branch, defaults to main)
+
+name: Scheduled Test
+
+on:
+  schedule:
+    # Run every day at 2 AM UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch to run tests on"
+        required: false
+        default: "main"
+
+# Required permissions for security scanning
+permissions:
+  contents: read # Read repository contents
+
+jobs:
+  # Job 1: Scan application source code for vulnerabilities
+  security-scan-code:
+    name: Security Scan Codebase
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the specified branch (or default to main)
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
+      # Install Syft and Grype security scanning tools
+      - name: Setup Security Tools
+        uses: ./.github/actions/scheduled_test_setup
+
+      # Generate SBOM and scan for vulnerabilities in source code
+      # Scans the ./src directory for application dependencies
+      # Fails on high severity or above vulnerabilities
+      - name: Run Security Scan
+        uses: ./.github/actions/security-scan-code
+        with:
+          directory: "./src"
+
+  # Job 2: Lint Dockerfile for best practices and security issues
+  docker-lint:
+    name: Lint Dockerfile
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the specified branch (or default to main)
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
+      # Run Hadolint to check Dockerfile for best practices
+      # Checks for common mistakes, security issues, and style violations
+      # Assumes Dockerfile is at repository root
+      - name: Lint Dockerfile
+        uses: ./.github/actions/docker-lint
+        with:
+          dockerfile: "./Dockerfile"
+          working-directory: "."
+
+  # Job 3: Build container and perform comprehensive security scan
+  docker-scan:
+    name: Docker Security Scan
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the specified branch (or default to main)
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || 'main' }}
+
+      # Build Docker image, generate SBOM with Syft, scan with Grype
+      # Uses repository root as build context
+      # Dockerfile at root can COPY from ./src
+      # Fails if high or critical severity vulnerabilities are found
+      - name: Build and Scan Container
+        uses: ./.github/actions/docker-scan
+        with:
+          working-directory: "."
+          dockerfile-path: "./Dockerfile"
+          image-name: "app"
+          image-tag: ${{ github.sha }}
+          fail-on-severity: "high" # Fail on high/critical vulnerabilities
+
+  # Job 4: Aggregate results and create summary report
+  summary:
+    name: Test Summary
+    runs-on: ubuntu-latest
+    needs: [security-scan-code, docker-lint, docker-scan] # Wait for all jobs
+    if: always() # Run even if previous jobs failed
+    steps:
+      # Create a summary report in the GitHub Actions UI
+      # Shows status of all jobs and fails if any job failed
+      - name: Check Results
+        run: |
+          # Add summary header
+          echo "## Scheduled Test Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Add context information
+          echo "- **Branch**: ${{ github.event.inputs.branch || 'main' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Display results of each job
+          echo "### Job Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- Security Scan: ${{ needs.security-scan-code.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Docker Lint: ${{ needs.docker-lint.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Docker Scan: ${{ needs.docker-scan.result }}" >> $GITHUB_STEP_SUMMARY
+
+          # Determine overall success/failure
+          if [ "${{ needs.security-scan-code.result }}" != "success" ] || \
+             [ "${{ needs.docker-lint.result }}" != "success" ] || \
+             [ "${{ needs.docker-scan.result }}" != "success" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ **Some tests failed. Please review the logs above.**" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          else
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "✅ **All tests passed successfully!**" >> $GITHUB_STEP_SUMMARY
+          fi

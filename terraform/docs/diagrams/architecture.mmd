@@ -1,0 +1,66 @@
+```mermaid
+graph TB
+    subgraph AWS["AWS Cloud"]
+        subgraph VPC["VPC"]
+            subgraph Public["Public Subnets"]
+                ALB["Application Load Balancer"]
+            end
+            
+            subgraph Private["Private Subnets"]
+                subgraph ECS["ECS Cluster"]
+                    Service["ECS Service"]
+                    Task["ECS Tasks"]
+                end
+            end
+        end
+
+        subgraph Security["Security"]
+            SG_ALB["ALB Security Group"]
+            SG_ECS["ECS Security Group"]
+            KMS["KMS Key"]
+            Secrets["Secrets Manager"]
+        end
+
+        subgraph Monitoring["Monitoring"]
+            CloudWatch["CloudWatch"]
+            Alarms["CloudWatch Alarms"]
+            SNS["SNS Topics"]
+        end
+
+        subgraph Cost["Cost Management"]
+            Budget["AWS Budget"]
+            Anomaly["Cost Anomaly Detection"]
+        end
+    end
+
+    %% Connections
+    Internet((Internet)) --> ALB
+    ALB --> Service
+    Service --> Task
+    
+    %% Security connections
+    SG_ALB --> ALB
+    SG_ECS --> Task
+    KMS --> Secrets
+    Secrets --> Task
+    
+    %% Monitoring connections
+    Task --> CloudWatch
+    CloudWatch --> Alarms
+    Alarms --> SNS
+    
+    %% Cost connections
+    Budget --> SNS
+    Anomaly --> SNS
+
+    %% Styling
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white
+    classDef security fill:#D13212,stroke:#232F3E,stroke-width:2px,color:white
+    classDef monitoring fill:#60A5FA,stroke:#232F3E,stroke-width:2px,color:white
+    classDef cost fill:#7FBA00,stroke:#232F3E,stroke-width:2px,color:white
+    
+    class AWS,ALB,Service,Task aws
+    class SG_ALB,SG_ECS,KMS,Secrets security
+    class CloudWatch,Alarms,SNS monitoring
+    class Budget,Anomaly cost
+``` 
