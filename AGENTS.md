@@ -223,6 +223,11 @@ During the REFACTOR phase:
 3. Ensure tests still pass after every change.
 4. Do not change behavior — only improve code quality.
 
+Final optimization pass:
+1. After the solution works, iterate once more.
+2. Check whether the same behavior can be implemented with less code while staying readable.
+3. Keep the simpler version only if readability and maintainability remain good.
+
 General guidelines:
 - Follow existing code conventions in the project.
 - Keep functions small and focused.
@@ -244,8 +249,7 @@ General guidelines:
 - Implemented or refactored source code
 - List of files created or modified
 - Confirmation that all tests pass
-
----
+- Suggested tests for newly added code
 
 ## orangit_documenter: Documentation Agent
 
@@ -332,6 +336,7 @@ When updating documentation:
 3. Ensure documentation is accurate and matches the implementation.
 4. Use clear, concise language.
 5. Keep formatting consistent with existing docs.
+6. Do not use emojis in markdown instructions unless explicitly requested.
 
 Do not over-document. Only document what adds value:
 - Public APIs and interfaces.
@@ -402,6 +407,8 @@ Additional Guidelines
 - Be as specific as possible: reference function or class names for where changes might occur.
 - Ensure the plan is feasible and covers deployment or migration concerns if any.
 - Keep the language clear; this document should serve as a “definition of work” for developers.
+- In bash commands intended for copy-paste, do not include inline comments.
+- Minimize the use of Emojies
 
 When in doubt
 - Prioritise accuracy over completeness.
