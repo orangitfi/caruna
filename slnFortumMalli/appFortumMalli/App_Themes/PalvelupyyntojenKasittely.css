@@ -1,0 +1,221 @@
+﻿
+.palvelupyyntohaku
+{
+    background-color: #E6F0FA;
+    padding:20px;
+    border: 1px #C1CBD5 solid;
+    height:30px;
+}
+.otsikkoLabel
+{
+    margin-top:50%;
+    margin-bottom: 50%;
+}
+
+.tapahtumaOtsikko td
+{
+    font-weight:bold;
+    width: 20%;
+}
+
+.palvelupyyntorivi td 
+{
+    height: 35px;
+     background-color: none;
+     width: 20%;
+}
+.palvelupyyntoriviAlt td
+{
+    height: 35px;
+    background-color: #F6F4F5;
+    width: 20%;
+}
+.palveluPyyntotaulukko
+{
+      border-spacing:0;
+      border-collapse:collapse;
+      width:100%;
+      margin-top: 10px;
+}
+
+.palvelupyyntoSivunumerot
+{
+    margin-top:5px;
+}
+.pyyntoOtsikko a
+{
+    color:#5A5A5A !important;
+    font-weight:bold;
+}
+
+.icon
+{
+    opacity:0.3;
+}
+
+
+
+
+/* --------------------------------------------------------------------------------- */
+
+
+.tietoOtsikko
+{
+    color: #111111;
+    padding: 8px 0px 8px 0px;
+    vertical-align: top;
+    max-width: 225px;
+    width: 150px;
+    text-align: left;
+}
+
+.tietoArvo
+{
+    padding: 5px 7px 5px 3px;
+    color: #5A5A5A;
+}
+
+.lomakeElementti
+{
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.palvelukanavaForm
+{
+    background-color: #E6F0FA;
+    border-top: 3px solid #6AB7FB;
+    margin-bottom: 30px;
+    width: auto;
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-right: 40px;
+    padding-bottom: 15px;
+    float: left;
+    width: 560px;
+}
+
+.palvelukanavaOhje
+{
+    color: black;
+    float: left;
+    width: 200px;
+    margin-left: 15px;
+}
+
+.formJaOhje
+{
+    overflow: hidden;
+    clear: both;
+}
+
+.ohjeOtsikko
+{
+    font-weight: bold;
+}
+
+.palvelukanavaBlockOtsikko
+{
+    clear: both;
+}
+
+.kuiskaus
+{
+    color: #5A5A5A;
+    font-style: italic;
+    font-size: 90%;
+}
+
+.palvelukanavaTaulukko
+{
+    width: 100%;
+}
+
+    .palvelukanavaTaulukko td
+    {
+        border-bottom: 1px dashed #C1CBD5;
+    }
+
+.palvelukanavaInputBlock
+{
+    margin-bottom: 15px;
+}
+
+.pakollinenAsteriski
+{
+    color: #CF1B5C !important;
+    font-weight: bold;
+}
+
+.pinkText
+{
+    color: #CF1B5C !important;
+}
+
+.formValidationInfo
+{
+    padding: 10px 0px 10px 25px;
+    background-color: #FFEFE7;
+    border-bottom: 2px solid #FE6700;
+    margin-left: -20px;
+    margin-right: -40px;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+    .formValidationInfo ul
+    {
+        padding: 0px 0px 0px 25px;
+    }
+
+        .formValidationInfo ul li
+        {
+            padding: 2px 0px 2px 0px;
+        }
+
+.palvelukanavaButton
+{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #333333;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 5px 15px;
+    background-color: #ffffff;
+    border: 1px solid #777777;
+    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#dedede');
+    -ms-filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#dedede')";
+    background-image: -moz-linear-gradient(top, #ffffff, #dedede);
+    background-image: -ms-linear-gradient(top, #ffffff, #dedede);
+    background-image: -o-linear-gradient(top, #ffffff, #dedede);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#ffffff), to(#dedede));
+    background-image: -webkit-linear-gradient(top, #ffffff, #dedede);
+    background-image: linear-gradient(top, #ffffff, #dedede);
+}
+
+    .palvelukanavaButton:hover
+    {
+        color: #CF1B5C;
+        text-decoration: none;
+        outline: none !important;
+        cursor: pointer;
+    }
+
+.palveluPyyntoLahetetty
+{
+    background-color: #E6F0FA;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px #C1CBD5 solid;
+}
+
+.palvelukanavaBlock
+{
+     width:860px;
+}
+
+
+

@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{290D5D4A-F6F6-4124-951D-78F3992202BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>appFortumMalli</RootNamespace>
+    <AssemblyName>appFortumMalli</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>appFortumMalli.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>appFortumMalli.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="aktiviteetti.ascx" />
+    <Content Include="App_Themes\Default\Default.css" />
+    <Content Include="App_Themes\Default\Images\gloss.png" />
+    <Content Include="App_Themes\Default\Images\MenuTausta1px_1.png" />
+    <Content Include="App_Themes\Default\Images\Nappi1px_1.png" />
+    <Content Include="App_Themes\Default\Images\Nuoli.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_1.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_2.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_3.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_4.png" />
+    <Content Include="App_Themes\Default\Images\tab-active-left.gif" />
+    <Content Include="App_Themes\Default\Images\tab-active-right.gif" />
+    <Content Include="App_Themes\Default\Images\tab-active.gif" />
+    <Content Include="App_Themes\Default\Images\tab-hover-left.gif" />
+    <Content Include="App_Themes\Default\Images\tab-hover-right.gif" />
+    <Content Include="App_Themes\Default\Images\tab-hover.gif" />
+    <Content Include="App_Themes\Default\Images\tab-left.gif" />
+    <Content Include="App_Themes\Default\Images\tab-line.gif" />
+    <Content Include="App_Themes\Default\Images\tab-right.gif" />
+    <Content Include="App_Themes\Default\Images\tab.gif" />
+    <Content Include="App_Themes\Default\Images\Ukko.png" />
+    <Content Include="App_Themes\Default\Images\Ukko_2.png" />
+    <Content Include="App_Themes\Default\Images\Ylapalkki1px_1.png" />
+    <Content Include="App_Themes\font-awesome\css\font-awesome-ie7.css" />
+    <Content Include="App_Themes\font-awesome\css\font-awesome-ie7.min.css" />
+    <Content Include="App_Themes\font-awesome\css\font-awesome.css" />
+    <Content Include="App_Themes\font-awesome\css\font-awesome.min.css" />
+    <Content Include="App_Themes\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="App_Themes\PalvelupyyntojenKasittely.css" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="ctrlDropDown.ascx" />
+    <Content Include="default2.aspx" />
+    <Content Include="Haku.ascx" />
+    <Content Include="kiinteistot.ascx" />
+    <Content Include="korvaus.ascx" />
+    <Content Include="maksu.ascx" />
+    <Content Include="muuntamon_tiedot.ascx" />
+    <Content Include="omistaja.ascx" />
+    <Content Include="perusnaytto_sopimus.aspx" />
+    <Content Include="perusnaytto_tontti.aspx" />
+    <Content Include="perustiedot_sopimus.ascx" />
+    <Content Include="perustiedot_tontti.ascx" />
+    <Content Include="Pics\areader16.png" />
+    <Content Include="Pics\collapse.jpg" />
+    <Content Include="Pics\cp_button.png" />
+    <Content Include="Pics\excel.gif" />
+    <Content Include="Pics\expand.jpg" />
+    <Content Include="Pics\help.png" />
+    <Content Include="Pics\Kalenteri.png" />
+    <Content Include="Pics\message_ok.png" />
+    <Content Include="Pics\print.gif" />
+    <Content Include="Pics\slasi.gif" />
+    <Content Include="poimintajoukko.aspx" />
+    <Content Include="poimintalomake.aspx" />
+    <Content Include="sopimukset.ascx" />
+    <Content Include="sopimus_edit.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="tiedosto.ascx" />
+    <Content Include="Tyokalut\HenkiloTyokalut.ascx" />
+    <Content Include="valitseTyyppi.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="yhteystiedot.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.designer.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About.aspx.vb">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.vb">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.vb">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.vb">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="aktiviteetti.ascx.designer.vb">
+      <DependentUpon>aktiviteetti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="aktiviteetti.ascx.vb">
+      <DependentUpon>aktiviteetti.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ctrlDropDown.ascx.designer.vb">
+      <DependentUpon>ctrlDropDown.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlDropDown.ascx.vb">
+      <DependentUpon>ctrlDropDown.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.vb">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.vb">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default2.aspx.designer.vb">
+      <DependentUpon>default2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="default2.aspx.vb">
+      <DependentUpon>default2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Haku.ascx.designer.vb">
+      <DependentUpon>Haku.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Haku.ascx.vb">
+      <DependentUpon>Haku.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kiinteistot.ascx.designer.vb">
+      <DependentUpon>kiinteistot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="kiinteistot.ascx.vb">
+      <DependentUpon>kiinteistot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="korvaus.ascx.designer.vb">
+      <DependentUpon>korvaus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="korvaus.ascx.vb">
+      <DependentUpon>korvaus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="maksu.ascx.designer.vb">
+      <DependentUpon>maksu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="maksu.ascx.vb">
+      <DependentUpon>maksu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="muuntamon_tiedot.ascx.designer.vb">
+      <DependentUpon>muuntamon_tiedot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="muuntamon_tiedot.ascx.vb">
+      <DependentUpon>muuntamon_tiedot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="omistaja.ascx.designer.vb">
+      <DependentUpon>omistaja.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="omistaja.ascx.vb">
+      <DependentUpon>omistaja.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perusnaytto_sopimus.aspx.designer.vb">
+      <DependentUpon>perusnaytto_sopimus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perusnaytto_sopimus.aspx.vb">
+      <DependentUpon>perusnaytto_sopimus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="perusnaytto_tontti.aspx.designer.vb">
+      <DependentUpon>perusnaytto_tontti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="perusnaytto_tontti.aspx.vb">
+      <DependentUpon>perusnaytto_tontti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="perustiedot_sopimus.ascx.designer.vb">
+      <DependentUpon>perustiedot_sopimus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="perustiedot_sopimus.ascx.vb">
+      <DependentUpon>perustiedot_sopimus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="perustiedot_tontti.ascx.designer.vb">
+      <DependentUpon>perustiedot_tontti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="perustiedot_tontti.ascx.vb">
+      <DependentUpon>perustiedot_tontti.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="poimintajoukko.aspx.designer.vb">
+      <DependentUpon>poimintajoukko.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="poimintajoukko.aspx.vb">
+      <DependentUpon>poimintajoukko.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="poimintalomake.aspx.designer.vb">
+      <DependentUpon>poimintalomake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="poimintalomake.aspx.vb">
+      <DependentUpon>poimintalomake.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sopimukset.ascx.designer.vb">
+      <DependentUpon>sopimukset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="sopimukset.ascx.vb">
+      <DependentUpon>sopimukset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sopimus_edit.aspx.designer.vb">
+      <DependentUpon>sopimus_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sopimus_edit.aspx.vb">
+      <DependentUpon>sopimus_edit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="tiedosto.ascx.designer.vb">
+      <DependentUpon>tiedosto.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tiedosto.ascx.vb">
+      <DependentUpon>tiedosto.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tyokalut\HenkiloTyokalut.ascx.designer.vb">
+      <DependentUpon>HenkiloTyokalut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Tyokalut\HenkiloTyokalut.ascx.vb">
+      <DependentUpon>HenkiloTyokalut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="valitseTyyppi.aspx.designer.vb">
+      <DependentUpon>valitseTyyppi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="valitseTyyppi.aspx.vb">
+      <DependentUpon>valitseTyyppi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="yhteystiedot.ascx.designer.vb">
+      <DependentUpon>yhteystiedot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="yhteystiedot.ascx.vb">
+      <DependentUpon>yhteystiedot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="App_Themes\Default\Default.skin" />
+    <Content Include="App_Themes\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="App_Themes\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="App_Themes\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="App_Themes\font-awesome\font\FontAwesome.otf" />
+    <Content Include="App_Themes\font-awesome\less\bootstrap.less" />
+    <Content Include="App_Themes\font-awesome\less\core.less" />
+    <Content Include="App_Themes\font-awesome\less\extras.less" />
+    <Content Include="App_Themes\font-awesome\less\font-awesome-ie7.less" />
+    <Content Include="App_Themes\font-awesome\less\font-awesome.less" />
+    <Content Include="App_Themes\font-awesome\less\icons.less" />
+    <Content Include="App_Themes\font-awesome\less\mixins.less" />
+    <Content Include="App_Themes\font-awesome\less\path.less" />
+    <Content Include="App_Themes\font-awesome\less\variables.less" />
+    <Content Include="App_Themes\font-awesome\scss\font-awesome-ie7.scss" />
+    <Content Include="App_Themes\font-awesome\scss\font-awesome.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_bootstrap.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_core.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_extras.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_icons.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_mixins.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_path.scss" />
+    <Content Include="App_Themes\font-awesome\scss\_variables.scss" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\PublishProfiles\Jukka.pubxml" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51737</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
