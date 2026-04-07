@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    h1.paaOtsikko {
+      font-size: 20px;
+      width: 450px;
+    /* float: left; */
+    margin-right: 5px;
+    /* margin-top: 0px; */
+    display: inline-block;
+    }
+
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 2px;
+      margin-top: 5px;
+    }
+
+    div.sivu {
+      width: 700px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+      div.taulukko table {
+        width: 100%;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      div.taulukko td {
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        vertical-align: top;
+      }
+
+      div.taulukko td.otsikko {
+        width: 140px;
+      }
+
+      div.taulukko td.teksti {
+        width: 210px;
+      }
+
+      div.taulukko td.otsikko2 {
+        width: 160px;
+      }
+
+      div.taulukko tr.erotin td {
+        padding-bottom: 5px;
+      }
+
+    div.teksti {
+      margin-bottom: 10px;
+    }
+
+      div.teksti div.otsikko {
+        font-weight: bold;
+        text-align: center;
+      }
+
+    ul.oikeudet {
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+      ul.oikeudet li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        clear: both;
+      }
+
+        ul.oikeudet li.otsikko {
+          font-weight: normal;
+          text-decoration: underline;
+          font-style: italic;
+          margin-bottom: 10px;
+        }
+
+        ul.oikeudet li div.bullet {
+          width: 40px;
+          float: left;
+        }
+
+        ul.oikeudet li div.teksti {
+          width: 680px;
+          display: inline-block;
+        }
+
+    div.korvaus {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+      div.korvaus span.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      div.korvaus span.summa {
+        font-weight: bold;
+      }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px; 
+        margin-right: 100px; 
+        /*display: inline-block;*/ 
+        padding-bottom: 10px;
+      }
+
+      div.allekirjoitukset div.allekirjoitusRinnakkainen {
+        display: inline-block; 
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px; 
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px; 
+          border: none; 
+          color: #000000; 
+          background-color: #000000; 
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+      div.allekirjoitukset div.maanomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        float: left;
+        margin-right: 100px;
+      }
+      div.allekirjoitukset div.maanomistajanimi {
+        width: 160px;
+        float:left;
+        margin-right:100px;
+      }
+
+      div.allekirjoitukset div.johdonomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      div.allekirjoitukset div.johdonomistajanimi {
+        width: 160px;
+        display:inline-block;
+      }
+
+    div.liitteet {
+      clear: both;
+    }
+
+      div.liitteet div.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+        width: auto;
+        float: left;
+      }
+
+      div.liitteet div.teksti {
+        width: auto;
+        display: inline-block;
+      }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+    <div class="sivu sivunVaihto">
+        <h1 class="paaOtsikko">AVTAL OM NYTJANDERÄTT TILL LEDNINGSOMRÅDE (JORDKABEL OCH LUFTLEDNINGAR)</h1>
+        <div class="viivakoodi">
+            <div class="koodi">
+                <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+            </div>
+            <div class="numero">[Sopimusnumero]</div>
+        </div>
+        <h3>Elnätsinnehavare</h3>
+        <div class="taulukko">
+            <table>
+                <tr>
+                    <td class="otsikko">Namn</td>
+                    <td class="teksti">[JohdonOmistaja.Nimi]</td>
+                    <td class="otsikko">FO-nummer</td>
+                    <td class="teksti">[JohdonOmistaja.YTunnus]</td>
+                </tr>
+                <tr>
+                    <td class="otsikko">Adress</td>
+                    <td colspan="3">[JohdonOmistaja.Osoite]</td>
+                </tr>
+                <tr>
+                    <td class="otsikko">Ledningsdel</td>
+                    <td colspan="3">[LinjaOsa.Nimi]</td>
+                </tr>
+                <<{key="MuutLinjaOsat"}
+        <tr>
+          <td class="otsikko"></td>
+          <td colspan="3">[Nimi]</td>
+        </tr>
+        >>
+        <tr>
+          <td class="otsikko">Kartblad</td>
+          <td class="teksti">[Karttalehti]</td>
+          <td class="otsikko">Arbete nr</td>
+          <td>[PCSNumero]</td>
+        </tr>
+            </table>
+        </div>
+        <h3>Markägare</h3>
+        <div class="taulukko">
+            <table>
+                <<{key="MaanOmistajat"}
+        <tr>
+          <td class="otsikko">Namn</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">födelsetid / FO-nummer</td>
+          <td>[Syntymaaika][YTunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Adress</td>
+          <td colspan="3">[Osoite]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Kontonummer</td>
+          <td colspan="3">[Tilinumero]</td>
+        </tr>
+        >>
+        <<{key="Kiinteistot"}
+        <tr>
+          <td class="otsikko">Fastighetens namn</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">Fastighetsbeteckning</td>
+          <td>[Rekisterinumero]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Kommun</td>
+          <td class="teksti">[Kunta]</td>
+          <td class="otsikko2">By</td>
+          <td>[Kyla]</td>
+        </tr>
+        >>
+            </table>
+        </div>
+        <h3>Hyresgäst</h3>
+        <div class="taulukko">
+            <table>
+                <<{key="Vuokralaiset"}
+                <tr>
+                <td class="otsikko">Namn</td>
+                <td class="teksti" colspan="3">[Nimi]</td>
+                </tr>
+                <tr>
+                <td class="otsikko">Adress</td>
+                <td colspan="3">[Osoite]</td>
+                </tr>
+                <tr class="erotin">
+                <td class="otsikko">Telefonnummer</td>
+                <td colspan="3">[Puhelin]</td>
+                </tr>
+                >>
+            </table>
+        </div>
+        [Sivunvaihto_1_{8,}]
+        <div class="teksti">
+            Markägaren och Elnätsinnehavaren har slutit följande avtal (nedan ”Avtal”) om överlåtelse av en bestående nytt<br />
+            janderätt till ledningsområdet, och om därav utgående ersättning, för byggande och upprätthållande av nät på en<br />
+            eller flera av de ovan nämnda fastigheterna. Detta Avtal grundar sig på 161 § i markanvändnings- och bygglagen.
+        </div>
+        <div class="teksti">
+            Område reserverat för placering av ledning (”Ledningsområdet”) anges i den bifogade kartbilagan (Bilaga 1).<br />
+            Ledningsområdets areal definieras figurvis i bifogade ersättningsberäkning (Bilaga 2) eller kartbilaga.
+        </div>
+        [Sivunvaihto_1_{6,7}]
+        <div class="teksti">
+            <div class="otsikko">1</div>
+            Elnätsinnehavaren har rätt att, dock med beaktande i mån av möjlighet av Markägarens önskemål
+        </div>
+        <ul class="oikeudet">
+            <li>
+                <div class="bullet">a)</div>
+                <div class="teksti">
+                    att på ovan nämnda fastighet bygga och upprätthålla i bifogade ersättningsberäkning och/eller kartbilaga<br />
+                    angivna jordkablar och luftledningar med mellanspänning, dataöverföringskablar, rörläggningar och<br />
+                    eventuella märkningsanordningar, fördelnings- och förgreningskåp samt övriga motsvarande delar av<br />
+                    nätet (nedan ”Nätet”). Transformator- och kopplingsstationernas placering ska avtalas i ett separat avtal.
+                </div>
+            </li>
+            [Sivunvaihto_1_{5,5}]
+            <li>
+                <div class="bullet">b)</div>
+                <div class="teksti">
+                    att utföra små ändringar eventuellt påkallade av kontrollmätningar på planerade sträckningar eller platser<br />
+                    för ovan nämnda ledningar, stationer och konstruktioner.
+                </div>
+            </li>
+            [Sivunvaihto_1_{4,4}]
+            <li>
+                <div class="bullet">c)</div>
+                <div class="teksti">
+                    att i samband med byggandet av Nätet vid behov avlägsna träd, buskar och grenar. Träd och buskar<br />
+                    planterade på gårdsplan bör i mån av möjlighet skyddas.
+                </div>
+            </li>
+            [Sivunvaihto_1_{3,3}]
+            <li>
+                <div class="bullet">d)</div>
+                <div class="teksti">
+                    att senare genomföra nödvändiga underhållsåtgärder på ledningen, hålla närområdet till Nätets ovan jor-<br />
+                    den belägna konstruktioner (bland annat fördelningskåp, transformator- och kopplingsstationer) fritt från<br />
+                    träd och annan växtlighet på sätt som driftsäkerheten och elsäkerhetsföreskrifterna förutsätter.
+                </div>
+            </li>
+            [Sivunvaihto_1_{2,2}]
+            <li>
+                <div class="bullet">e)</div>
+                <div class="teksti">
+                    att röra sig och använda motordrivna fordon på fastigheten för att utföra planering, utmärkning, byggande<br />
+                    samt underhålls- och driftåtgärder på Nätet.
+                </div>
+            </li>
+            [Sivunvaihto_1_{1,1}]
+            <li>
+                Angående luftledningar har Elnätsinnehavaren dessutom rätt
+            </li>
+            <li>
+                <div class="bullet">f)</div>
+                <div class="teksti">
+                    att lägga till nya ledningar och andra konstruktioner i befintliga stolpar, om olägenheten för Markägaren<br />
+                    inte ökar.
+                </div>
+            </li>
+            [Sivunvaihto_2_{11,};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li>
+                <div class="bullet">g)</div>
+                <div class="teksti">
+                    att hålla Ledningsområdena fria från träd och vid behov från buskar och grenar i hela Ledningsområdet<br />
+                    på sätt som ledningarnas driftsäkerhet och elsäkerhetsföreskrifterna förutsätter samt utanför Lednings-<br />
+                    mrådet i störningssituationer avlägsna träd som har fallit eller böjt sig över ledningarna eller andra träd<br />
+                    som äventyrar eldistributionen.
+                </div>
+            </li>
+            [Sivunvaihto_2_{10,10};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li>
+                <div class="bullet">h)</div>
+                <div class="teksti">
+                    att utanför Ledningsområdet avlägsna klentoppiga och slanaktiga träd eller andra enstaka träd som t.ex.<br />
+                    vid hård vind eller under tung snömassa kan skada ledningen. Detta förutsätter att Elnätsinnehavaren på<br />
+                    förhand i god tid skriftligen eller på något annat ändamålsenligt sätt informerar Markägaren om röjning-<br />
+                    arna och uppmanar Markägaren att ta kontakt, om denne på förhand önskar komma överens om detaljer<br />
+                    kring avlägsnandet av träden. Om skada som Markägaren åsamkas genom detta ska överenskommas<br />
+                    särskilt enligt punkt 5.
+                </div>
+            </li>
+        </ul>
+            [Sivunvaihto_2_{9,9};
+    </div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+        <div class="otsikko">2</div>
+        Alla träd, grenar och buskar som avlägsnas från Ledningsområdet enligt detta Avtal och under dess giltighetstid<br />
+        blir i Markägarens ägo och ska bortskaffas av Markägaren, om inte annat särskilt överenskoms.
+    </div>
+            [Sivunvaihto_2_{7,8};
+    </div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+        <div class="otsikko">3</div>
+        Markägaren har rätt att nyttja Ledningsområdet som är reserverat för jordkabeln. När Markägaren nyttjar Led-<br />
+        ningsområdet ska han iaktta gällande elsäkerhetsföreskrifter.
+    </div>
+    <div class="teksti">
+        Idkande av jord- och skogsbruk, byggnadsverksamhet samt hållande av öppna lager och anläggningar på Led-<br />
+        ningsområdet och i dess närhet begränsas av bestämmelserna i markanvändnings- och bygglagen samt elsäker-<br />
+        hetsföreskrifterna givna av Caruna eller myndigheterna på basis av denna. Noggrannare anvisningar om förfa-<br />
+        randet i ovan nämnda fall ges av myndigheterna och Elnätsinnehavaren.
+    </div>
+            [Sivunvaihto_2_{6,6};
+    </div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+        För att skydda Nätets konstruktioner ska Markägaren informera Elnätsinnehavaren i god tid, dock senast en (1)<br />
+        vecka före, om sådana skogsavverknings-, sprängnings-, diknings- och andra liknande arbeten på fastigheten<br />
+        som kan medföra risk för skada på Nätet. Elnätsinnehavaren är skyldig att på Markägarens begäran utan ersätt-<br />
+        ning peka ut en jordkabelns exakta läge i terrängen, ge fällningshjälp i närheten av ovan jorden belägna delar av<br />
+        Nätet samt ge anvisningar för skydd av Nätet. Elnätsinnehavaren ska utföra ringa åtgärderna för att skydda Nätet<br />
+        på egen bekostnad.
+    </div>
+    [Sivunvaihto_2_{5,5};
+    </div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      När Markägaren utför ovan nämnda arbeten i närheten av Nätets konstruktioner, bör han förfara så, att dessa<br />
+      inte skadas. Om Markägaren försummar sina förpliktelser enligt denna punkt, är han skyldig att ersätta Elnätsin-<br />
+      nehavaren direkta skador som orsakats på Nätet genom försummelsen. 
+    </div>
+    [Sivunvaihto_2_{4,4};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">4</div>
+      Elnätsinnehavaren betalar till Markägaren i bifogade ersättningsberäkning noggrannare specificerade ersätt-<br />
+      ningar för placering som en engångsbetalning. Ersättningen omfattar olägenheter och skador som orsakas<br />
+      av placeringen. Ersättningarna betalas som en engångsbetalning inom två (2) månader från påbörjandet av<br />
+      byggnadsarbetet. 
+    </div>
+    <div class="korvaus">
+      <span class="otsikko">Ersättning sammanlagt</span>
+      <span class="summa">[KorvausYht] euro</span>
+    </div>
+    [Sivunvaihto_2_{3,3};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Om ersättning inte betalas inom utsatt tid betalar Elnätsinnehavaren dröjsmålsränta för den överskridande tiden<br />
+      enligt räntelagen. 
+    </div>
+    [Sivunvaihto_2_{1,2};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">5</div>
+      Utöver ersättning för placering är Elnätsinnehavaren skyldig att återställa skador som orsakats i samband med<br />
+      byggandet av Nätet eller underhålls- eller driftåtgärder och i samband med återställandet sörja för bortförandet av<br />
+      stora stenar som stigit upp på markytan under byggnadsarbeten. Om återställandet inte är möjligt, ska Elnätsin-<br />
+      nehavaren ersätta Markägaren för direkta skador som orsakats i samband med placeringen av jordkabeln (t.ex.<br />
+      skador på terrängen, vägar eller trädbestånd).  Utförande av återställningsarbetet och betalning av ersättningar<br />
+      avtalas särskilt mellan Elnätsinnehavaren och Markägaren. 
+    </div>
+    [Sivunvaihto_3_{10,};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Om Markägaren anser, att de ersättningar som Elnätsinnehavaren har betalat inte omfattar alla olägenheter och<br />
+      skador som avses i 161 § i markanvändnings- och bygglagen, kan Markägaren överföra ersättningsfrågan för att<br />
+      avgöras i enlighet med inlösningslagen.
+    </div>
+    <div class="teksti">
+      Elnätsinnehavaren ska överenskomma med en tredje part om ersättande av skador som denne orsakats. 
+    </div>
+    [Sivunvaihto_3_{9,9};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">6</div>
+      Markägaren kan på egen bekostnad låta flytta Nätets konstruktioner till en av Elnätsinnehavaren godkänd ny<br />
+      plats. Flyttningen utförs av Elnätsinnehavaren.
+    </div>
+    <div class="teksti">
+      Flyttningskostnaderna bestäms enligt ålder på nätet som ska flyttas. En ålderskompensation ska beräknas på<br />
+      nätet som flyttas och avräknas från kostnader för det nya nätet som ska byggas. Ålderskompensationen för nätet<br />
+      som flyttas består av återanskaffningsvärdet som multipliceras med en ålderskompensationsprocent som be-<br />
+      stäms enligt nätets ålder (Bilaga 3). 
+    </div>
+    [Sivunvaihto_3_{7,8};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">7</div>
+      Markägaren är skyldig att informera om innehållet i detta Avtal till en tredje part som har en sådan nyttjanderätt<br />
+      eller annan rätt till fastigheten som kan påverkas av detta Avtal. 
+    </div>
+    <div class="teksti">
+      Detta Avtal och betalade ersättningar binder fastighetens senare ägare eller innehavare av en rätt anknuten till<br />
+      fastigheten. När Markägaren överlåter sin ägande- eller annan rätt vidare, förbinder han sig att informera den nya<br />
+      ägaren eller rättsinnehavaren om Elnätsinnehavarens, på detta Avtal, grundade rättigheter och Markägarens<br />
+      skyldigheter och att låta anteckna dem i köpebrevet, arrendeavtalet eller annan överlåtelsehandling. 
+    </div>
+    [Sivunvaihto_3_{6,6};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Markägaren är på begäran skyldig att informera Elnätsinnehavaren om arrenderättsinnehavarens kontaktuppgif-<br />
+      ter och eventuella förändringar i dessa uppgifter.  
+    </div>
+    [Sivunvaihto_3_{4,5};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">8</div>
+      Användning av jordkablar kan leda till att Elnätsinnehavaren inte längre har behov av elstolpar, i vilket fall<br />
+      Elnätsinnehavaren kan överlåta äganderätt och innehav av stolpar i gemensamt utnyttjande till en tredje part.<br />
+      Då övergår de rättigheter och skyldigheter som följer av det tidigare luftledningsavtalet till den nya ägaren av stol-<br />
+      parna. Före överlåtelsen avlägsnar Elnätsinnehavaren elstolparnas ledningar och andra till Nätet anslutna kon-<br />
+      struktioner som ägs av denna. För överlåtelsen betalas ingen särskild ersättning till Markägaren
+    </div>
+    <div class="teksti">
+      Ifall Markägaren har ledningar efter mätpunkten (t.ex. kundens egna ledningar) placerade på basis av ett avtal<br />
+      mellan Elnätsinnehavaren och Markägaren eller muntliga uppgifter, kan Elnätsinnehavaren bevilja nyttjanderätt<br />
+      till elstolparna med ett separat nyttjanderättsavtal. Förfaringssätt och villkor för beviljandet av nyttjanderätten defi-<br />
+      nieras i nyttjanderättsavtalet. 
+    </div>
+    <div class="teksti">
+      <div class="otsikko">9</div>
+      Om Elnätsinnehavaren överlåter sin på detta Avtal grundade rättigheter och skyldigheter vidare, ska Elnätsinne-<br />
+      havaren informera Markägaren om överlåtelsen. 
+    </div>
+    [Sivunvaihto_3_{1,3};</div><div class="sivu">] 
+    <div class="teksti">
+      <div class="otsikko">10</div>
+      Detta avtal träder i kraft omedelbart när det har undertecknats och gäller tills Nätets konstruktioner på fastigheter-<br />
+      nas områden slutligt avlägsnas. Om Nätet inte avlägsnas i sin helhet, är Avtalet i kraft enligt vad blir kvar av Nätet<br />
+      på fastigheternas områden. 
+    </div>
+    <div class="teksti">
+      Om Nätets konstruktioner avlägsnas, återställer Elnätsinnehavaren Ledningsområdet i ett skick som lämpar sig<br />
+      för det tidigare bruksändamålet. Meddelande om Nätets avlägsnande tillställs Markägaren i mån av möjlighet. 
+    </div>
+    <div class="teksti">
+      <div class="otsikko">11</div>
+      Detta Avtal förfaller om byggnadsarbetena inte har påbörjats inom två (2) år från det Avtalet har ingåtts. Om på-<br />
+      börjandet av byggnadsarbetena fördröjs av någon speciell orsak som Elnätsinnehavaren inte rår över, kan Elnät-<br />
+      sinnehavaren förlänga Avtalets giltighetstid med högst ett (1) år. Elnätsinnehavaren ska då informera Markäga-<br />
+      ren om förlängandet i god tid, dock minst två (2) veckor före utgången av avtalsperioden.
+    </div>
+    [Sivunvaihto_4_{9,};</div><div class="sivu">]
+    <div class="teksti">
+      <div class="otsikko">12</div>
+      Avtalet har upprättats i två likalydande exemplar, ett för vardera parten.  
+    </div>
+    <div class="teksti">Vi godkänner ovanstående Avtal och beräkning:</div>
+    <div class="teksti">__________ den _______  20</div>
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>Markägare</h3>
+        <hr />
+        [MaanOmistaja.Nimi]<br />
+        &nbsp;
+      </div>
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>Elnätsinnehavare</h3>
+        <hr />
+        [JohdonOmistaja.Nimi]<br />
+        [SopimuksenLaatija]
+      </div>
+      [Sivunvaihto_4_{5,9};</div></div><div class="sivu"><div class="allekirjoitukset">]
+      <<{key="SeuraavatMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>Markägare</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+    <<{key="LoputMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>Markägare</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+  </div>
+  <div class="liitteet">
+    <div class="otsikko">Bilagor:</div>
+    <div class="teksti">
+      Kartbilaga (Bilaga 1)<br />
+      Ersättningsberäkning (Bilaga 2)<br />
+      Tabell för ålderskompensation (Bilaga 3)
+    </div>
+  </div>
+</div>
+</body>
+</html>
