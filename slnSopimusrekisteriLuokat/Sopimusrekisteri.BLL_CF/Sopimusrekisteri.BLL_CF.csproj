@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C409AF1E-1626-4BA7-ABFF-F45EA79DA915}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sopimusrekisteri.BLL_CF</RootNamespace>
+    <AssemblyName>Sopimusrekisteri.BLL_CF</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class\LaskennallinenPaattymispvm.cs" />
+    <Compile Include="IFRSHistoria.cs" />
+    <Compile Include="IFRSHistoriaExcel.cs" />
+    <Compile Include="Class\MathUtils.cs" />
+    <Compile Include="Models\IFRSHistoriaExcelModel.cs" />
+    <Compile Include="Models\IFRSKausi.cs" />
+    <Compile Include="Models\IFRSLaskentaYhteenveto.cs" />
+    <Compile Include="Models\IFRSMaturiteetti.cs" />
+    <Compile Include="Models\IFRSYhteensaVuokratyypeittain.cs" />
+    <Compile Include="Models\IFRSLaskenta.cs" />
+    <Compile Include="Vuokratyyppi.cs" />
+    <Compile Include="Korkoprosentti.cs" />
+    <Compile Include="AktiviteetinLaji.cs" />
+    <Compile Include="AktiviteetinStatus.cs" />
+    <Compile Include="Aktiviteetti.cs" />
+    <Compile Include="AktiviteettiYhteystapa.cs" />
+    <Compile Include="Alv.cs" />
+    <Compile Include="ArkistonSijainti.cs" />
+    <Compile Include="Asiakastyyppi.cs" />
+    <Compile Include="AsiakirjaTarkenne.cs" />
+    <Compile Include="BicKoodi.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Hakuehdot\Hakuehdot.cs" />
+    <Compile Include="Hakuehdot\KorvauslaskelmaHakuehdot.cs" />
+    <Compile Include="Hakuehdot\SopimusHakuehdot.cs" />
+    <Compile Include="IFSPayment.cs" />
+    <Compile Include="IOhjaustieto.cs" />
+    <Compile Include="IPoimittava.cs" />
+    <Compile Include="KorvauslaskelmaLoki.cs" />
+    <Compile Include="MaksuaineistoOletustiedot.cs" />
+    <Compile Include="PcsSummaryRaportti.cs" />
+    <Compile Include="Poiminnat\IPoimintaehdot.cs" />
+    <Compile Include="Poiminnat\IPoimintaehto.cs" />
+    <Compile Include="Poiminnat\PoiminnanValintateksti.cs" />
+    <Compile Include="Poiminnat\Poimintaehdot.cs" />
+    <Compile Include="Poiminnat\Poimintaehto.cs" />
+    <Compile Include="SopimusKiinteisto.cs" />
+    <Compile Include="DFRooli.cs" />
+    <Compile Include="HinnastoAlakategoria.cs" />
+    <Compile Include="HinnastoKategoria.cs" />
+    <Compile Include="IEditable.cs" />
+    <Compile Include="Indeksi.cs" />
+    <Compile Include="Indeksityyppi.cs" />
+    <Compile Include="Infopallura.cs" />
+    <Compile Include="InvCost.cs" />
+    <Compile Include="Julkisuusaste.cs" />
+    <Compile Include="Kayttooikeustiedot.cs" />
+    <Compile Include="Kieli.cs" />
+    <Compile Include="Kiinteisto.cs" />
+    <Compile Include="KirjanpidonAineisto.cs" />
+    <Compile Include="KirjanpidonAineistoRivi.cs" />
+    <Compile Include="KirjanpidonKustannuspaikka.cs" />
+    <Compile Include="Kirjanpidontili.cs" />
+    <Compile Include="Kohdekategoria.cs" />
+    <Compile Include="KorvausHinnasto.cs" />
+    <Compile Include="Korvauslaskelma.cs" />
+    <Compile Include="KorvauslaskelmaRivi.cs" />
+    <Compile Include="KorvauslaskelmaStatus.cs" />
+    <Compile Include="Korvaustyyppi.cs" />
+    <Compile Include="KorvausyksikonTyyppi.cs" />
+    <Compile Include="Kunta.cs" />
+    <Compile Include="Kuukausi.cs" />
+    <Compile Include="Kyla.cs" />
+    <Compile Include="LiiketoiminnanTarve.cs" />
+    <Compile Include="Local1.cs" />
+    <Compile Include="Lupataho.cs" />
+    <Compile Include="Maa.cs" />
+    <Compile Include="MaaraAlaTarkenne.cs" />
+    <Compile Include="Maksu.cs" />
+    <Compile Include="Maksuaineisto.cs" />
+    <Compile Include="Maksualue.cs" />
+    <Compile Include="Maksuehdot.cs" />
+    <Compile Include="MaksunSuoritus.cs" />
+    <Compile Include="MaksuStatus.cs" />
+    <Compile Include="MaksuTiliointi.cs" />
+    <Compile Include="Metsatyyppi.cs" />
+    <Compile Include="OrganisaationTyyppi.cs" />
+    <Compile Include="PassivoinninSyy.cs" />
+    <Compile Include="Poiminta.cs" />
+    <Compile Include="Postitiedot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purpose.cs" />
+    <Compile Include="Puustolaji.cs" />
+    <Compile Include="PuustonOmistajuus.cs" />
+    <Compile Include="PuustonPoisto.cs" />
+    <Compile Include="Regulation.cs" />
+    <Compile Include="Saanto.cs" />
+    <Compile Include="SiirtoOikeus.cs" />
+    <Compile Include="SopimuksenAlaluokka.cs" />
+    <Compile Include="SopimuksenEhtoversio.cs" />
+    <Compile Include="SopimuksenKesto.cs" />
+    <Compile Include="SopimuksenTila.cs" />
+    <Compile Include="Sopimus.cs" />
+    <Compile Include="SopimusarkistoLoki.cs" />
+    <Compile Include="SopimusFormaatti.cs" />
+    <Compile Include="Sopimusluokka.cs" />
+    <Compile Include="SopimusPoiminta.cs" />
+    <Compile Include="SopimusTaho.cs" />
+    <Compile Include="SopimusTuloste.cs" />
+    <Compile Include="Sopimustyyppi.cs" />
+    <Compile Include="Taho.cs" />
+    <Compile Include="TahoTyyppi.cs" />
+    <Compile Include="Tiedosto.cs" />
+    <Compile Include="Tiedostolahde.cs" />
+    <Compile Include="Tunnisteyksikko.cs" />
+    <Compile Include="TunnisteyksikkoTyyppi.cs" />
+    <Compile Include="Yksikko.cs" />
+    <Compile Include="YlasopimuksenTyyppi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KT.Utils\KT.Utils\KT.Utils.csproj">
+      <Project>{7fff279e-6aa1-4e11-8dfc-bd4ac33a31dc}</Project>
+      <Name>KT.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

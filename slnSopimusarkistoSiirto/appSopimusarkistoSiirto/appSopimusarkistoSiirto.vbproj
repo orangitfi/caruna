@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BA0CA13-FECC-41B1-B8DE-A8E89FBDB678}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <StartupObject>appSopimusarkistoSiirto.Siirto</StartupObject>
+    <RootNamespace>appSopimusarkistoSiirto</RootNamespace>
+    <AssemblyName>appSopimusarkistoSiirto</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Console</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>appSopimusarkistoSiirto.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>appSopimusarkistoSiirto.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Konfiguraatio\Konfiguraatiot.vb" />
+    <Compile Include="Liittymat\Sharepoint\Era.vb" />
+    <Compile Include="Liittymat\Sharepoint\Heratys.vb" />
+    <Compile Include="Liittymat\Sharepoint\Kentta.vb" />
+    <Compile Include="Liittymat\Sharepoint\KenttaAttribuutti.vb" />
+    <Compile Include="Liittymat\Sharepoint\Kysely.vb" />
+    <Compile Include="Liittymat\Sharepoint\KyselyAsetukset.vb" />
+    <Compile Include="Liittymat\Sharepoint\Lista.vb" />
+    <Compile Include="Liittymat\Sharepoint\Listat.vb" />
+    <Compile Include="Liittymat\Sharepoint\Metodi.vb" />
+    <Compile Include="Liittymat\Sharepoint\Nakyma.vb" />
+    <Compile Include="Liittymat\Sharepoint\NakymaKentat.vb" />
+    <Compile Include="Liittymat\Sharepoint\Nakymat.vb" />
+    <Compile Include="Liittymat\Sharepoint\Pyynto.vb" />
+    <Compile Include="Liittymat\Sharepoint\TestiClient.vb" />
+    <Compile Include="Liittymat\Sharepoint\Vastaus.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\LevyTiedosto.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\SopimusarkistoClient.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\SopimusHakuehdot.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\Tiedosto.vb" />
+    <Compile Include="Liittymat\Tiedostoraportti\Raportti.vb" />
+    <Compile Include="Liittymat\Tiedostoraportti\Tiedostorivi.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\SopimusarkistoLists\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SopimusarkistoViews\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Siirto.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.AddAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.AddDiscussionBoardItemResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.AddListFromFeatureResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.AddListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.AddWikiPageResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.ApplyContentTypeToListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.CheckInFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.CheckOutFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.CreateContentTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.DeleteAttachmentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.DeleteContentTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.DeleteContentTypeXmlDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.DeleteListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetAttachmentCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListAndViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListContentTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListContentTypesAndPropertiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListContentTypesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListItemChangesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListItemChangesSinceTokenResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListItemChangesWithKnowledgeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.GetVersionCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UndoCheckOutResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UpdateContentTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UpdateContentTypesXmlDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UpdateContentTypeXmlDocumentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UpdateListItemsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UpdateListItemsWithKnowledgeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\appSopimusarkistoSiirto.SopimusarkistoLists.UpdateListResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoLists\Lists.wsdl" />
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.AddViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.DeleteViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.GetViewCollectionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.GetViewHtmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.GetViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.UpdateViewHtml2Response.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.UpdateViewHtmlResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\appSopimusarkistoSiirto.SopimusarkistoViews.UpdateViewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SopimusarkistoViews\Views.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SopimusarkistoLists\" />
+    <WCFMetadataStorage Include="Service References\SopimusarkistoViews\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoLists\Lists.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoLists\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoLists\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoLists\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoViews\Views.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoViews\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoViews\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SopimusarkistoViews\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KT.Utils\KT.Utils\KT.Utils.csproj">
+      <Project>{7fff279e-6aa1-4e11-8dfc-bd4ac33a31dc}</Project>
+      <Name>KT.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\slnSopimusrekisteriLuokat\Sopimusrekisteri.BLL_CF\Sopimusrekisteri.BLL_CF.csproj">
+      <Project>{c409af1e-1626-4ba7-abff-f45ea79da915}</Project>
+      <Name>Sopimusrekisteri.BLL_CF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\slnSopimusrekisteriLuokat\Sopimusrekisteri.DAL_CF\Sopimusrekisteri.DAL_CF.csproj">
+      <Project>{c596505e-3c1a-4b31-9adc-6e3971ef6e9b}</Project>
+      <Name>Sopimusrekisteri.DAL_CF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Avustajat\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

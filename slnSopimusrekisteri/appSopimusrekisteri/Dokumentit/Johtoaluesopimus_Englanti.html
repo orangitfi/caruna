@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    h1.paaOtsikko {
+      font-size: 20px;
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    div.sivu {
+      width: 700px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+      div.taulukko table {
+        width: 100%;
+        border-spacing: 0px;
+        border-collapse: collapse;
+      }
+
+      div.taulukko td.otsikko {
+        width: 110px;
+      }
+
+      div.taulukko td.teksti {
+        width: 250px;
+      }
+
+      div.taulukko tr.erotin td {
+        padding-bottom: 5px;
+      }
+
+    div.teksti {
+      margin-bottom: 10px;
+    }
+
+      div.teksti div.otsikko {
+        font-weight: bold;
+        text-align: center;
+      }
+
+    ul.oikeudet {
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+      ul.oikeudet li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        clear: both;
+      }
+
+        ul.oikeudet li.otsikko {
+          font-weight: normal;
+          text-decoration: underline;
+          font-style: italic;
+          margin-bottom: 10px;
+        }
+
+        ul.oikeudet li div.bullet {
+          width: 40px;
+          float: left;
+        }
+
+        ul.oikeudet li div.teksti {
+          width: 680px;
+          display: inline-block;
+        }
+
+    div.korvaus {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+      div.korvaus span.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      div.korvaus span.summa {
+        font-weight: bold;
+      }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px; 
+        margin-right: 100px; 
+        /*display: inline-block;*/ 
+        padding-bottom: 10px;
+      }
+
+      div.allekirjoitukset div.allekirjoitusRinnakkainen {
+        display: inline-block; 
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px; 
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px; 
+          border: none; 
+          color: #000000; 
+          background-color: #000000; 
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+      div.allekirjoitukset div.maanomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        float: left;
+        margin-right: 100px;
+      }
+      div.allekirjoitukset div.maanomistajanimi {
+        width: 160px;
+        float:left;
+        margin-right:100px;
+      }
+
+      div.allekirjoitukset div.johdonomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      div.allekirjoitukset div.johdonomistajanimi {
+        width: 160px;
+        display:inline-block;
+      }
+
+    div.liitteet {
+      clear: both;
+    }
+
+      div.liitteet div.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+        width: auto;
+        float: left;
+      }
+
+      div.liitteet div.teksti {
+        width: auto;
+        display: inline-block;
+      }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+    <div class="sivu sivunVaihto">
+        <h1 class="paaOtsikko">RIGHT-OF-USE AGREEMENT FOR TRANSMISSION LINE AREA</h1>
+        <div class="viivakoodi">
+            <div class="koodi">
+                <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+            </div>
+            <div class="numero">[Sopimusnumero]</div>
+        </div>
+        <h3>TRANSMISSION LINE OWNER</h3>
+        <div class="taulukko">
+            <table>
+                <tr>
+                    <td class="otsikko">Name</td>
+                    <td class="teksti">[JohdonOmistaja.Nimi]</td>
+                    <td class="otsikko"></td>
+                    <td class="teksti"></td>
+                </tr>
+                <tr>
+                    <td class="otsikko">Address</td>
+                    <td class="teksti" colspan="3">[JohdonOmistaja.Osoite]</td>
+                </tr>
+                <tr>
+                    <td class="otsikko">Line section</td>
+                    <td class="teksti" colspan="3">[LinjaOsa.Nimi]</td>
+                </tr>
+                <<{key="MuutLinjaOsat"}
+        <tr>
+          <td class="otsikko"></td>
+          <td class="teksti" colspan="3">[Nimi]</td>
+        </tr>
+        >>
+        <tr>
+          <td class="otsikko">Map sheet</td>
+          <td class="teksti">[Karttalehti]</td>
+          <td class="otsikko">Work no.</td>
+          <td class="teksti">[PCSNumero]</td>
+        </tr>
+            </table>
+        </div>
+        <h3>LANDOWNER</h3>
+        <div class="taulukko">
+            <table>
+                <<{key="MaanOmistajat"}
+        <tr>
+          <td class="otsikko">Name</td>
+          <td>[Nimi]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Address</td>
+          <td>[Osoite]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Account number</td>
+          <td>[Tilinumero]</td>
+        </tr>
+        >>
+            </table>
+        </div>
+        <div class="taulukko">
+            <table>
+                <<{key="Kiinteistot"}
+        <tr>
+          <td class="otsikko">Real estate</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko">Real estate ID</td>
+          <td class="teksti">[Rekisterinumero]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Municipality</td>
+          <td class="teksti">[Kunta]</td>
+          <td class="otsikko">Village</td>
+          <td class="teksti">[Kyla]</td>
+        </tr>
+        >>
+            </table>
+        </div>
+        <h3>TENANT</h3>
+        <div class="taulukko">
+            <table>
+                <<{key="Vuokralaiset"}
+                <tr>
+                <td class="otsikko">Name</td>
+                <td class="teksti" colspan="3">[Nimi]</td>
+                </tr>
+                <tr>
+                <td class="otsikko">Address</td>
+                <td colspan="3">[Osoite]</td>
+                </tr>
+                <tr class="erotin">
+                <td class="otsikko">Phone</td>
+                <td colspan="3">[Puhelin]</td>
+                </tr>
+                >>
+            </table>
+        </div>
+        [Sivunvaihto_1_{9,}]
+        <div class="teksti">
+            The aforementioned transmission line owner and landowner have entered into the following agreement concerning<br />
+            permanent restriction of the right of use pertaining to the landowner’s aforementioned property and the<br />
+            compensation payable thereon for the purpose of constructing and maintaining a network. This contract template is<br />
+            based on section 161 of the Land Use and Building Act (1999/132).
+        </div>
+        [Sivunvaihto_1_{7,8}]
+        <div class="teksti">
+            <div class="otsikko">1</div>
+            The transmission line owner shall, while taking due account of the landowner’s wishes to the extent possible, have<br />
+            the right to:
+        </div>
+        <ul class="oikeudet">
+            <li class="otsikko">
+                Overhead line:
+            </li>
+            <li>
+                <div class="bullet">a)</div>
+                <div class="teksti">
+                    construct and maintain in the aforementioned property the transmission lines, transformer and switching<br />
+                    substations, columns and any equipment, open-wire transmission lines and overhead cables mounted<br />
+                    thereon specified in the enclosed compensation calculation and/or map annex. The transmission line<br />
+                    owner shall have the right to add new transmission lines and other structures in the existing columns<br />
+                    insofar as this will not cause any further harm to the landowner;
+                </div>
+            </li>
+            [Sivunvaihto_1_{6,6}]
+            <li>
+                <div class="bullet">b)</div>
+                <div class="teksti">
+                    make minor changes to the planned locations of the aforementioned transmission lines, substations<br />
+                    and structures that may be warranted by control measurements;
+                </div>
+            </li>
+            [Sivunvaihto_1_{5,5}]
+            <li>
+                <div class="bullet">c)</div>
+                <div class="teksti">
+                    access the property for the purpose of carrying out planning, marking, construction,<br />
+                    maintenance and operating actions on the transmission lines, substations and structures;
+                </div>
+            </li>
+            [Sivunvaihto_1_{4,4}]
+            <li>
+                <div class="bullet">d)</div>
+                <div class="teksti">
+                    remove any trees, shrubs and brushes from the area as deemed necessary in view of the construction work<br />
+                    during construction of the network.<br />
+                    Any trees or shrubs planted in the curtilage shall be preserved to the extent possible;
+                </div>
+            </li>
+            [Sivunvaihto_1_{3,3}]
+            <li>
+                <div class="bullet">e)</div>
+                <div class="teksti">
+                    keep the transmission line areas free of trees and, where necessary, of shrubs and brushes, as<br />
+                    required in view of the operational reliability of the transmission lines and the applicable electrical<br />
+                    safety regulations;
+                </div>
+            </li>
+            [Sivunvaihto_1_{2,2}]
+            <li>
+                <div class="bullet">f)</div>
+                <div class="teksti">
+                    remove, in the event of disruptions, any trees outside the transmission line area that have fallen or bent <br /> over
+                    the transmission lines or otherwise endanger the distribution of electricity;
+                </div>
+            </li>
+            [Sivunvaihto_1_{1,1}]
+            <li>
+                <div class="bullet">g)</div>
+                <div class="teksti">
+                    remove any small-topped and slender trees outside the transmission line area or other individual trees that<br />
+                    may cause damage to the transmission line during strong winds or due to a heavy snow load, for example.<br />
+                    This is subject to the precondition that the transmission line owner notifies the landowner well in advance in<br />
+                    writing or by other appropriate means of the clearings, asking the landowner to contact the transmission<br />
+                    line owner in the event that the landowner wants to first agree on any particulars related to the removal of<br />
+                    the trees. Any harm caused to the landowner as a result of this shall be separately agreed upon as<br />
+                    provided in section 5 hereof.
+                </div>
+            </li>
+            [Sivunvaihto_2_{10,};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li class="otsikko">
+                Ground cable
+            </li>
+            <li>
+                <div class="bullet">a)</div>
+                <div class="teksti">
+                    construct and maintain in the aforementioned property the cables, transformer and switching substations,<br />
+                    pipings and any marking devices and distribution cabinets specified in the enclosed compensation<br />
+                    calculation and/or map annex;
+                </div>
+            </li>
+            <li>
+                <div class="bullet">b)</div>
+                <div class="teksti">
+                    make minor changes to the planned locations of the aforementioned cables, substations and<br />
+                    structures that may be warranted by control measurements;
+                </div>
+            </li>
+            [Sivunvaihto_2_{9,9};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li>
+                <div class="bullet">c)</div>
+                <div class="teksti">
+                    remove any trees, shrubs and brushes from the area as deemed necessary in view of the construction<br />
+                    work during construction of the network. Any trees or shrubs planted in the curtilage shall be preserved to<br />
+                    the extent possible;
+                </div>
+            </li>
+            [Sivunvaihto_2_{7,8};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li>
+                <div class="bullet">d)</div>
+                <div class="teksti">
+                    carry out any maintenance work later on that is deemed necessary in view of servicing the cable;
+                </div>
+            </li>
+            <li>
+                <div class="bullet">e)</div>
+                <div class="teksti">
+                    access the property for the purpose of carrying out planning, marking, construction, maintenance and<br />
+                    operating actions on the cables and structures;
+                </div>
+            </li>
+            <li>
+                <div class="bullet">f)</div>
+                <div class="teksti">
+                    place in the transmission line area additional cables and structures within the meaning of point a) above<br />
+                    provided that this will not alter the width of the transmission line area. The transmission line owner<br />
+                    undertakes to notify the landowner of any such addition of cables and structures. Any harm caused as a<br />
+                    result of such addition shall be subject to the provisions of<br />
+                    section 5 hereof.
+                </div>
+            </li>
+        </ul>
+        [Sivunvaihto_2_{5,6};
+    </div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      The location of the transmission line area is defined in the enclosed map (Annex 1). The width of the<br />
+      transmission line area is defined in the enclosed compensation calculation (Annex 2), section “basis of the<br />
+      compensation calculation” / in the map annex.
+    </div>
+    <div class="teksti">
+      <div class="otsikko">2</div>
+      Any trees, brushes and shrubs felled from the transmission line area shall remain the landowner’s property that is to<br />
+      be removed from the site. If the trees remain the transmission line owner’s property, they shall be compensated<br />
+      according to their fair value.
+    </div>
+    [Sivunvaihto_2_{3,4};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">3</div>
+      Construction activities and the keeping of open depots and equipment in the vicinity of the transmission line are<br />
+      restricted by the provisions of the Land Use and Building Act and the electrical safety regulations. More specific<br />
+      instructions on the procedure to be followed in the aforementioned cases are available from the authorities and<br />
+      the transmission line owner.
+    </div>
+    [Sivunvaihto_2_{2,2};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      For protecting the structures of the transmission line network, the landowner shall notify the transmission line<br />
+      owner well in advance of any felling, blasting, ditching or other comparable work carried out on his part owing to<br />
+      which the network may be subject to the risk of damage. The transmission line owner shall, at the landowner’s<br />
+      request, show the exact location of the ground cable in the terrain free of charge and give instructions for<br />
+      protecting the network. If the measures necessary for protecting the network are negligible, the transmission line<br />
+      owner shall carry out the work at his own expense.
+    </div>
+    [Sivunvaihto_2_{1,1};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      When the aforementioned work is carried out in the vicinity of the network structures, the landowner is required to<br />
+      proceed in such a way that no damage is caused to the network structures. The transmission line owner shall<br />
+      provide felling assistance where necessary. Felling assistance does not mean the actual felling work. The<br />
+      landowner is required to notify the transmission line owner of the need for felling assistance no later than three<br />
+      working days prior to the commencement of the felling work.
+    </div>
+    <div class="teksti">
+      <div class="otsikko">4</div>
+      The transmission line owner shall pay the landowner the compensations detailed in the enclosed compensation<br />
+      calculation. The compensations shall be paid as a lump sum within one (1) month of the commencement of the<br />
+      construction work.
+    </div>
+    <div class="korvaus">
+      <span class="otsikko">Total amount of compensation</span>
+      <span class="summa">[KorvausYht] €</span>
+    </div>
+    [Sivunvaihto_3_{10,};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      If the compensation is not paid within the prescribed time limit, the transmission line owner shall pay<br />
+      penalty interest as defined in the Finnish Interest Act for the duration of the delay.
+    </div>
+    [Sivunvaihto_3_{9,9};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">5</div>
+      The transmission line owner is liable to repair any damage caused during construction time and in connection with<br />
+      maintenance and operation actions or agree on their compensation with the landowner on a case-by-case basis.<br />
+      The compensation for damage shall be paid within one (1) month of the date when the compensation amount was<br />
+      agreed upon.
+    </div>
+    [Sivunvaihto_3_{7,8};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">6</div>
+      The landowner may, at his own expense, have the transmission line/structures moved to a new location<br />
+      approved by the transmission line owner. The moving shall be carried out by the transmission line owner.
+    </div>
+    [Sivunvaihto_3_{6,6};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">7</div>
+      The landowner is required to disclose the content of this agreement to the usufructuary. In the event that the<br />
+      landowner surrenders his right of ownership or usufruct, the landowner undertakes to inform the new owner or<br />
+      usufructuary of the transmission line owner’s rights under this agreement and to have them recorded in the deed of<br />
+      transfer or lease, respectively.
+    </div>
+    <div class="teksti">This agreement and the compensations paid are also binding upon any successive owner or usufructuary.</div>
+    [Sivunvaihto_3_{4,5};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">8</div>
+      The transmission line owner shall have the right to surrender the right of use of the columns to another<br />
+      transmission line owner. No separate compensation shall be paid to the landowner of such surrender. The name<br />
+      and address of the new holder of the right of use and the period of validity of the right of use shall be notified to the<br />
+      landowner where possible. The transmission line owner to whom the right of use has been surrendered shall then<br />
+      have the right to access the landowner’s land for the purpose of carrying out planning, construction and<br />
+      maintenance work.
+    </div>
+    [Sivunvaihto_3_{3,3};</div><div class="sivu">]
+    <div class="teksti">
+      <div class="otsikko">9</div>
+      The landowner shall have the right to exploit the transmission line area. When exploiting the transmission line<br />
+      area, the landowner shall comply with the then-current electrical safety regulations. However, the growing of trees<br />
+      and seedlings in the overhead line area must be separately agreed upon with the transmission line owner.
+    </div>
+    [Sivunvaihto_3_{2,2};</div><div class="sivu">] 
+    <div class="teksti">
+      <div class="otsikko">10</div>
+      The transmission line owner shall be entitled to assign this agreement to another transmission line owner.<br />
+      No separate compensation shall be paid to the landowner of such assignment.
+    </div>
+    [Sivunvaihto_3_{1,1};</div><div class="sivu">] 
+    <div class="teksti">
+      <div class="otsikko">11</div>
+      This agreement shall become effective immediately when duly signed and remain in force until the network<br />
+      structures are removed.
+    </div>
+    <div class="teksti">
+      When the network structures have been removed, the transmission line owner shall return the transmission<br />
+      line area to a condition that is appropriate in view of its former use. The landowner shall be notified of the<br />
+      removal of the transmission line where possible.
+    </div>
+    <div class="teksti">
+      <div class="otsikko">12</div>
+      This agreement shall lapse if the construction has not been commenced within two (2) years of the date when<br />
+      the agreement was signed. If the commencement of the construction work is delayed for a special reason<br />
+      beyond the transmission line owner’s control, the term of validity of the agreement shall be extended for a<br />
+      maximum of one (1) year. The transmission line owner shall notify the landowner thereof well in advance, in<br />
+      any event no later than prior to the expiry of the two-year time limit.
+    </div>
+      [Sivunvaihto_4_{9,};</div><div class="sivu">]
+    <div class="teksti">
+      <div class="otsikko">13</div>
+      This agreement has been executed in duplicate, with one copy for each party.
+    </div>
+    <div class="teksti">We hereby accept the foregoing agreement and calculation:</div>
+    <div class="teksti">__________ päivänä _______kuuta  20</div>
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>LANDOWNER</h3>
+        <hr />
+        [MaanOmistaja.Nimi]<br />
+        &nbsp;
+      </div>
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>TRANSMISSION LINE OWNER</h3>
+        <hr />
+        [JohdonOmistaja.Nimi] p.p<br />
+        [SopimuksenLaatija]
+      </div>
+      [Sivunvaihto_4_{5,9};</div></div><div class="sivu"><div class="allekirjoitukset">]
+      <<{key="SeuraavatMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>LANDOWNER</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+    <<{key="LoputMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>LANDOWNER</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+  </div>
+  <div class="liitteet">
+    <div class="otsikko">Encl:</div>
+    <div class="teksti">
+      Annex 1 Map<br />
+      Annex 2 Compensation calculation
+    </div>
+  </div>
+</div>
+</body>
+</html>

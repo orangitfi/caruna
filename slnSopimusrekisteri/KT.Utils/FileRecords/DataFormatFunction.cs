@@ -1,0 +1,1 @@
+﻿public delegate object DataFormatFunction(object value);

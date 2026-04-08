@@ -1,0 +1,1136 @@
+﻿/* tagi määritykset*/
+/*---------------------------------------------------------------------------------*/
+html
+{
+
+}
+
+form
+{
+
+}
+
+body
+{   
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  
+  background-color: #FFFFFF;
+  background-image: url(images/Sivupalkki1px_4.png);
+  background-repeat: repeat-y;
+  
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  
+  color: #5A5A5A;
+}
+
+body.report
+{
+  margin: 25px 30px 25px 30px;
+  padding: 0px;
+  height: 100%;
+   
+  background-image: none;
+   
+  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  
+  color: #5A5A5A;
+}
+
+body.plain
+{
+    background-image: none;
+}
+
+h1
+{
+    font-size: 15px;
+    font-weight: normal;
+    color: #787878;
+    
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 4px 10px;
+    
+    /*border: 1px solid Lime;*/
+    
+    text-transform: uppercase;
+}
+
+h2
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: #505050;
+    margin-bottom: 15px;
+    
+    text-transform: uppercase;
+}
+
+h3
+{
+    font-size: 14px;
+    font-weight: bold;
+    color: #505050;
+
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 4px 10px;
+    
+    /*border: 1px solid Red;*/
+}
+
+h4
+{
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px; 
+}
+
+h5
+{
+    font-size: 12px;
+    font-weight: bold;   
+}
+
+a           {font-size: 12px; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; text-decoration: underline;}
+a:link      {color: #38A4FF;}
+a:visited   {color: #38A4FF;}
+a:hover     {color: #FF8432;}
+a:active    {color: #38A4FF;}
+
+input
+{
+  color: Black;  
+}
+
+textarea
+{
+  color: Black;   
+}
+
+option
+{
+  color: Black;
+}
+
+/* id määritykset */
+/*!!!!!!!!!!!!!!!!!!! LAYOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/*---------------------------------------------------------------------------------*/
+#header
+{
+    /*height: 75px;*/
+    background-image: url(Images/Ylapalkki1px_1.png);
+    background-repeat: repeat-x;
+    
+    height: 80px;
+}
+
+#title
+{
+  float: left;
+  
+  padding: 18px 0px 0px 25px;
+  margin: 0px 0px 0px 0px;
+  
+  width: 425px;
+  
+  
+  /*border: 1px solid Lime;*/
+}
+
+#title h1
+{
+  font-family: sans-serif;
+  font-size: 32px;
+  
+  color: White;
+  
+  margin: 0px 0px 0px 0px; 
+  padding: 0px 0px 0px 0px;
+   
+}
+
+#title h2
+{
+  color: White;
+  
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  
+  margin: 0px 0px -5px 10px;   
+  padding: 0px 0px 0px 0px;  
+}
+
+#loginDisplay
+{
+  float: right;  
+ 
+  font-size: x-small;  
+  margin-top: 35px;
+  
+  width: 450px;
+}
+
+#logoKilta
+{
+
+  float: left;
+  /*Kiltalogon vertikaalinen sijoitus */
+  padding-top: 15px;
+  vertical-align: bottom;
+}
+
+#menu
+{
+  padding-top: 0px;  
+  background-color:#c1c1c1;
+  clear: both;
+  width: 100%;
+}
+
+#menubar
+{
+
+}
+
+/*Sivupalkin tausta värimääritys on vaihdettu bodyn taustakuvaan, koska sivupalkin dynaaminen korkeuden asetus sisällön mukaan osottautui hankalaksi.*/
+#sidebar
+{
+ /*background-color: #EDEDED;*/
+    
+ float: left;  
+
+ padding: 2px 10px 2px 10px;
+  
+ width: 250px;    
+ 
+ /*border: 1px solid Purple;*/
+}
+
+#logoCustomer
+{
+  padding: 15px 0px 15px 4px;
+  width: 125px;
+}
+
+#toolbar
+{   
+
+  padding-bottom: 20px;
+}
+
+#search
+{
+
+}
+
+#content
+{   
+  /*Sidebar leveys 250px ja padding 10px + 10px marginaali sisällölle 30px eli margin-left 250px + 10px + 10px + 30px = 300px*/
+
+  float: left;
+  
+  padding: 0px 0px 0px 0px;
+ 
+  
+  margin-left: 30px;
+  margin-top: 30px;  
+  margin-right: 30px;
+  
+  vertical-align: top;
+
+  /*border: 1px solid Lime;*/
+  width: 860px;
+}
+
+#footer
+{
+  clear: both;  
+  padding-top: 20px;  
+  text-align: center;
+  width: 100%;
+}
+
+#footer hr
+{
+    margin: 0px 30px 0px 300px;
+    width: auto;
+}
+
+#footer a
+{
+    text-decoration: none;
+    margin-left: 270px
+}
+
+/* Luokat */
+/*---------------------------------------------------------------------------------*/
+.page
+{
+  width: 1220px;
+  /*border: 1px solid Purple;*/
+}
+
+.nounderline
+{
+    
+}
+
+/*Validaatio*/
+.validation
+{
+   margin: 0px 0px 0px 0px;
+   padding: 0px 0px 0px 0px; 
+   
+   color: #FF6400;
+}
+
+.alert
+{
+  background-color: #FFD2BF;
+}
+
+.buttonDefault
+{
+	background-image:url(Images/Nappi1px_1.png);
+	background-repeat: repeat-x;
+	
+	border-top: 1px solid #C3E1FB;
+	border-left: 1px solid #A1D7FF;
+	border-right: 1px solid #75ADDC;
+	border-bottom: 1px solid #5592CB;
+	
+	font-weight: bold;
+	
+	height: 23px;
+
+    cursor:pointer;
+    overflow:visible;
+    
+    color: White;
+}
+
+.decimal {text-align: left;}
+.centered {text-align: center;}
+
+.loginDisplay       {width: auto; height: 25px; padding-right: 10px; margin-left: auto;}
+.loginDisplay td    {color: #ADADAD; font-size: 11px; font-weight: bold; text-transform: uppercase; padding: 2px 15px 2px 15px;}
+.loginDisplay td a  {color: #ADADAD; font-size: 11px; text-decoration: none;}
+
+.loginDisplay td.changePassword    {font-size: 10px; font-weight:normal; text-transform: none;}
+.loginDisplay td.changePassword a  {font-size: 10px; text-decoration: underline;}
+
+
+.toolbar                        {}
+.toolbar ul                     {padding-left: 0px;}
+.toolbar li                     {list-style-type: none; margin: 5px 0px 5px 0px;}
+.toolbar li input[type=submit]  {text-align: left; width: 195px;}
+
+.toolbar div.toolbarRow input {margin: 5px 5px 5px 0px;}
+
+/*Haku taulukon tyylit*/
+.search     {}
+.search ul  {padding-left : 0px;}
+.search li  {list-style-type: none; padding: 4px 0px 4px 0px;}
+.search td  {padding:2px 0px 2px 0px; vertical-align: top;}
+
+/*Laajennettuhaku poikkeus linkki tyyli*/
+.search td.advancedSearch               {padding: 30px 0px 10px 0px;}
+.search td.advancedSearch a             {font-size: 13px; font-weight: bold; text-transform: uppercase; text-decoration: none;}
+.search td.advancedSearch a:link        {color: #505050;}
+.search td.advancedSearch a:visited     {color: #505050;}
+.search td.advancedSearch a:hover       {color: #505050;}
+.search td.advancedSearch a:active      {color: #505050;}
+
+.search td.advancedSearchArrow          {border: 1px solid Lime;}
+
+/*TabContainer*/
+/*
+.tabContainer .ajax__tab_header					{ background:url(images/tab-line.gif) repeat-x bottom; }
+.tabContainer .ajax__tab_outer						{ background:url(images/tab-right.gif) no-repeat right; }
+.tabContainer .ajax__tab_inner						{ background:url(images/tab-left.gif) no-repeat; }
+.tabContainer .ajax__tab_tab						{ background:url(images/tab.gif) repeat-x; }
+.tabContainer .ajax__tab_hover .ajax__tab_outer	{ background:url(images/tab-hover-right.gif) no-repeat right; }
+.tabContainer .ajax__tab_hover .ajax__tab_inner	{ background:url(images/tab-hover-left.gif) no-repeat; }
+.tabContainer .ajax__tab_hover .ajax__tab_tab		{ background:url(images/tab-hover.gif) repeat-x; }
+.tabContainer .ajax__tab_active .ajax__tab_outer	{ background:url(images/tab-active-right.gif) no-repeat right; }
+.tabContainer .ajax__tab_active .ajax__tab_inner	{ background:url(images/tab-active-left.gif) no-repeat; }
+.tabContainer .ajax__tab_active .ajax__tab_tab		{ background:url(images/tab-active.gif) repeat-x; }
+*/
+
+.tabContainer .ajax__tab_header					    {background-color: White; border-bottom: 3px solid #989898; font-weight: bold;}
+.tabContainer .ajax__tab_outer						{background-color: #E4E4E4; border-right: 1px solid #C6C6C6; border-top: 1px solid #F8F8F8;}
+.tabContainer .ajax__tab_inner						{background-color: #E4E4E4; border-left: 1px solid #F8F8F8; }
+.tabContainer .ajax__tab_tab						{background-color: #E4E4E4; cursor:pointer; color: #888888;}
+.tabContainer .ajax__tab_hover .ajax__tab_outer	    {background-color: #989898; border-top: 1px solid #AAAAAA; }
+.tabContainer .ajax__tab_hover .ajax__tab_inner	    {background-color: #989898; border-left: 1px solid #989898;}
+.tabContainer .ajax__tab_hover .ajax__tab_tab		{background-color: #989898; color: #CFDBE6; font-weight: bold;}
+.tabContainer .ajax__tab_active .ajax__tab_outer	{background-color: #989898; border-top: 1px solid #AAAAAA;}
+.tabContainer .ajax__tab_active .ajax__tab_inner	{background-color: #989898; border-left: 1px solid #999999;}
+.tabContainer .ajax__tab_active .ajax__tab_tab		{background-color: #989898; cursor: default; color: #454545;}
+.tabContainer .ajax__tab_panel                      {padding-top: 20px;}
+
+/*Tabcontainer on lomakeella laitetaan taustaväri kuntoon */
+.tabContainerForm .ajax__tab_header                 {background-color: #E6F0FA;}
+.tabContainerForm .ajax__tab_panel                  {background-color: #E6F0FA; padding: 0px 0px 0px 0px;}
+.tabContainerForm .ajax__tab_tab				    {}
+
+/* XP IE7 theme - Other Styles */
+.tabContainer .ajax__tab_header 					{ font-size:11px;}
+.tabContainer .ajax__tab_outer						{ padding-right:4px;height:29px; }
+.tabContainer .ajax__tab_inner						{ padding-left:3px; }
+.tabContainer .ajax__tab_tab						{ padding:8px 10px;margin:0; }
+.tabContainer .ajax__tab_body						{ background-color:#ffffff; }
+
+/* Menu */
+table.menu
+{
+  width: 100%;
+}
+
+table.menu td
+{
+  background-image: url(Images/MenuTausta1px_1.png);
+  background-repeat: repeat-x;  
+ 
+  border-top: 1px solid #666666;
+  border-left: 1px solid #646464;
+  border-bottom: 1px solid #4B4B4B;
+  border-right: 1px solid #3F3F3F;  
+    
+  height: 25px;  
+    
+  padding: 4px 4px 4px 4px;
+  
+  text-align: center;
+}
+
+table.menu td.menuLinkItem
+{
+  width: 150px;
+}
+
+table.menu td a
+{   
+ font-family: sans-serif;   
+ font-size: 14px;
+ font-weight: bold;
+ color: White;
+ 
+ 
+ /*text-transform: uppercase;*/
+ text-decoration: none;
+ /*letter-spacing: 1px;*/
+}
+
+/*Itsenäiset tagi luokat */
+/*Linkki joka näyttää napilta*/
+div.linkButton
+{
+    float: left;
+    margin: 4px 20px 0px 0px;
+}
+
+div.linkButton a
+{
+    background-image:url(Images/Nappi1px_1.png);
+	background-repeat: repeat-x;
+	
+	border-top: 1px solid #C3E1FB;
+	border-left: 1px solid #A1D7FF;
+	border-right: 1px solid #75ADDC;
+	border-bottom: 1px solid #5592CB;
+	
+	padding: 3px 9px 4px 9px;
+	
+	font-weight: Bold;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 12px;
+	
+	height: 23px;    
+
+    text-decoration: none;
+    cursor:pointer;
+    overflow:visible;
+    
+    color: White;
+}
+
+div.info    {margin-left: 0px; margin-bottom: 30px;   }
+div.info h1 {margin: 0px 0px 10px 0px;}
+
+div.centeredBox {margin-left: auto; margin-right: auto; width: 550px; margin-top: 100px;}
+
+/* ELEMENTIT   
+
+/* ------------------------------------------------------------------------*/
+/* KONTIT */
+/* ------------------------------------------------------------------------*/
+div.containerAccordion
+{
+    border-top: 3px solid #6AB7FB;   
+    margin-bottom: 30px;     
+}
+
+/* ------------------------------------------------------------------------*/
+/* LISTAT */
+/* ------------------------------------------------------------------------*/
+/*Perus lista elementti*/
+div.list
+{
+    background-color: White;
+    border-top: 3px solid #9A9899;
+    margin-bottom: 30px;
+    width: auto;
+}
+
+/*Listan GridView määritys*/
+div.list table.listGridview {width: 100%;}
+
+/*Lista Gridin th ja td määritykset. Sisennykset, align, reunavärit*/
+div.list table.listGridview th, div.list table.listGridview td
+{
+    padding: 4px 2px 4px 5px;
+    width: auto;
+ 
+    vertical-align: top;
+    
+    text-align: left;   
+    
+    border-bottom: 1px solid #C1CBD5;
+}
+
+div.list table.listGridview td.listGridviewAction {text-align: right; padding-right: 10px; width: 60px;}
+
+/* gridin otsikon tr luokka*/
+div.list table.listGridview tr.listGridviewHeader
+{
+ background-color: #BFCBD6;
+ 
+ font-size: 13px;
+ 
+ height: 42px;
+}
+
+        .gvFooter
+        {
+            border-top:2px solid grey;
+        }
+
+/* gridin otsikko soluihin vaikuttava tyyli */
+div.list table.listGridview tr.listGridviewHeader th {background-color: #F6F4F5; font-size: 12px;}
+
+/* Rivin tr tyyli*/
+div.list table.listGridview tr.listGridviewItem {}
+div.list table.listGridview tr.listGridviewItem:hover {background-color: #F0F0F0;}
+div.list table.listGridview tr.listGridviewItem td {}
+
+/*Info rivin tyyli.*/
+div.list table.listGridview tr.listGridviewItemInfo {background-color: #EFF6FF;}
+div.list table.listGridview tr.listGridviewItemInfo:hover {background-color: #E0E5FF;}
+div.list table.listGridview tr.listGridviewItemInfo td {}
+
+/* Huomio rivin tyyli*/
+div.list table.listGridview tr.listGridviewAlertItem {background-color: #FFEFE7;}
+div.list table.listGridview tr.listGridviewAlertItem:hover {background-color: #FFD2BF;}
+div.list table.listGridview tr.listGridviewAlertItem td{}
+
+/* Vaihtoehtoisen rivin tyyli*/
+div.list table.listGridview tr.listGridviewAlternatingItem {/*background-color: #F0F0F0;*/}
+div.list table.listGridview tr.listGridviewAlternatingItem:hover {background-color: #F0F0F0;}
+div.list table.listGridview tr.listGridviewAlternatingItem td {}
+
+/*Vaihtoehtoisenrivin info tyyli*/
+div.list table.listGridview tr.listGridviewAlternatingItemInfo {background-color: #EFF6FF;}
+div.list table.listGridview tr.listGridviewAlternatingItemInfo:hover {background-color: #E0E5FF;}
+div.list table.listGridview tr.listGridviewAlternatingItemInfo td {}
+
+/*Vaihtoehtoisen huomio rivin tyyli*/
+div.list table.listGridview tr.listGridviewAlertAlternatingItem {background-color: #FFEFE7;}
+div.list table.listGridview tr.listGridviewAlertAlternatingItem:hover {background-color: #FFD2BF;}
+div.list table.listGridview tr.listGridviewAlertAlternatingItem td {}
+
+
+/*Tietotyyppi määrityksiä*/
+div.list table.listGridview td.decimal  {padding-right: 20px; text-align: right;}
+div.list table.listGridview td.centered {text-align: center; padding-left: 0px; padding-right: 0px;}
+
+/*Laajennus raportteihin*/
+
+div.listExtensionReport
+{
+ margin-top: 15px;   
+ border-top: none;   
+}
+
+div.listExtensionReport table.listGridview tr.listGridviewHeader th
+{
+ /*background-color: White;*/
+}
+
+/*Listan sisäinen lista*/
+div.innerList
+{
+    background-color: White;
+    margin-top: 5px;
+    margin-left:20px;
+    margin-bottom: 5px;
+    width: auto;
+}
+
+/*Listan GridView määritys*/
+div.innerList table.innerListGridview {width: 100%;}
+
+/*Lista Gridin th ja td määritykset. Sisennykset, align, reunavärit*/
+div.innerList table.innerListGridview th, div.innerList table.innerListGridview td
+{
+    padding: 4px 2px 4px 5px;
+    width: auto;
+ 
+    vertical-align: top;
+    
+    text-align: left;   
+    
+    border-bottom: 1px solid #C1CBD5;
+}
+
+div.innerList table.innerListGridview td.innerListGridviewAction {text-align: right; padding-right: 10px; width: 60px;}
+
+/* gridin otsikon tr luokka*/
+div.innerList table.innerListGridview tr.innerListGridviewHeader
+{
+ height: 20px;
+}
+
+/* gridin otsikko soluihin vaikuttava tyyli */
+div.innerList table.innerListGridview tr.innerListGridviewHeader th {background-color: #E0E1E2; font-size: 11px;}
+
+/* Rivin tr tyyli*/
+div.innerList table.innerListGridview tr.innerListGridviewItem {}
+div.innerList table.innerListGridview tr.innerListGridviewItem:hover {background-color: #E3E6E9;}
+div.innerList table.innerListGridview tr.innerListGridviewItem td {}
+
+/*Info rivin tyyli.*/
+div.innerList table.innerListGridview tr.innerListGridviewItemInfo {background-color: #EFF6FF;}
+div.innerList table.innerListGridview tr.innerListGridviewItemInfo:hover {background-color: #E0E5FF;}
+div.innerList table.innerListGridview tr.innerListGridviewItemInfo td {}
+
+/* Huomio rivin tyyli*/
+div.innerList table.innerListGridview tr.innerListGridviewAlertItem {background-color: #FFEFE7;}
+div.innerList table.innerListGridview tr.innerListGridviewAlertItem:hover {background-color: #FFD2BF;}
+div.innerList table.innerListGridview tr.innerListGridviewAlertItem td{}
+
+/* Vaihtoehtoisen rivin tyyli*/
+div.innerList table.innerListGridview tr.innerListGridviewAlternatingItem {/*background-color: #F0F0F0;*/}
+div.innerList table.innerListGridview tr.innerListGridviewAlternatingItem:hover {background-color: #E3E6E9;}
+div.innerList table.innerListGridview tr.innerListGridviewAlternatingItem td {}
+
+/*Vaihtoehtoisenrivin info tyyli*/
+div.innerList table.innerListGridview tr.innerListGridviewAlternatingItemInfo {background-color: #EFF6FF;}
+div.innerList table.innerListGridview tr.innerListGridviewAlternatingItemInfo:hover {background-color: #E0E5FF;}
+div.innerList table.innerListGridview tr.innerListGridviewAlternatingItemInfo td {}
+
+/*Vaihtoehtoisen huomio rivin tyyli*/
+div.innerList table.innerListGridview tr.innerListGridviewAlertAlternatingItem {background-color: #FFEFE7;}
+div.innerList table.innerListGridview tr.innerListGridviewAlertAlternatingItem:hover {background-color: #FFD2BF;}
+div.innerList table.innerListGridview tr.innerListGridviewAlertAlternatingItem td {}
+
+
+/*Tietotyyppi määrityksiä*/
+div.innerList table.innerListGridview td.decimal  {padding-right: 20px; text-align: right;}
+div.innerList table.innerListGridview td.centered {text-align: center; padding-left: 0px; padding-right: 0px;}
+
+/*Lista kuville*/
+div.listPictures
+{
+    background-color: White;
+    border-top: 3px solid #9A9899;
+    margin-bottom: 30px;
+    width: auto;
+}
+
+div.listPictures div.listPicturesPicture
+{
+ float: left;   
+ margin: 10px 5px 10px 5px;
+ 
+ border-top: 2px solid #CAC8C9;
+ border-left: 2px solid #CAC8C9;
+ border-bottom: 2px solid #9A9899;
+ border-right: 2px solid #9A9899;
+ 
+ background-color: #F2F2F2;
+}
+
+div.listPictures div.listPicturesPicture div.listPicturesPictureContent     {height: 105px; text-align: center; margin: 10px 3px 10px 3px;}
+div.listPictures div.listPicturesPicture div.listPicturesPictureContent img {margin-bottom: 5px;}
+div.listPictures div.listPicturesPicture div.listPicturesPictureFooter      {text-align: center; padding: 7px 10px 9px 10px; height: 20px; background-color: #DEDEDE;}
+div.listPictures div.listPicturesPicture div.listPicturesPictureFooter input{}
+div.listPictures div.listPicturesPicture div.listPicturesPictureFooter input[type=submit] {margin: 0px 6px 0px 5px;}
+
+div.listPictures div.listPicturesClear
+{
+ clear: both;   
+}
+
+/* ------------------------------------------------------------------------*/
+/* LOMAKKEET */
+/* ------------------------------------------------------------------------*/
+/*Taulukko muotoisen lomakkeen tyylit*/
+div.form
+{
+ background-color: #E6F0FA;
+ border-top: 3px solid #6AB7FB;   
+ margin-bottom: 30px;
+ width: auto;
+}
+
+/*Lomakkeen asp.net validaationsummary komponentin tyylit*/
+div.form div.formValidationInfo             {border: none;}
+div.form div.formValidationInfo div         {padding: 10px 0px 10px 25px; background-color: #FFEFE7; border-bottom: 2px solid #FE6700;}
+div.form div.formValidationInfo div ul      {padding: 0px 0px 0px 25px;}
+div.form div.formValidationInfo div ul li   {padding: 2px 0px 2px 0px;}
+
+/*Lomakkeen ohjeteksti*/
+div.form div.formInfo {
+ float: left;
+ 
+ padding: 15px 0px 30px 35px;
+ vertical-align: top;
+ width: 500px;
+ /*border: 1px solid Purple;*/
+}
+
+div.form div.formInfo div.bankAccounts {clear: both;}
+
+div.form div.formInfo div.bankAccounts span.bankItem {
+ float: left;
+ clear: left;
+ width: 80px;
+ margin-right: 25px;
+}
+
+div.form div.formInfo div.bankAccounts span.accountItem {
+  float: left;
+}
+
+/* Lomakkeen päivittäjä päivitetty (luoja luotu)*/
+div.form div.formDateInfo
+{
+ float: right;
+ 
+ font-size: 10px;   
+ padding: 15px 35px 0px 0px;
+  
+ width: 275px; 
+ height: 50px;   
+ text-align: right;
+ vertical-align: top;
+ /*border: 1px solid Orange;*/
+}
+
+/* Lomakkeen taulukon tyylit*/
+div.form table.form {clear: both; padding: 0px 35px 0px 35px; width: 100%; /*border: 1px solid Lime;*/}
+
+/*Yhteiset td luokkien tyyli määritetyksien group. Alareuna.*/
+div.form table.form td.formHeader,
+div.form table.form td.formValidation,
+div.form table.form td.formInputElement,
+div.form table.form td.formContentElement,
+div.form table.form td.formTableElement,
+div.form table.form td.formInnerTable,
+div.form table.form td.formInnerActions,
+div.form table.form td.formMultiSelection,
+div.form table.form td.formAlertElement
+{
+    border-bottom: 1px dashed #C1CBD5;
+}
+
+div.form table.form td.formHeader
+{
+    color: #999999;
+    font-weight: bold;
+    
+    padding: 8px 0px 8px 0px;
+    
+    vertical-align: top;
+    max-width: 225px;
+    width: 150px;
+    text-align: right;
+}
+
+div.form table.form td.formAlertElement
+{
+
+    padding: 8px 0px 8px 0px;
+    vertical-align: top;
+}
+
+
+div.form table.form td.formValidation {width: 25px; max-width: 25px; text-align: center;}
+
+div.form table.form td.formContentElement                   {padding: 5px 7px 5px 3px;}
+div.form table.form td.formInputElement                     {padding: 5px 7px 5px 3px;}
+div.form table.form td.formInputElement ul                  {padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;}
+div.form table.form td.formInputElement ul li               {list-style-type: none; margin-top: 5px;}
+div.form table.form td.formInputElement img                 {cursor: pointer; padding-left: 5px; padding-right: 5px;}
+div.form table.form td.formInputElement input               {padding-left: 5px;}
+div.form table.form td.formInputElement input[type=submit]  {margin-left: 10px;}
+div.form table.form td.formInputElement select              {}
+div.form table.form td.formInputElement textarea            {margin: 5px 7px 5px 0px;}
+
+div.form table.form td.formInputElementExtensionCompare     {width: 150px;}
+div.form table.form td.formInputElementExtensionHtml img    {padding-left: 0px; padding-right: 0px;}
+div.form table.form td.formInputElementExtensionWithAlert   {width: 330px;}
+
+div.form table.form td.formInputElement div.formInputElementInnerDescription {display: inline-block; vertical-align: top; padding: 6px 0px 6px 3px; width: 150px;}
+
+div.form table.form td.formDescription              {padding: 12px 0px 12px 3px; border: none; vertical-align: top;}
+/*Käytetään lomakkeen toimintojen alapuolella*/
+div.form table.form td.formDescriptionBottom        {padding: 12px 0px 30px 0px; border: none; vertical-align: top;}
+
+/*Taulukko lomakkeen solun sisällä. Lista elementtiä voidaan käyttää lomakkeen taulukko elementin sisällä alla hieman korjauksia lista elementille lomakkeen sisälle. */
+div.form table.form td.formTableElement                 {padding: 15px 0px 0px 4px;}
+/*Käytetään kun lista elementti sijoitetaan lomakkeen toiminto nappien alapuolelle*/
+div.form table.form td.formTableElementBottom           {padding: 5px 0px 0px 0px;}
+div.form table.form td.formTableElementBottom div.list  {margin-bottom: 15px;}
+
+/*Monivalinta*/
+div.form table.form td.formMultiSelection                                                                       {padding: 10px 7px 10px 4px;}
+div.form table.form td.formMultiSelection select                                                                {width: 250px;}
+div.form table.form td.formMultiSelection input[type=submit]                                                    {width: 125px; margin: 0px 10px 10px 10px}
+div.form table.form td.formMultiSelection table.formMultiSelectionTable                                         {}
+dim.form table.form td.formMultiSelection table.formMultiSelectionTable td.formMultiSelectionTableItems         {}
+dim.form table.form td.formMultiSelection table.formMultiSelectionTable td.formMultiSelectionTableActions       {}
+dim.form table.form td.formMultiSelection table.formMultiSelectionTable td.formMultiSelectionTableSelectedItems {}
+
+/*Sisäinen taulu*/
+div.form table.form td.formInnerTable               {}
+div.form table.form td.formInnerTable table td      {padding: 5px 5px 5px 5px;}
+
+/*Lomakkeen sisäinen toiminto rivi. Nappien välistys*/
+div.form table.form td.formInnerActions             {padding: 5px 0px 5px 3px; text-align: left;}
+div.form table.form td.formInnerActions input       {margin-right: 15px;}
+
+/*Lomakkeen toiminto rivi. Nappien välistys*/
+div.form table.form td.formActions                  {padding: 25px 0px 25px 3px; border: none; text-align: left;}
+div.form table.form td.formActions input            {margin-right: 15px;}
+
+/*Lomakkeen toiminto rivi. Keskitetty napit.*/
+div.form table.form td.formActionsCentered          {padding: 25px 0px 25px 0px; border: none; text-align: center;}
+div.form table.form td.formActionsCentered input    {margin-right: 15px;}
+
+div.form table.form td.formExtensionBlock {border-bottom: 1px solid #C1CBD5;}
+
+div.form div.formClearElement             {clear: both;}
+
+/*Poiminnassa käytettäviä laajennettuja lomake tyylit. Ei ala sisennystä.*/
+div.formExtensionAccordion
+{
+    margin-bottom: 0px;
+    
+    padding-top: 10px;
+    padding-bottom: 15px;   
+}
+
+div.formExtensionContainerAccordion
+{
+    border-top: none; 
+}
+
+
+/* ------------------------------------------------------------------------*/
+/* OTSIKKO TOIMINTO PALKIT */
+/* ------------------------------------------------------------------------*/
+/*Näkymissä käyttettävä otsikkopalkki tyylit*/
+/* Otsikon ja napin sijainin määritys headerBarin korkeudella ja h1 & actions margin top arvoilla.*/
+div.headerBar                               {background-color: #DEDEDE; height: 40px; clear: both;}
+
+div.headerBar h1                            {float: left; color: #646464; margin-top: 17px; text-transform: uppercase; /*border: 1px solid Purple;*/}
+div.headerBar a                             {float: left; margin-left: 10px; margin-top: 20px;}
+div.headerBar div.headerBarAccordionElement img {float: left; margin-left: 10px; margin-top: 13px;}
+div.headerBar div.headerBarAccordionElement h1 {float: left; margin-left: 10px; margin-top: 10px;}
+div.headerBar input[type=submit]            {float: right; margin: 9px 12px 0px 0px;}
+div.headerBar div.headerBarActionLink       {float: right; margin-right: 10px; margin-top: 20px;}
+div.headerBar div.headerBarActionLink a     {margin: 0px 0px 0px 0px;}     
+div.headerBar div.headerBarActionImgLink       {float: right; margin: 10px 12px 0px 0px;}
+div.headerBar div.headerBarActionImgLink a     {margin: 0px 0px 0px 0px;}
+div.headerBar div.headerBarActionImgLink a img {border: 5px none White; margin: 0px 5px 0px 5px;}
+
+div.headerBar div.headerBarInfo             {float: left; margin-top: 13px; margin-left: 5px; width: 700px;}
+
+/*Laajennusta poimintaan*/
+div.headerBarExtensionAccordion {border-top: 3px solid #6AB7FB;}
+
+/*Laajennus raportteihin*/
+div.headerBarExtensionReport                {background-color: White;}
+/*
+div.headerBarReport div.headerBarInfo           {float: none;}
+div.headerBarReport div.headerBarActionImgLink  {float: left; padding-top: 10px; padding-bottom: 20px;}
+*/
+
+/*Vaalia tausta */
+div.headerBarWhite                                  {background-color: White;   height: 40px;}
+
+div.headerBarWhite h1                               {float: left; color: #646464; margin-top: 19px; text-transform: uppercase;}
+div.headerBarWhite a                                {float: left; margin-left: 10px; margin-top: 20px;}
+div.headerBarWhite div.headerBarWhiteAccordionElement img {float: left; margin-left: 10px; margin-top: 13px;/*margin-top: -6px;*/}
+div.headerBarWhite div.headerBarWhiteAccordionElement h1 {float: left; margin-left: 10px; margin-top: 10px;/*margin-top: -8px;*/}
+div.headerBarWhite input[type=submit]               {float: left; margin-left: 0px;
+  margin-right: 12px;
+  margin-top: 9px;
+}
+div.headerBarWhite div.headerBarWhiteAction         {float: right; margin: 17px 10px 0px 0px;}
+div.headerBarWhite div.headerBarWhiteActionLink     {float: right; margin: 20px 12px 0px 0px;}
+div.headerBarWhite div.headerBarWhiteActionLink a   {margin: 0px 0px 0px 0px;}
+
+
+div.headerBarWhite div.headerBarWhiteInfo           {float: right; margin-top: 13px; margin-left: 5px;}
+
+
+/*Yleinen otsikkopalkki tietojen, linkkien ja nappien näyttämiseen.*/
+/*Sisältää ala-marginaalin. Ei ole tarkoitus käyttää muitten elementtien kanssa vaan on itsenäinen elementti*/
+div.bar                     {margin-bottom: 15px; padding-top: 10px; background-color: White; height: 35px;}
+div.bar a                   {float: left; margin-right: 10px; margin-top: 12px;}
+div.bar h1                  {margin-top: 8px; float: left; text-transform: uppercase;}
+div.bar input[type=submit]  {float: left; margin: 0px 12px 0px 0px; }
+
+div.bar div.barAction                       {float: right; margin: 0px 5px 0px 0px;}
+div.bar div.barAction a                     {}
+div.bar div.barAction input[type=submit]    {float: right; margin: 9px 12px 0px 0px;}
+
+div.bar div.barText                         {float: left; margin-top: 12px;}
+div.bar div.barInfo                         {float: right; margin: 10px 5px 0px 0px;}
+
+/* Laajennus*/
+div.barExtensionGray                 {background-color: #DEDEDE; border-bottom: 3px solid #999999; padding-left: 2px; margin-bottom: 20px; height: 30px; clear: both;}
+div.barExtensionGray a               {margin: 8px 0px 0px 10px;}
+div.barExtensionGray div.barAction a {margin: -3px 0px 0px 10px;}
+div.barExtensionGray input[type=submit]  {float: left; margin: 0px 2px 0px 10px; }
+div.barExtensionGray h1              {margin-top: 7px;}
+div.barExtensionGray div.barAction   {float: right; margin-top: 12px;}
+
+/*Alatunniste palkki toiminnot ja yhteenveto tiedot */
+/*Tulee yleensä jonkin elementin alapuolelle jolloin ylemmän elementin bottom marginaali on 30px footerBar otetaan huomioon tämä -30px ja lisää bottom marginaaliin 30px*/
+/*Otetava huomioon jos yläpuolisen bottom marginaali muuttuu.*/
+div.footerBar                   {margin-top: -30px;  margin-bottom: 30px; padding-top: 15px; height: 30px; background-color: White;}
+div.footerBar div.footerBarInfo {float: right;}
+div.footerBar input[type=submit]{float: left; margin: 0px 12px 0px 0px;}
+
+/* ------------------------------------------------------------------------*/
+/* NÄKYMÄT */
+/* ------------------------------------------------------------------------*/
+/*Info näkymä henkilön perustiedot yms....*/
+div.viewInfo            {border-top: 3px solid #999999; padding-top: 8px; margin-bottom: 30px; width: auto;}
+div.viewInfo table      {width: 575px;}
+div.viewInfo table td   {padding: 3px 15px 3px 0px;}
+
+div.viewInfo table td.viewInfoContentElement {width: 150px; max-width: 150px; padding: 8px 30px 8px 5px;  vertical-align: top;}
+
+/*Perusnäkymä */
+div.view                    {border-top: 3px solid #999999; padding-top: 8px; margin-bottom: 30px; width: auto; /*border: 1px solid purple;*/}
+
+
+div.view div.viewInfo       {float: left; border:none; margin-bottom: 10px; padding: 5px 0px 0px 35px; vertical-align: top; width: 500px;}
+div.view div.viewDateInfo   {float: right; border:none; font-size: 10px; margin-bottom: 10px; padding: 5px 35px 0px 0px; width: 275px; text-align: right; vertical-align: top;}
+div.view div.viewInfoFull   {padding: 5px 0px 0px 10px; vertical-align: top;}
+
+div.view ul.viewLinkElement     {margin: 0px 0px 0px 0px; padding-left: 10px; padding-top: 10px; clear: both;}
+div.view ul.viewLinkElement li  {margin-bottom: 5px; list-style-type: none;}
+
+div.view table.view              {clear: both; width: 100%;}
+div.view table.view tr:hover     {background-color: #F0F0F0;}
+div.view table.view td           {}
+
+/*Yhteiset td luokkien tyyli määritetyksien group. Alareuna.*/
+div.view table.view td.viewHeader,
+div.view table.view td.viewContentElement,
+div.view table.view td.viewTableElement
+{
+    border-bottom: 1px solid #C1CBD5;
+}
+
+div.view table.view td.viewHeader
+{
+    color: #999999;
+    font-weight: bold;
+    padding: 8px 30px 8px 0px;
+    width: 150px;
+    max-width: 300px;
+    vertical-align: top;
+    text-align: right;
+}
+
+/*Näkymän lista tyylit*/
+div.view table.view td.viewContentElement        {padding: 8px 0px 8px 0px;}
+div.view table.view td.viewContentElement ul     {margin: 0px 0px 0px 0px; padding-left: 0px;}
+div.view table.view td.viewContentElement ul li  {margin-bottom: 5px; list-style-type: none;}
+
+div.view table.view td.viewTableElement          {padding: 15px 0px 8px 0px;}
+
+/*Kahden palsta näkymät */
+div.view2columns            {border-top: 3px solid #999999; padding-top: 8px; margin-bottom: 30px; width: auto;}
+div.view2columns table      {float: left; width: 860px;}
+div.view2columns table td   {}
+
+/*Kahden palstan näkymän. Taulun solujen yhteiset määritykset. Reunat*/
+div.view2columns table td.view2columnsHeader1,
+div.view2columns table td.view2columnsContentElement1,
+div.view2columns table td.view2columnsHeader2,
+div.view2columns table td.view2columnsContentElement2
+{
+    border-bottom: 1px solid #C1CBD5;    
+}   
+
+div.view2columns table td.view2columnsHeader1
+{
+    color: #999999;
+    font-weight: bold;
+    padding: 8px 30px 8px 4px;
+    width: 130px;
+    /*max-width: 75px;*/
+    vertical-align: top;
+    text-align: right;
+}
+
+div.view2columns table td.view2columnsContentElement1
+{
+    padding-top: 8px;
+    padding-bottom: 8px;  
+    padding-right: 4px; 
+    width: 300px;
+    /*max-width: 150px;*/
+    vertical-align: top;
+}
+
+div.view2columns table td.view2columnsHeader2
+{
+    color: #999999;
+    font-weight: bold;
+    padding: 8px 30px 8px 4px;
+    width: 130px;
+    /*max-width: 75px;*/
+    vertical-align: top;
+    text-align: right;
+}
+
+div.view2columns table td.view2columnsContentElement2
+{
+    padding-top: 8px;   
+    padding-bottom: 8px;    
+    padding-right: 4px;  
+    width: 300px;
+    /*max-width: 150px;*/
+    vertical-align: top;
+}
+
+div.view2columns div.view2columnsListElement
+{    
+    float: right;
+    vertical-align: top;
+    margin-left: 10px;
+    margin-right: 30px;
+    width: 225px;
+}
+
+div.view2columns table td.view2columnsElementHover
+{   
+    background-color: #F0F0F0;
+}
+
+div.view2columns table td.view2columnsSpacer
+{
+ width: 30px;   
+}
+
+div.view2columns div.view2columnsListElement h4 { margin-top: 10px;}
+
+div.view2columns div.view2columnsListElement ul {padding-left: 15px; margin: 0px 0px 0px 0px;}
+div.view2columns div.view2columnsListElement li {padding: 5px 0px 5px 0px;}
+
+div.view2columns div.view2columnsListElement table {width: 200px; padding-bottom: 10px;}
+div.view2columns div.view2columnsListElement table tr {}
+div.view2columns div.view2columnsListElement table td {padding: 5px 0px 5px 0px;  vertical-align: top;/*border: 1px solid Purple;*/}
+div.view2columns div.view2columnsListElement table td a {margin-left: 10px;}
+
+div.view2columns div.view2columnsListElement div.view2columnListElementLegend{}
+
+div.view2columns div.view2columnsClearElement {clear: both; height: 0px;}
+
+.fonttipieni
+{
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: xx-small;
+}
+
+
+
+/*
+
+div.viewInfo
+{
+    border-top: 3px solid #999999;   
+    
+    padding-top: 8px;
+    margin-bottom: 30px;
+
+    width: auto;
+}
+
+div.viewInfo table
+{
+    
+}
+
+div.viewInfo table td
+{
+    padding: 3px 15px 3px 0px; 
+}
+
+div.viewInfo table td.viewInfoHeader
+{
+    color: #999999;
+    font-weight: bold;
+    
+    padding: 8px 25px 8px 30px;
+    
+    width: 0px;
+    max-width: 200px;
+
+    text-align: right;
+    
+    vertical-align: top;
+}
+
+div.viewInfo table td.viewInfoContentElement
+{
+    width: 175px;
+    max-width: 200px;
+    padding: 8px 0px 8px 0px;    
+    vertical-align: top;
+}
+div.form table.form td.formInfo
+{
+ padding: 15px 0px 0px 0px;
+    
+ border: none;
+ 
+ height: 50px;   
+ 
+ vertical-align: top;
+}
+
+div.form table.form td.formDateInfo
+{
+ font-size: 10px;   
+ padding: 5px 30px 0px 0px;
+    
+ border: none;
+  
+ 
+ text-align: right;
+ vertical-align: top;
+}
+*/

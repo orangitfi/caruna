@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26a5769f7dcd4415be49a6507e7cf5c0" Name="Diagram1" ZoomLevel="75" ShowGrid="true">
+        <EntityTypeShape EntityType="FortumDataModel.Aktiviteetti" Width="1.5" PointX="4.5066536630069152" PointY="13.089527359739657" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_AccessRules" Width="1.5" PointX="8.8284073364121873" PointY="9.4469234540345717" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_Applications" Width="1.5" PointX="5.4300575263006881" PointY="19.049530008365181" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_Membership" Width="1.5" PointX="11.44349960398092" PointY="11.781616529348128" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_Paths" Width="1.5" PointX="11.584337353512801" PointY="17.873503827431009" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_PersonalizationAllUsers" Width="1.5" PointX="6.4295251883703868" PointY="26.513924253412487" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_PersonalizationPerUser" Width="1.5" PointX="8.4146752880954523" PointY="2.8163506848813737" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_Profile" Width="1.5" PointX="8.7731414925181959" PointY="15.617371477008504" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_RoleGroups" Width="1.5" PointX="1.3233442498945371" PointY="18.825991192285898" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_Roles" Width="1.5" PointX="2.7239715972561256" PointY="18.888734617684378" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_RolesInGroups" Width="1.5" PointX="7.5326945388376227" PointY="31.218965559834132" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_SchemaVersions" Width="1.5" PointX="5.0422930834080528" PointY="11.749405493843092" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_Users" Width="1.5" PointX="7.712724782392721" PointY="24.38767674210839" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_UsersInGroups" Width="1.5" PointX="1.5327909670457203" PointY="10.743096207614567" />
+        <EntityTypeShape EntityType="FortumDataModel.aspnet_WebEvent_Events" Width="1.5" PointX="1.2977476386808546" PointY="1.7190655030864597" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_AktiviteetinLaji" Width="1.5" PointX="10.869463886539203" PointY="6.0302498070664008" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_AktiviteetinStatus" Width="1.5" PointX="3.8321881777756794" PointY="9.4969978972789821" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_AktiviteettiYhteystapa" Width="1.5" PointX="2.3444452576080548" PointY="16.860546954376879" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Alv" Width="1.5" PointX="1.0594968968348097" PointY="6.5167866677589652" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_ArkistonSijainti" Width="1.5" PointX="6.4142717506802969" PointY="9.22404408884423" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Asiakastyyppi" Width="1.5" PointX="3.5397414972725052" PointY="31.380669608423798" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_AsiakirjaTarkenne" Width="1.5" PointX="9.6148828424582646" PointY="10.397631933166474" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_BicKoodi" Width="1.5" PointX="8.7900571957184273" PointY="16.50715879374517" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_DFRooli" Width="1.5" PointX="11.126316278766057" PointY="18.495125928192923" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_HinnastoAlakategoria" Width="1.5" PointX="4.229208314898055" PointY="19.109886118727683" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_HinnastoKategoria" Width="1.5" PointX="10.782640193953476" PointY="20.114633271524045" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Indeksi" Width="1.5" PointX="5.3072766257949526" PointY="24.084551464805635" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Indeksityyppi" Width="1.5" PointX="1.680265094004695" PointY="12.798777541517643" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Infopallura" Width="1.5" PointX="11.866279676494319" PointY="11.793014069922741" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_InvCost" Width="1.5" PointX="7.8298715128702439" PointY="22.092476661360113" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Julkisuusaste" Width="1.5" PointX="5.6107827860912227" PointY="19.772902736334551" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Kieli" Width="1.5" PointX="3.1203585598246937" PointY="29.172500772947679" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_KirjanpidonKustannuspaikka" Width="1.5" PointX="7.8331000487474256" PointY="11.115150695254631" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Kirjanpidontili" Width="1.5" PointX="6.1105334172540031" PointY="12.942136204308893" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Kohdekategoria" Width="1.5" PointX="10.71168624922246" PointY="6.5344970256716461" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Kunta" Width="1.5" PointX="4.7970174070433789" PointY="29.0121313319598" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Kyla" Width="1.5" PointX="0.6454749464269145" PointY="30.039880170505437" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_LiiketoiminnanTarve" Width="1.5" PointX="3.5435339843591369" PointY="20.706515828476526" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Local1" Width="1.5" PointX="2.0922292424795352" PointY="3.0484829559216662" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Lupataho" Width="1.5" PointX="7.6159698644727323" PointY="4.0601072926354167" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Maa" Width="1.5" PointX="10.019062499524589" PointY="17.592316650595663" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_MaaraAlaTarkenne" Width="1.5" PointX="11.799452762957408" PointY="16.35077425108793" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Maksualue" Width="1.5" PointX="1.8620093697039455" PointY="8.87060375924716" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Maksuehdot" Width="1.5" PointX="8.9540670518549472" PointY="18.134617009262843" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_MaksunSuoritus" Width="1.5" PointX="1.8811091174749235" PointY="25.453076478770505" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Metsatyyppi" Width="1.5" PointX="6.45642543139701" PointY="23.032310988303418" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_PassivoinninSyy" Width="1.5" PointX="6.6139234875393678" PointY="27.012248007120679" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Postitiedot" Width="1.5" PointX="9.8482337472253629" PointY="21.666407923058795" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Purpose" Width="1.5" PointX="8.6473925433342309" PointY="28.467186806941026" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Puustolaji" Width="1.5" PointX="8.0660119261900025" PointY="12.325001826661174" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_PuustonOmistajuus" Width="1.5" PointX="0.079651130400435588" PointY="16.728040539067258" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_PuustonPoisto" Width="1.5" PointX="8.2239859738498851" PointY="4.7433918140565" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Regulation" Width="1.5" PointX="2.3691898874795019" PointY="31.741575851916139" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Saanto" Width="1.5" PointX="6.8975125303946019" PointY="16.1128574982811" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_SiirtoOikeus" Width="1.5" PointX="5.4881728149429767" PointY="15.774191088869326" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_SopimuksenAlaluokka" Width="1.5" PointX="2.7073123355895805" PointY="28.594929514729852" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_SopimuksenEhtoversio" Width="1.5" PointX="8.8064104117482955" PointY="16.819550075018569" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_SopimuksenKesto" Width="1.5" PointX="10.265616248485454" PointY="29.369770778980932" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_SopimusFormaatti" Width="1.5" PointX="7.6153857631680486" PointY="23.970181908444587" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_TunnisteyksikkoTyyppi" Width="1.5" PointX="9.0776784201514342" PointY="12.017663037412643" />
+        <EntityTypeShape EntityType="FortumDataModel.hlp_Yksikko" Width="1.5" PointX="7.21411445886554" PointY="30.160138770081169" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_KorvauslaskemaStatus" Width="1.5" PointX="2.9721919591409121" PointY="3.1114201858227237" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_Korvaustyyppi" Width="1.5" PointX="7.9940109532298571" PointY="21.759735430478926" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_KorvausyksikonTyyppi" Width="1.5" PointX="4.2656257619455582" PointY="6.7090185166844254" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_Kuukausi" Width="1.5" PointX="1.4167213167141757" PointY="19.783016035232233" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_MaksuStatus" Width="1.5" PointX="11.117550892344468" PointY="9.1120911730044014" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_OrganisaationTyyppi" Width="1.5" PointX="5.0771691822806222" PointY="7.9842511452661133" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_SopimuksenTila" Width="1.5" PointX="1.4428891043378456" PointY="9.98945945966498" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_Sopimusluokka" Width="1.5" PointX="10.373132770123489" PointY="26.72181555382992" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_Sopimustyyppi" Width="1.5" PointX="3.762350456678472" PointY="5.2237824672943827" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_TahoTyyppi" Width="1.5" PointX="8.4289638793230814" PointY="7.7646546399987555" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_Tiedostolahde" Width="1.5" PointX="1.3123085635305889" PointY="21.242099891063805" />
+        <EntityTypeShape EntityType="FortumDataModel.hlps_YlasopimuksenTyyppi" Width="1.5" PointX="6.8375913439493576" PointY="20.622204968995511" />
+        <EntityTypeShape EntityType="FortumDataModel.Kiinteisto" Width="1.5" PointX="11.830706208865488" PointY="0.81757922508641112" />
+        <EntityTypeShape EntityType="FortumDataModel.KirjanpidonAineisto" Width="1.5" PointX="11.863976754184801" PointY="28.892185880286707" />
+        <EntityTypeShape EntityType="FortumDataModel.KirjanpidonAineistoRivi" Width="1.5" PointX="0.5095172079789998" PointY="31.089531540446696" />
+        <EntityTypeShape EntityType="FortumDataModel.KorvausHinnasto" Width="1.5" PointX="1.5975166324514507" PointY="9.4917020990940291" />
+        <EntityTypeShape EntityType="FortumDataModel.Korvauslaskelma" Width="1.5" PointX="9.4077612261324" PointY="2.0522642443199941" />
+        <EntityTypeShape EntityType="FortumDataModel.KorvauslaskelmaRivi" Width="1.5" PointX="3.30082324300931" PointY="18.819209077776971" />
+        <EntityTypeShape EntityType="FortumDataModel.Maksu" Width="1.5" PointX="5.7847609770413309" PointY="16.558104269466412" />
+        <EntityTypeShape EntityType="FortumDataModel.Maksu_Tiliointi" Width="1.5" PointX="7.6374651825229947" PointY="11.684348231034516" />
+        <EntityTypeShape EntityType="FortumDataModel.Maksuaineisto" Width="1.5" PointX="4.6256002451412384" PointY="26.85211147128237" />
+        <EntityTypeShape EntityType="FortumDataModel.Poiminta" Width="1.5" PointX="6.7977707659815305" PointY="30.107408388567812" />
+        <EntityTypeShape EntityType="FortumDataModel.Sopimus" Width="1.5" PointX="5.645929385743071" PointY="15.499509952729341" />
+        <EntityTypeShape EntityType="FortumDataModel.Sopimus_Kiinteisto" Width="1.5" PointX="4.8644421737941181" PointY="17.385517202962898" />
+        <EntityTypeShape EntityType="FortumDataModel.Sopimus_Taho" Width="1.5" PointX="0.64053127199436122" PointY="25.58587981461821" />
+        <EntityTypeShape EntityType="FortumDataModel.Sopimus_Tuloste" Width="1.5" PointX="5.2264677589882478" PointY="18.983359986442775" />
+        <EntityTypeShape EntityType="FortumDataModel.SopimusarkistoLoki" Width="1.5" PointX="8.0776597597066591" PointY="11.472983916976016" />
+        <EntityTypeShape EntityType="FortumDataModel.sysdiagrams" Width="1.5" PointX="9.99774347524985" PointY="18.683745333311961" />
+        <EntityTypeShape EntityType="FortumDataModel.Taho" Width="1.5" PointX="8" PointY="0.5" />
+        <EntityTypeShape EntityType="FortumDataModel.TallennettuPoimintaehto" Width="1.5" PointX="8.3291945775641114" PointY="10.557422806768409" />
+        <EntityTypeShape EntityType="FortumDataModel.TallennettuPoimintaehto_Ehto" Width="1.5" PointX="2.6519051895718579" PointY="6.8857376309510965" />
+        <EntityTypeShape EntityType="FortumDataModel.TallennettuPoimintajoukko" Width="1.5" PointX="6.9091138052330878" PointY="30.55727083913855" />
+        <EntityTypeShape EntityType="FortumDataModel.TallennettuPoimintajoukko_Taho" Width="1.5" PointX="1.8195175574251998" PointY="4.0474157203209655" />
+        <EntityTypeShape EntityType="FortumDataModel.Tiedosto" Width="1.5" PointX="5.5863329533423922" PointY="1.7954400339142607" />
+        <EntityTypeShape EntityType="FortumDataModel.Tunnisteyksikko" Width="1.5" PointX="0.44522405436505752" PointY="8.8424783092189951" />
+        <AssociationConnector Association="FortumDataModel.FK_Aktiviteetti_aspnet_Users" />
+        <AssociationConnector Association="FortumDataModel.FK_Aktiviteetti_hlp_AktiviteetinLaji" />
+        <AssociationConnector Association="FortumDataModel.FK_Aktiviteetti_hlp_AktiviteetinStatus" />
+        <AssociationConnector Association="FortumDataModel.FK_Aktiviteetti_hlp_AktiviteettiYhteystapa" />
+        <AssociationConnector Association="FortumDataModel.FK_Aktiviteetti_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Aktiviteetti_Taho" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Ac__Appli__1E9A6CE7" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Me__Appli__1C281490" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Pa__Appli__556091EC" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Ro__Appli__0C7BBCAC" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Ro__Appli__3E7D2C94" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Us__Appli__08211BE3" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Me__UserI__1D1C38C9" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Pe__PathI__5D01B3B4" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Pe__PathI__62BA8D0A" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Pe__UserI__63AEB143" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Pr__UserI__330B79E8" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Ro__Group__151102AD" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Us__RoleG__339589CD" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Ro__RoleI__12349602" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Ro__RoleI__141CDE74" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Us__UserI__31AD415B" />
+        <AssociationConnector Association="FortumDataModel.FK__aspnet_Us__UserI__3489AE06" />
+        <AssociationConnector Association="FortumDataModel.Korvauslaskelma_hlp_Alv" />
+        <AssociationConnector Association="FortumDataModel.FK_Tiedosto_hlp_ArkistonSijainti" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Taho_hlp_Asiakastyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Tiedosto_hlp_AsiakirjaTarkenne" />
+        <AssociationConnector Association="FortumDataModel.FK_Taho_hlp_BicKoodi" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_DFRooli" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlp_HinnastoAlakategoria" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlp_HinnastoKategoria" />
+        <AssociationConnector Association="FortumDataModel.FK_hlp_Indeksi_hlp_Indeksityyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_hlp_Indeksi_hlps_Kuukausi" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Indeksityyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_hlp_Indeksityyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_InvCost" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_InvCost" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_Julkisuusaste" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_Kieli" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_KirjanpidonKustannuspaikka" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_KirjanpidonKustannuspaikka" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Kirjanpidontili" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_Kirjanpidontili" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_hlp_Kirjanpidontili" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_Kohdekategoria" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_hlp_Kunta" />
+        <AssociationConnector Association="FortumDataModel.FK_Taho_hlp_Kunta" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_hlp_Kyla" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_hlp_LiiketoiminnanTarve" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Local1" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_Local1" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_Lupataho" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_hlp_Maa" />
+        <AssociationConnector Association="FortumDataModel.FK_Taho_hlp_Maa" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_hlp_MaaraAlaTarkenne" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlp_Maksualue" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Maksualue" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Maksuehdot" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_MaksunSuoritus" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlp_Metsatyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Taho_hlp_PassivoinninSyy" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Purpose" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_Purpose" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlp_Puustolaji" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_PuustonOmistajuus" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_PuustonOmistajuus" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_PuustonPoisto" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_PuustonPoisto" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlp_Regulation" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_Regulation" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_hlp_Saanto" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_SiirtoOikeus" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_SiirtoOikeus1" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_SopimuksenAlaluokka" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_SopimuksenEhtoversio" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_SopimuksenKesto" />
+        <AssociationConnector Association="FortumDataModel.FK_Tiedosto_hlp_SopimusFormaatti" />
+        <AssociationConnector Association="FortumDataModel.FK_Tunnisteyksikko_hlp_TunnisteyksikkoTyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_hlp_Yksikko_hlps_KorvausyksikonTyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlp_Yksikko" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_hlp_Yksikko" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlps_KorvauslaskemaStatus" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlps_Korvaustyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlps_Kuukausi" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_hlps_Kuukausi1" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_hlps_Kuukausi" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_hlps_MaksuStatus" />
+        <AssociationConnector Association="FortumDataModel.FK_Taho_hlps_OrganisaationTyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlps_SopimuksenTila" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlps_Sopimusluokka" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvausHinnasto_hlps_Sopimustyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlp_Sopimustyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Taho_hlps_TahoTyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Tiedosto_hlps_Tiedostolahde" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_hlps_YlasopimuksenTyyppi" />
+        <AssociationConnector Association="FortumDataModel.FK_Kiinteisto_Taho" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Kiinteisto_Kiinteisto" />
+        <AssociationConnector Association="FortumDataModel.FK_KirjanpidonAineisto_Maksuaineisto" />
+        <AssociationConnector Association="FortumDataModel.FK_KirjanpidonAineistoRivi_Maksuaineisto" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_KorvausHinnasto" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_Korvauslaskelma" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Korvauslaskelma_Taho" />
+        <AssociationConnector Association="FortumDataModel.FK_KorvauslaskelmaRivi_Korvauslaskelma" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_Korvauslaskelma" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_Maksuaineisto" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_Taho" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_Taho1" />
+        <AssociationConnector Association="FortumDataModel.FK_Maksu_Tiliointi_Maksu" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Kiinteisto_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Sopimus1" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Taho" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Taho_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Taho1" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Taho2" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Tuloste_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Tiedosto_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Tunnisteyksikko_Sopimus" />
+        <AssociationConnector Association="FortumDataModel.FK_Sopimus_Taho_Taho" />
+        <AssociationConnector Association="FortumDataModel.FK_TallennettuPoimintaehto_Ehto_TallennettuPoimintaehto" />
+        <AssociationConnector Association="FortumDataModel.FK_TallennettuPoimintajoukko_Taho_TallennettuPoimintajoukko" />
+        <AssociationConnector Association="FortumDataModel.aspnet_AccessRulesInRoles" />
+        <AssociationConnector Association="FortumDataModel.aspnet_UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

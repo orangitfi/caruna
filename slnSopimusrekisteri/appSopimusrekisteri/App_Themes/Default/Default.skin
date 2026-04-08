@@ -1,0 +1,50 @@
+﻿<%--
+Default skin template. The following skins are provided as examples only.
+
+1. Named control skin. The SkinId should be uniquely defined because
+   duplicate SkinId's per control type are not allowed in the same theme.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Default skin. The SkinId is not defined. Only one default 
+   control skin per control type is allowed in the same theme.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+<asp:Button runat="server" CssClass="buttonDefault"/>
+
+<asp:TextBox Width="300px" runat="server" />
+<asp:TextBox SkinId="Mini" Width="57px" runat="server" />
+<asp:TextBox SkinId="Short" Width="75px" runat="server" />
+<asp:TextBox SkinId="HalfSize" Width="150px" runat="server" />
+<asp:TextBox SkinId="Search" Width="150px" runat="server" />
+<asp:TextBox SkinId="Datetime" Width="75px" runat="server" />
+<asp:TextBox SkinId="Numeric" Width="75px" CssClass="decimal" runat="server" />
+<asp:TextBox SkinId="Decimal" Width="100px" CssClass="decimal" runat="server" />
+<asp:TextBox SkinId="Email" Width="800px" Height="600px" runat="server" />
+<asp:TextBox SkinId="Info" Width="300px" Height="100px" runat="server" />
+
+<asp:RequiredFieldValidator CssClass="validation" Text="*" Display="Dynamic" runat="server" />
+
+<asp:CompareValidator CssClass="validation" Text="*" Display="Dynamic" runat="server" />
+
+<asp:RegularExpressionValidator CssClass="validation" Text="*" Display="Dynamic" runat="server" />
+
+<asp:CustomValidator CssClass="validation" Text="*" Display="Dynamic" runat="server" />
+
+<asp:GridView runat="server" CssClass="listGridview" 
+    CellPadding="3" GridLines="None">
+    <AlternatingRowStyle CssClass="listGridviewAlternatingItem" />
+    <HeaderStyle CssClass="listGridviewHeader" />
+    <RowStyle CssClass="listGridviewItem" />
+</asp:GridView>
+
+<asp:ImageButton runat="server" SkinID="PrintImage" ImageUrl="Images/print.gif"/>
+<asp:ImageButton runat="server" SkinID="ExcelImage" ImageUrl="Images/Excel.png"/>
+<asp:Image runat="server" SkinID="PrintImage" ImageUrl="Images/print.gif"/>
+<asp:Image runat="server" SkinID="CalendarImage" ImageUrl="Images/kalenteri.png"/>
+<asp:Image runat="server" SkinID="InfoImage" ImageUrl="Images/info_tp.png" CssClass="infoImage" />
+<asp:Image runat="server" SkinID="ExcelImage" ImageUrl="Images/Excel.png"/>

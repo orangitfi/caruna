@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C596505E-3C1A-4B31-9ADC-6E3971EF6E9B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sopimusrekisteri.DAL_CF</RootNamespace>
+    <AssemblyName>Sopimusrekisteri.DAL_CF</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntityConfigurations\IFRSHistoriaExcelCfg.cs" />
+    <Compile Include="EntityConfigurations\IFRSHistoriaCfg.cs" />
+    <Compile Include="EntityConfigurations\VuokratyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\KorkoprosenttiCfg.cs" />
+    <Compile Include="EntityConfigurations\AktiviteetinLajiCfg.cs" />
+    <Compile Include="EntityConfigurations\AktiviteetinStatusCfg.cs" />
+    <Compile Include="EntityConfigurations\AktiviteettiCfg.cs" />
+    <Compile Include="EntityConfigurations\AktiviteettiYhteystapaCfg.cs" />
+    <Compile Include="EntityConfigurations\AlvCfg.cs" />
+    <Compile Include="EntityConfigurations\ArkistonSijaintiCfg.cs" />
+    <Compile Include="EntityConfigurations\AsiakastyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\AsiakirjaTarkenneCfg.cs" />
+    <Compile Include="EntityConfigurations\BicKoodiCfg.cs" />
+    <Compile Include="EntityConfigurations\IFSPaymentCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvauslaskelmaLokiCfg.cs" />
+    <Compile Include="EntityConfigurations\PcsSummaryRaporttiCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusKiinteistoCfg.cs" />
+    <Compile Include="EntityConfigurations\DFRooliCfg.cs" />
+    <Compile Include="EntityConfigurations\HinnastoAlakategoriaCfg.cs" />
+    <Compile Include="EntityConfigurations\HinnastoKategoriaCfg.cs" />
+    <Compile Include="EntityConfigurations\IndeksiCfg.cs" />
+    <Compile Include="EntityConfigurations\IndeksityyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\InfopalluraCfg.cs" />
+    <Compile Include="EntityConfigurations\InvCostCfg.cs" />
+    <Compile Include="EntityConfigurations\JulkisuusasteCfg.cs" />
+    <Compile Include="EntityConfigurations\KieliCfg.cs" />
+    <Compile Include="EntityConfigurations\KiinteistoCfg.cs" />
+    <Compile Include="EntityConfigurations\KirjanpidonAineistoCfg.cs" />
+    <Compile Include="EntityConfigurations\KirjanpidonAineistoRiviCfg.cs" />
+    <Compile Include="EntityConfigurations\KirjanpidonKustannuspaikkaCfg.cs" />
+    <Compile Include="EntityConfigurations\KirjanpidontiliCfg.cs" />
+    <Compile Include="EntityConfigurations\KohdekategoriaCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvausHinnastoCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvauslaskelmaCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvauslaskelmaRiviCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvauslaskemaStatusCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvaustyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\KorvausyksikonTyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\KuntaCfg.cs" />
+    <Compile Include="EntityConfigurations\KuukausiCfg.cs" />
+    <Compile Include="EntityConfigurations\KylaCfg.cs" />
+    <Compile Include="EntityConfigurations\LiiketoiminnanTarveCfg.cs" />
+    <Compile Include="EntityConfigurations\Local1Cfg.cs" />
+    <Compile Include="EntityConfigurations\LupatahoCfg.cs" />
+    <Compile Include="EntityConfigurations\MaaCfg.cs" />
+    <Compile Include="EntityConfigurations\MaaraAlaTarkenneCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksuaineistoCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksualueCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksuCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksuehdotCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksunSuoritusCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksuStatusCfg.cs" />
+    <Compile Include="EntityConfigurations\MaksuTiliointiCfg.cs" />
+    <Compile Include="EntityConfigurations\MetsatyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\OrganisaationTyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\PassivoinninSyyCfg.cs" />
+    <Compile Include="EntityConfigurations\PoimintaCfg.cs" />
+    <Compile Include="EntityConfigurations\PostitiedotCfg.cs" />
+    <Compile Include="EntityConfigurations\PurposeCfg.cs" />
+    <Compile Include="EntityConfigurations\PuustolajiCfg.cs" />
+    <Compile Include="EntityConfigurations\PuustonOmistajuusCfg.cs" />
+    <Compile Include="EntityConfigurations\PuustonPoistoCfg.cs" />
+    <Compile Include="EntityConfigurations\RegulationCfg.cs" />
+    <Compile Include="EntityConfigurations\SaantoCfg.cs" />
+    <Compile Include="EntityConfigurations\SiirtoOikeusCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimuksenAlaluokkaCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimuksenEhtoversioCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimuksenKestoCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimuksenTilaCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusarkistoLokiCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusFormaattiCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusluokkaCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusTahoCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimusTulosteCfg.cs" />
+    <Compile Include="EntityConfigurations\SopimustyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\TahoCfg.cs" />
+    <Compile Include="EntityConfigurations\TahoTyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\TiedostoCfg.cs" />
+    <Compile Include="EntityConfigurations\TiedostolahdeCfg.cs" />
+    <Compile Include="EntityConfigurations\TunnisteyksikkoCfg.cs" />
+    <Compile Include="EntityConfigurations\TunnisteyksikkoTyyppiCfg.cs" />
+    <Compile Include="EntityConfigurations\YksikkoCfg.cs" />
+    <Compile Include="EntityConfigurations\YlasopimuksenTyyppiCfg.cs" />
+    <Compile Include="EntityHandlers\IFRSHistoriaHandler.cs" />
+    <Compile Include="EntityHandlers\IFRSHistoriaExcelHandler.cs" />
+    <Compile Include="EntityHandlers\VuokratyyppiHandler.cs" />
+    <Compile Include="EntityHandlers\KorkoprosenttiHandler.cs" />
+    <Compile Include="EntityHandlers\AlvHandler.cs" />
+    <Compile Include="EntityHandlers\BicKoodiHandler.cs" />
+    <Compile Include="EntityHandlers\EntityHandlerBase.cs" />
+    <Compile Include="EntityHandlers\HandlerContext.cs" />
+    <Compile Include="EntityHandlers\IFSPaymentHandler.cs" />
+    <Compile Include="EntityHandlers\InspectPreviousValuesEventArgs.cs" />
+    <Compile Include="EntityHandlers\KieliHandler.cs" />
+    <Compile Include="EntityHandlers\KorvauslaskelmaHandler.cs" />
+    <Compile Include="EntityHandlers\KorvauslaskelmaLokiHandler.cs" />
+    <Compile Include="EntityHandlers\KorvauslaskelmaRiviHandler.cs" />
+    <Compile Include="EntityHandlers\KorvauslaskelmaStatusHandler.cs" />
+    <Compile Include="EntityHandlers\KorvaustyyppiHandler.cs" />
+    <Compile Include="EntityHandlers\KuntaHandler.cs" />
+    <Compile Include="EntityHandlers\MaaHandler.cs" />
+    <Compile Include="EntityHandlers\MaksuHandler.cs" />
+    <Compile Include="EntityHandlers\MaksunSuoritusHandler.cs" />
+    <Compile Include="EntityHandlers\OhjaustietoHandler.cs" />
+    <Compile Include="EntityHandlers\OrganisaationTyyppiHandler.cs" />
+    <Compile Include="EntityHandlers\PcsSummaryRaporttiHandler.cs" />
+    <Compile Include="EntityHandlers\PoimintaHandler.cs" />
+    <Compile Include="EntityHandlers\PostitiedotHandler.cs" />
+    <Compile Include="EntityHandlers\SopimuksenTilaHandler.cs" />
+    <Compile Include="EntityHandlers\SopimusarkistoHandler.cs" />
+    <Compile Include="EntityHandlers\SopimusHandler.cs" />
+    <Compile Include="EntityHandlers\SopimusKiinteistoHandler.cs" />
+    <Compile Include="EntityHandlers\SopimusTahoHandler.cs" />
+    <Compile Include="EntityHandlers\SopimusTulosteHandler.cs" />
+    <Compile Include="EntityHandlers\SopimustyyppiHandler.cs" />
+    <Compile Include="EntityHandlers\TahoHandler.cs" />
+    <Compile Include="EntityHandlers\TiedostoHandler.cs" />
+    <Compile Include="KiltaDataContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IFRSRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SopimusRepository.cs" />
+    <Compile Include="Repositories\TiedostoTuontiRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KT.Utils\KT.Utils\KT.Utils.csproj">
+      <Project>{7fff279e-6aa1-4e11-8dfc-bd4ac33a31dc}</Project>
+      <Name>KT.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sopimusrekisteri.BLL_CF\Sopimusrekisteri.BLL_CF.csproj">
+      <Project>{c409af1e-1626-4ba7-abff-f45ea79da915}</Project>
+      <Name>Sopimusrekisteri.BLL_CF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

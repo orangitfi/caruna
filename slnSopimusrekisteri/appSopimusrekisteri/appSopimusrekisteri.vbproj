@@ -1,0 +1,2123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{42CACB78-7CD8-45CA-8D51-C1021B40FCF3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>appSopimusrekisteri</RootNamespace>
+    <AssemblyName>appSopimusrekisteri</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <ExcludeFoldersFromDeployment>SQL</ExcludeFoldersFromDeployment>
+    <IntermediateOutputPath>c:\Temp\caruna</IntermediateOutputPath>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <ExcludeFoldersFromDeployment>SQL</ExcludeFoldersFromDeployment>
+    <DocumentationFile>appSopimusrekisteri.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>appSopimusrekisteri.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ExcludeFoldersFromDeployment>SQL</ExcludeFoldersFromDeployment>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.5.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.7.1213\lib\45\AjaxControlToolkit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.7.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.7.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined, Version=1.13.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.13.2\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.4\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="evohtmltopdf">
+      <HintPath>..\packages\EvoPdf\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit.1.0\lib\35\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.5\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.5\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=2.1.0.4, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WindowsAzure.Storage.2.1.0.4\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.5\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TemplateHandler, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\TemplateHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.Routing" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Aktiviteetti\Muokkaa.aspx" />
+    <Content Include="Aktiviteetti\Poiminta.aspx" />
+    <Content Include="Aktiviteetti\Tehtavalista.ascx" />
+    <Content Include="Aktiviteetti\Tiedot.aspx" />
+    <Content Include="App_Themes\Default\Images\Excel.png" />
+    <Content Include="App_Themes\Default\Images\info.jpg" />
+    <Content Include="App_Themes\Default\Images\info_tp.png" />
+    <Compile Include="Avustajat\Palaute.vb" />
+    <Compile Include="Avustajat\SopimusAvustaja.vb" />
+    <Compile Include="Components\ExcelReader.vb" />
+    <Compile Include="Components\IFRS\IFRSExcel.vb" />
+    <Compile Include="Components\IFRS\IFRSExcelAsetukset.vb" />
+    <Compile Include="Components\IFRS\IFRSExcelKaikkiVuokrat.vb" />
+    <Compile Include="Components\IFRS\IFRSExcelMaturiteetti.vb" />
+    <Compile Include="Components\IFRS\IIFRSExcelWorksheet.vb" />
+    <Compile Include="Components\PdfHelper.vb" />
+    <Compile Include="Components\Templates\JASTemplateContext.vb" />
+    <Compile Include="Components\Templates\JASTemplate.vb" />
+    <Compile Include="Components\Templates\JASTemplateHelpers.vb" />
+    <Compile Include="Components\Templates\KiinteistoTemplate.vb" />
+    <Compile Include="Components\Templates\KorvausTemplate.vb" />
+    <Compile Include="Components\Templates\MuuntamonSijoitussopimusContext.vb" />
+    <Compile Include="Components\Templates\MuuntamosopimusTemplate.vb" />
+    <Compile Include="Components\Templates\MuuntamosopimusTemplateContext.vb" />
+    <Compile Include="Components\Templates\MuuntamosopimusTemplateHelpers.vb" />
+    <Compile Include="Components\Templates\MuuntamonSijoitussopimusTemplate.vb" />
+    <Compile Include="Components\Templates\SuostumusTemplateContext.vb" />
+    <Compile Include="Components\Templates\SuostumusTemplate.vb" />
+    <Compile Include="Components\Templates\SuostumusTemplateHelpers.vb" />
+    <Compile Include="Components\Templates\TahoPariTemplate.vb" />
+    <Compile Include="Components\Templates\TahoTemplate.vb" />
+    <Compile Include="Components\Templates\TunnisteyksikkoTemplate.vb" />
+    <Compile Include="Components\TypeFormatters.vb" />
+    <Compile Include="Components\UiHelper.vb" />
+    <Compile Include="Controls\DateInput.vb" />
+    <Content Include="bin\TemplateHandler.dll" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Controls\Infopallura.ascx" />
+    <Content Include="Controls\LomakeVirhe.ascx" />
+    <Content Include="Controls\PoimintaOperaattori.ascx" />
+    <Content Include="Controls\PoimintaTyokalut.ascx" />
+    <Content Include="Dokumentit\CCAPylvaidenLuovutuskirja.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_Englanti.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_korvaukseton.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_Maakaapeli_korvaukseton.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_Maakaapeli_korvaukseton_Ruotsi.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_Maakaapeli_Ruotsi.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_Maakaapeli.html" />
+    <Content Include="Dokumentit\Johtoaluesopimus_Ruotsi.html" />
+    <Content Include="Dokumentit\Yksityistiesopimus.html" />
+    <Content Include="Dokumentit\Maankayttosopimus.html" />
+    <Content Include="Dokumentit\Muuntamoaluesopimus.html" />
+    <Content Include="Dokumentit\Muuntamoaluesopimus_IlmanKorvausta.html" />
+    <Content Include="Dokumentit\MuuntamonSijoitussopimus.html" />
+    <Content Include="Dokumentit\MuuntamonSijoitussopimus_Ruotsi.html" />
+    <Content Include="Dokumentit\Muuntamosopimus_IlmanKorvausta.html" />
+    <Content Include="Dokumentit\Muuntamosopimus_kerta.html" />
+    <Content Include="Dokumentit\Muuntamosopimus_Kerta_Ruotsi.html" />
+    <Content Include="Dokumentit\Muuntamosopimus_vuosi.html" />
+    <Content Include="Dokumentit\Muuntamoaluesopimus_Ruotsi.html" />
+    <Content Include="Dokumentit\Muuntamosopimus_vuosi_Ruotsi.html" />
+    <Content Include="Dokumentit\Suostumus.html" />
+    <Content Include="Dokumentit\Suostumus_Ruotsi.html" />
+    <Content Include="Kayttaja\Uloskirjautuminen.aspx" />
+    <Content Include="Kayttaja\Kirjautuminen.aspx" />
+    <Content Include="Kayttaja\Profiili.aspx" />
+    <Content Include="Korvauslaskelma\Tulosta.aspx" />
+    <Content Include="Liittymat\LevyJaot.aspx" />
+    <Content Include="Maksuaineisto\Maksuaineisto_IFS.aspx" />
+    <Content Include="Maksuaineisto\Maksuaineisto_Testi.aspx" />
+    <Content Include="Maksuaineisto\Pcs_Tuonti.aspx" />
+    <Content Include="Maksuaineisto\Tuonti.aspx" />
+    <Content Include="Maksut\Lisaa.aspx" />
+    <Content Include="Maksut\Lisaa_poimituille.aspx" />
+    <Content Include="Ohjaustiedot\Indeksi\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Indeksi\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Korkoprosentti\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Korkoprosentti\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Korvaushinnasto\Tuonti.aspx" />
+    <Content Include="Ohjaustiedot\Local1\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Local1\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Regulation\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Regulation\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Purpose\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Purpose\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\InvCost\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\InvCost\Tiedot.aspx" />
+    <Content Include="My Project\DataSources\System.Xml.Linq.XElement.datasource" />
+    <Content Include="Ohjaustiedot\SopimusExcel\Tuonti.aspx" />
+    <Content Include="Ohjaustiedot\SopimusExcel\Vienti.aspx" />
+    <Content Include="Ohjaustiedot\TiedostoExcel\Tuonti.aspx" />
+    <Content Include="Ohjaustiedot\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Vuokratyyppi\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Vuokratyyppi\Tiedot.aspx" />
+    <Content Include="Poiminta\Poimintaehdot_Tallenna_Lataa.aspx" />
+    <Content Include="Poiminta\Poimintajoukko.aspx" />
+    <Content Include="Poiminta\Poimintajoukko_testi.aspx" />
+    <Content Include="Poiminta\Poimintalomake.aspx" />
+    <Content Include="Liittymat\Sahkoposti.aspx" />
+    <Content Include="Poiminta\Poimintalomake_testi.aspx" />
+    <Content Include="Poiminta\Poiminta_sarakkeet.aspx" />
+    <Content Include="Poiminta\Poiminta_sarakkeet_kiinteisto.aspx" />
+    <Content Include="Poiminta\Poiminta_sarakkeet_sopimus.aspx" />
+    <Content Include="Poiminta\Poiminta_sarakkeet_taho.aspx" />
+    <Content Include="Poiminta\Poiminta_Tallenna_Lataa.aspx" />
+    <Content Include="Raportit\IFRS.aspx" />
+    <Content Include="Raportit\Raportit.aspx" />
+    <Content Include="Raportit\Raportti.aspx" />
+    <Content Include="Raportit\RaporttiKontrollit\IFRS_Kausi.ascx" />
+    <Content Include="Raportit\RaporttiKontrollit\IFRS_Maturiteetti.ascx" />
+    <Content Include="Raportit\RaporttiKontrollit\Korvauslaskelma.ascx" />
+    <Content Include="Raportit\RaporttiKontrollit\Vuokrat.ascx" />
+    <Content Include="Liittymat\Sopimusarkisto\Sopimusarkisto.aspx" />
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.js" />
+    <Content Include="Scripts\jquery-ui-1.13.2.min.js" />
+    <Content Include="Sopimus\Aktiviteetit.ascx" />
+    <Content Include="Sopimus\Asiakkaat.ascx" />
+    <Content Include="Sopimus\Kiinteistot.ascx" />
+    <Content Include="Sopimus\Korvauslaskelmat.ascx" />
+    <Content Include="Sopimus\Lupa\Muokkaa.aspx" />
+    <Content Include="Sopimus\Lupa\Tiedot.aspx" />
+    <Content Include="Sopimus\Maksut.ascx" />
+    <Content Include="Sopimus\Muuntamo\Muokkaa.aspx" />
+    <Content Include="Sopimus\Muuntamo\Tiedot.aspx" />
+    <Content Include="Sopimus\Tiedostot.ascx" />
+    <Content Include="Sopimus\Alasopimukset.ascx" />
+    <Content Include="Sopimus\Tunnisteyksikot.ascx" />
+    <Content Include="Sopimus\Alasopimus.aspx" />
+    <Content Include="Sopimus\Vuokra\Muokkaa.aspx" />
+    <Content Include="Sopimus\Vuokra\Tiedot.aspx" />
+    <Content Include="SQL\20201112.sql" />
+    <Content Include="SQL\20201203.sql" />
+    <Content Include="SQL\20201201.sql" />
+    <Content Include="SQL\20201014.sql" />
+    <Content Include="SQL\20201218.sql" />
+    <Content Include="Taho\Kiinteistot.ascx" />
+    <Content Include="Taho\Sopimukset.ascx" />
+    <Content Include="Taho\Sopimustaho.aspx" />
+    <Content Include="Taho\Valitse.aspx" />
+    <Content Include="Tiedosto\Muokkaa.aspx" />
+    <Content Include="Viivakoodi\barcode.aspx" />
+    <Content Include="Yllapito\KayttajaHallinta.aspx" />
+    <Content Include="Yllapito\Ryhma.aspx" />
+    <Content Include="Yllapito\Ryhmat.aspx" />
+    <Content Include="Yllapito\Kayttaja.aspx" />
+    <Content Include="Yllapito\Kayttajat.aspx" />
+    <Content Include="Yllapito\Rooli.aspx" />
+    <Content Include="Yllapito\Roolit.aspx" />
+    <Content Include="App_Themes\Default\Default.css" />
+    <Content Include="App_Themes\Default\Images\collapse.jpg" />
+    <Content Include="App_Themes\Default\Images\expand.jpg" />
+    <Content Include="App_Themes\Default\Images\gloss.png" />
+    <Content Include="App_Themes\Default\Images\kalenteri.png" />
+    <Content Include="App_Themes\Default\Images\MenuTausta1px_1.png" />
+    <Content Include="App_Themes\Default\Images\Nappi1px_1.png" />
+    <Content Include="App_Themes\Default\Images\Nuoli.png" />
+    <Content Include="App_Themes\Default\Images\print.gif" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_1.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_2.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_3.png" />
+    <Content Include="App_Themes\Default\Images\Sivupalkki1px_4.png" />
+    <Content Include="App_Themes\Default\Images\tab-active-left.gif" />
+    <Content Include="App_Themes\Default\Images\tab-active-right.gif" />
+    <Content Include="App_Themes\Default\Images\tab-active.gif" />
+    <Content Include="App_Themes\Default\Images\tab-hover-left.gif" />
+    <Content Include="App_Themes\Default\Images\tab-hover-right.gif" />
+    <Content Include="App_Themes\Default\Images\tab-hover.gif" />
+    <Content Include="App_Themes\Default\Images\tab-left.gif" />
+    <Content Include="App_Themes\Default\Images\tab-line.gif" />
+    <Content Include="App_Themes\Default\Images\tab-right.gif" />
+    <Content Include="App_Themes\Default\Images\tab.gif" />
+    <Content Include="App_Themes\Default\Images\Ukko.png" />
+    <Content Include="App_Themes\Default\Images\Ukko_2.png" />
+    <Content Include="App_Themes\Default\Images\Ylapalkki1px_1.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Controls\Haku.ascx" />
+    <Content Include="Controls\Tyokalut.ascx" />
+    <Content Include="Maksuaineisto\Maksuaineisto.aspx" />
+    <Content Include="Maksuaineisto\Tiedot.aspx" />
+    <Content Include="Maksuaineisto\Maksuajot.aspx" />
+    <Content Include="Ohjaustiedot\Ohjaustiedot.aspx" />
+    <Content Include="Haku.aspx" />
+    <Content Include="Etusivu.aspx" />
+    <Content Include="Kiinteisto\Haku.aspx" />
+    <Content Include="Kiinteisto\Tiedot.aspx" />
+    <Content Include="Korvauslaskelma\Muokkaa.aspx" />
+    <Content Include="Korvauslaskelma\Rivi\Muokkaa.aspx" />
+    <Content Include="Korvauslaskelma\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\AsiakirjojenTarkenne\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\AsiakirjojenTarkenne\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Asiakastyyppi\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Asiakastyyppi\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\ArkistonSijainti\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\ArkistonSijainti\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\AktiviteettienYhteystapa\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\AktiviteettienYhteystapa\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\AktiviteetinStatus\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\AktiviteetinStatus\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\AktiviteetinLaji\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\AktiviteetinLaji\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\HinnastonKategoria\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\HinnastonKategoria\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\KirjanpidonKustannuspaikka\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\KirjanpidonKustannuspaikka\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\DFRooli\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\DFRooli\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\HinnastonAlakategoria\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\HinnastonAlakategoria\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Indeksityyppi\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Indeksityyppi\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Julkisuusaste\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Julkisuusaste\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\KirjanpidonTili\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\KirjanpidonTili\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Kunta\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Kunta\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Kyla\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Kyla\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\LiiketoiminnanTarve\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\LiiketoiminnanTarve\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Maa\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Maa\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Maaraalatarkenne\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Maaraalatarkenne\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\MaksunSuoritus\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\MaksunSuoritus\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Metsatyyppi\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Metsatyyppi\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\PassivoinninSyy\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\PassivoinninSyy\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Postitiedot\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Postitiedot\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Puustolaji\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Puustolaji\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\PuustonOmistajuus\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\PuustonOmistajuus\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\PuustonPoisto\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\PuustonPoisto\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Saanto\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Saanto\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Siirtooikeus\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Siirtooikeus\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\SopimuksenAlaluokka\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\SopimuksenAlaluokka\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\SopimuksenEhtoversio\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\SopimuksenEhtoversio\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\SopimuksenKesto\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\SopimuksenKesto\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Sopimusformaatti\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Sopimusformaatti\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Tunnisteyksikko\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Tunnisteyksikko\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Maksualue\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Maksualue\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\TunnisteyksikonTyyppi\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\TunnisteyksikonTyyppi\Tiedot.aspx" />
+    <Content Include="Ohjaustiedot\Korvaushinnasto\Muokkaa.aspx" />
+    <Content Include="Ohjaustiedot\Korvaushinnasto\Tiedot.aspx" />
+    <Content Include="Sopimus\Suostumus\Muokkaa.aspx" />
+    <Content Include="Sopimus\Suostumus\Tiedot.aspx" />
+    <Content Include="Sopimus\Valitse.aspx" />
+    <Content Include="Sopimus\Haku.aspx" />
+    <Content Include="Sopimus\JAS\Tiedot.aspx" />
+    <Content Include="Taho\Henkilo\Tiedot.aspx" />
+    <Content Include="Taho\Henkilo\Muokkaa.aspx" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Taho\Haku.aspx" />
+    <Content Include="Taho\Organisaatio\Muokkaa.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="App_Themes\Default\Default.skin" />
+    <Content Include="Yllapito\Web.config" />
+    <Content Include="Dokumentit\ExcelTemplate.xlsx" />
+    <Content Include="Kiinteisto\LiitaSopimukselle.ashx" />
+    <Content Include="Dokumentit\Liite_Ikahyvitys.pdf" />
+    <Content Include="Dokumentit\Liite_Ikahyvitys_Ruotsi.pdf" />
+    <Content Include="Dokumentit\CCA_LIITE.pdf" />
+    <Content Include="libman.json" />
+    <Content Include="Dokumentit\IFRS\IFRS_Pohja.xlsx" />
+    <Content Include="Dokumentit\m-files_tuonti_malli.xlsx" />
+    <None Include="My Project\PublishProfiles\publishaus ceelle.pubxml" />
+    <None Include="My Project\PublishProfiles\Saatana.pubxml" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Kiinteisto\Muokkaa.aspx" />
+    <Content Include="Sopimus\JAS\Muokkaa.aspx" />
+    <Content Include="Taho\Organisaatio\Tiedot.aspx" />
+    <Content Include="Tunnisteyksikko\Muokkaa.aspx" />
+    <Content Include="Tunnisteyksikko\Tiedot.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aktiviteetti\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aktiviteetti\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Aktiviteetti\Poiminta.aspx.designer.vb">
+      <DependentUpon>Poiminta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aktiviteetti\Poiminta.aspx.vb">
+      <DependentUpon>Poiminta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Aktiviteetti\Tehtavalista.ascx.designer.vb">
+      <DependentUpon>Tehtavalista.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Aktiviteetti\Tehtavalista.ascx.vb">
+      <DependentUpon>Tehtavalista.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Aktiviteetti\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Aktiviteetti\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Avustajat\Email.vb" />
+    <Compile Include="Avustajat\Io.vb" />
+    <Compile Include="Avustajat\Infopallurat.vb" />
+    <Compile Include="Avustajat\JavascriptAvustaja.vb" />
+    <Compile Include="Avustajat\Kontrollit.vb" />
+    <Compile Include="Avustajat\Luvut.vb" />
+    <Compile Include="Avustajat\Muuttujat.vb" />
+    <Compile Include="Avustajat\Paivaykset.vb" />
+    <Compile Include="Avustajat\Pudotusvalikko.vb" />
+    <Compile Include="Avustajat\Sessio.vb" />
+    <Compile Include="Avustajat\Taulukot.vb" />
+    <Compile Include="Components\Delegates.vb" />
+    <Compile Include="Components\ExcelBuilder.vb" />
+    <Compile Include="Controls\Infopallura.ascx.designer.vb">
+      <DependentUpon>Infopallura.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Infopallura.ascx.vb">
+      <DependentUpon>Infopallura.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LomakeVirhe.ascx.designer.vb">
+      <DependentUpon>LomakeVirhe.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LomakeVirhe.ascx.vb">
+      <DependentUpon>LomakeVirhe.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PoimintaOperaattori.ascx.designer.vb">
+      <DependentUpon>PoimintaOperaattori.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PoimintaOperaattori.ascx.vb">
+      <DependentUpon>PoimintaOperaattori.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\PoimintaTyokalut.ascx.designer.vb">
+      <DependentUpon>PoimintaTyokalut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PoimintaTyokalut.ascx.vb">
+      <DependentUpon>PoimintaTyokalut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kayttaja\Uloskirjautuminen.aspx.designer.vb">
+      <DependentUpon>Uloskirjautuminen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kayttaja\Uloskirjautuminen.aspx.vb">
+      <DependentUpon>Uloskirjautuminen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kayttaja\Profiili.aspx.designer.vb">
+      <DependentUpon>Profiili.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kayttaja\Profiili.aspx.vb">
+      <DependentUpon>Profiili.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kiinteisto\LiitaSopimukselle.ashx.vb">
+      <DependentUpon>LiitaSopimukselle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Konfiguraatio\Hakemistot.vb" />
+    <Compile Include="Konfiguraatio\Konfiguraatiot.vb" />
+    <Compile Include="Konfiguraatio\RooliAvustaja.vb" />
+    <Compile Include="Konfiguraatio\Roolit.vb" />
+    <Compile Include="Konfiguraatio\Tiedostot.vb" />
+    <Compile Include="Korvauslaskelma\Tulosta.aspx.designer.vb">
+      <DependentUpon>Tulosta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Tulosta.aspx.vb">
+      <DependentUpon>Tulosta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Liittymat\IFS\Configuration.vb" />
+    <Compile Include="Liittymat\IFS\Formatter.vb" />
+    <Compile Include="Liittymat\IFS\IFSIntegrationFile.vb" />
+    <Compile Include="Liittymat\IFS\Invoice.vb" />
+    <Compile Include="Liittymat\IFS\InvoiceHeader.vb" />
+    <Compile Include="Liittymat\IFS\InvoiceLine.vb" />
+    <Compile Include="Liittymat\IFS\InvoiceRow.vb" />
+    <Compile Include="Liittymat\IFS\Posting.vb" />
+    <Compile Include="Liittymat\IFS\Response.vb" />
+    <Compile Include="Liittymat\IFS\Supplier.vb" />
+    <Compile Include="Liittymat\LevyJaot.aspx.designer.vb">
+      <DependentUpon>LevyJaot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Liittymat\LevyJaot.aspx.vb">
+      <DependentUpon>LevyJaot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Liittymat\Maksuaineisto\Enumeraatiot.vb" />
+    <Compile Include="Liittymat\Maksuaineisto\Maksuaineisto.vb" />
+    <Compile Include="Liittymat\Maksuaineisto\MaksuaineistoHelper.vb" />
+    <Compile Include="Liittymat\Maksuaineisto\MaksuaineistoPalaute.vb" />
+    <Compile Include="Liittymat\Maksuaineisto\MaksuaineistoTiedosto.vb" />
+    <Compile Include="Liittymat\Maksuaineisto\Maksuraportti.vb" />
+    <Compile Include="Liittymat\Maksuaineisto\MaksuValidaattori.vb" />
+    <Compile Include="Liittymat\Sharepoint\Era.vb" />
+    <Compile Include="Liittymat\Sharepoint\Heratys.vb" />
+    <Compile Include="Liittymat\Sharepoint\Kentta.vb" />
+    <Compile Include="Liittymat\Sharepoint\KenttaAttribuutti.vb" />
+    <Compile Include="Liittymat\Sharepoint\Kysely.vb" />
+    <Compile Include="Liittymat\Sharepoint\KyselyAsetukset.vb" />
+    <Compile Include="Liittymat\Sharepoint\Listat.vb" />
+    <Compile Include="Liittymat\Sharepoint\Metodi.vb" />
+    <Compile Include="Liittymat\Sharepoint\NakymaKentat.vb" />
+    <Compile Include="Liittymat\Sharepoint\Nakymat.vb" />
+    <Compile Include="Liittymat\Sharepoint\Pyynto.vb" />
+    <Compile Include="Liittymat\Sharepoint\Vastaus.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\Operaatiot.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\SopimusHakuehdot.vb" />
+    <Compile Include="Liittymat\Sharepoint\TestiClient.vb" />
+    <Compile Include="Maksuaineisto\Maksuaineisto_IFS.aspx.designer.vb">
+      <DependentUpon>Maksuaineisto_IFS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuaineisto_IFS.aspx.vb">
+      <DependentUpon>Maksuaineisto_IFS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuaineisto_Testi.aspx.designer.vb">
+      <DependentUpon>Maksuaineisto_Testi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuaineisto_Testi.aspx.vb">
+      <DependentUpon>Maksuaineisto_Testi.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Maksuaineisto\Pcs_Tuonti.aspx.designer.vb">
+      <DependentUpon>Pcs_Tuonti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Pcs_Tuonti.aspx.vb">
+      <DependentUpon>Pcs_Tuonti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Maksuaineisto\Tuonti.aspx.designer.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Tuonti.aspx.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maksut\Lisaa.aspx.designer.vb">
+      <DependentUpon>Lisaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksut\Lisaa.aspx.vb">
+      <DependentUpon>Lisaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Maksut\Lisaa_poimituille.aspx.designer.vb">
+      <DependentUpon>Lisaa_poimituille.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksut\Lisaa_poimituille.aspx.vb">
+      <DependentUpon>Lisaa_poimituille.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksi\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksi\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korkoprosentti\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korkoprosentti\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korkoprosentti\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korkoprosentti\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korvaushinnasto\Tuonti.aspx.designer.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korvaushinnasto\Tuonti.aspx.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Local1\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Local1\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Local1\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Local1\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Regulation\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Regulation\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Regulation\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Regulation\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Purpose\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Purpose\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Purpose\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Purpose\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\InvCost\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\InvCost\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\InvCost\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\InvCost\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimusExcel\SopimusExcelCommon.vb" />
+    <Compile Include="Ohjaustiedot\SopimusExcel\Tuonti.aspx.designer.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimusExcel\Tuonti.aspx.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimusExcel\Vienti.aspx.designer.vb">
+      <DependentUpon>Vienti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimusExcel\Vienti.aspx.vb">
+      <DependentUpon>Vienti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\TiedostoExcel\Tuonti.aspx.designer.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\TiedostoExcel\Tuonti.aspx.vb">
+      <DependentUpon>Tuonti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Vuokratyyppi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Vuokratyyppi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Vuokratyyppi\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Vuokratyyppi\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Page\BaseHandler.vb" />
+    <Compile Include="Page\ListControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Ehdot\PoimintaehdotSopimus.vb" />
+    <Compile Include="Poiminta\Poimintaehdot_Tallenna_Lataa.aspx.designer.vb">
+      <DependentUpon>Poimintaehdot_Tallenna_Lataa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poimintaehdot_Tallenna_Lataa.aspx.vb">
+      <DependentUpon>Poimintaehdot_Tallenna_Lataa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poimintajoukko.aspx.designer.vb">
+      <DependentUpon>Poimintajoukko.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poimintajoukko.aspx.vb">
+      <DependentUpon>Poimintajoukko.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poimintajoukko_testi.aspx.designer.vb">
+      <DependentUpon>Poimintajoukko_testi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poimintajoukko_testi.aspx.vb">
+      <DependentUpon>Poimintajoukko_testi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poimintalomake.aspx.designer.vb">
+      <DependentUpon>Poimintalomake.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poimintalomake.aspx.vb">
+      <DependentUpon>Poimintalomake.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Liittymat\Sahkoposti.aspx.designer.vb">
+      <DependentUpon>Sahkoposti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Liittymat\Sahkoposti.aspx.vb">
+      <DependentUpon>Sahkoposti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poimintalomake_testi.aspx.designer.vb">
+      <DependentUpon>Poimintalomake_testi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poimintalomake_testi.aspx.vb">
+      <DependentUpon>Poimintalomake_testi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet.aspx.designer.vb">
+      <DependentUpon>Poiminta_sarakkeet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet.aspx.vb">
+      <DependentUpon>Poiminta_sarakkeet.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet_kiinteisto.aspx.designer.vb">
+      <DependentUpon>Poiminta_sarakkeet_kiinteisto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet_kiinteisto.aspx.vb">
+      <DependentUpon>Poiminta_sarakkeet_kiinteisto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet_sopimus.aspx.designer.vb">
+      <DependentUpon>Poiminta_sarakkeet_sopimus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet_sopimus.aspx.vb">
+      <DependentUpon>Poiminta_sarakkeet_sopimus.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet_taho.aspx.designer.vb">
+      <DependentUpon>Poiminta_sarakkeet_taho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_sarakkeet_taho.aspx.vb">
+      <DependentUpon>Poiminta_sarakkeet_taho.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_Tallenna_Lataa.aspx.designer.vb">
+      <DependentUpon>Poiminta_Tallenna_Lataa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Poiminta\Poiminta_Tallenna_Lataa.aspx.vb">
+      <DependentUpon>Poiminta_Tallenna_Lataa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\IFRS.aspx.designer.vb">
+      <DependentUpon>IFRS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\IFRS.aspx.vb">
+      <DependentUpon>IFRS.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\IReportControl.vb" />
+    <Compile Include="Raportit\Raportit.aspx.designer.vb">
+      <DependentUpon>Raportit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\Raportit.aspx.vb">
+      <DependentUpon>Raportit.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\Raportti.aspx.designer.vb">
+      <DependentUpon>Raportti.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\Raportti.aspx.vb">
+      <DependentUpon>Raportti.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\IFRS_Kausi.ascx.designer.vb">
+      <DependentUpon>IFRS_Kausi.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\IFRS_Kausi.ascx.vb">
+      <DependentUpon>IFRS_Kausi.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\IFRS_Maturiteetti.ascx.designer.vb">
+      <DependentUpon>IFRS_Maturiteetti.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\IFRS_Maturiteetti.ascx.vb">
+      <DependentUpon>IFRS_Maturiteetti.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\Korvauslaskelma.ascx.designer.vb">
+      <DependentUpon>Korvauslaskelma.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\Korvauslaskelma.ascx.vb">
+      <DependentUpon>Korvauslaskelma.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\Vuokrat.ascx.designer.vb">
+      <DependentUpon>Vuokrat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Raportit\RaporttiKontrollit\Vuokrat.ascx.vb">
+      <DependentUpon>Vuokrat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Raportit\ReportControlBase.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Liittymat\Sharepoint\Lista.vb" />
+    <Compile Include="Liittymat\Sharepoint\Nakyma.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\Tiedosto.vb" />
+    <Compile Include="Liittymat\Sopimusarkisto\Sopimusarkisto.aspx.designer.vb">
+      <DependentUpon>Sopimusarkisto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Liittymat\Sopimusarkisto\Sopimusarkisto.aspx.vb">
+      <DependentUpon>Sopimusarkisto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Aktiviteetit.ascx.designer.vb">
+      <DependentUpon>Aktiviteetit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Aktiviteetit.ascx.vb">
+      <DependentUpon>Aktiviteetit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Asiakkaat.ascx.designer.vb">
+      <DependentUpon>Asiakkaat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Asiakkaat.ascx.vb">
+      <DependentUpon>Asiakkaat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\JAS\Tulosta.ashx.vb">
+      <DependentUpon>Tulosta.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Kiinteistot.ascx.designer.vb">
+      <DependentUpon>Kiinteistot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Kiinteistot.ascx.vb">
+      <DependentUpon>Kiinteistot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Korvauslaskelmat.ascx.designer.vb">
+      <DependentUpon>Korvauslaskelmat.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Korvauslaskelmat.ascx.vb">
+      <DependentUpon>Korvauslaskelmat.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Lupa\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Lupa\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Lupa\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Lupa\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Maksut.ascx.designer.vb">
+      <DependentUpon>Maksut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Maksut.ascx.vb">
+      <DependentUpon>Maksut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Muuntamo\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Muuntamo\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Muuntamo\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Muuntamo\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Muuntamo\Tulosta.ashx.vb">
+      <DependentUpon>Tulosta.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Sopimus.ashx.vb">
+      <DependentUpon>Sopimus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Suostumus\Tulosta.ashx.vb">
+      <DependentUpon>Tulosta.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Tiedostot.ascx.designer.vb">
+      <DependentUpon>Tiedostot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Tiedostot.ascx.vb">
+      <DependentUpon>Tiedostot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Alasopimukset.ascx.designer.vb">
+      <DependentUpon>Alasopimukset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Alasopimukset.ascx.vb">
+      <DependentUpon>Alasopimukset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Tunnisteyksikot.ascx.designer.vb">
+      <DependentUpon>Tunnisteyksikot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Tunnisteyksikot.ascx.vb">
+      <DependentUpon>Tunnisteyksikot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Alasopimus.aspx.designer.vb">
+      <DependentUpon>Alasopimus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Alasopimus.aspx.vb">
+      <DependentUpon>Alasopimus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Vuokra\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Vuokra\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Vuokra\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Vuokra\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Kiinteistot.ascx.designer.vb">
+      <DependentUpon>Kiinteistot.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Kiinteistot.ascx.vb">
+      <DependentUpon>Kiinteistot.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Sopimukset.ascx.designer.vb">
+      <DependentUpon>Sopimukset.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Sopimukset.ascx.vb">
+      <DependentUpon>Sopimukset.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Sopimustaho.aspx.designer.vb">
+      <DependentUpon>Sopimustaho.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Sopimustaho.aspx.vb">
+      <DependentUpon>Sopimustaho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Valitse.aspx.designer.vb">
+      <DependentUpon>Valitse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Valitse.aspx.vb">
+      <DependentUpon>Valitse.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Tiedosto\IFRS.ashx.vb">
+      <DependentUpon>IFRS.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tiedosto\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tiedosto\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Tiedosto\Tiedosto.ashx.vb">
+      <DependentUpon>Tiedosto.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Viivakoodi\barcode.aspx.designer.vb">
+      <DependentUpon>barcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Viivakoodi\barcode.aspx.vb">
+      <DependentUpon>barcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\KayttajaHallinta.aspx.designer.vb">
+      <DependentUpon>KayttajaHallinta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\KayttajaHallinta.aspx.vb">
+      <DependentUpon>KayttajaHallinta.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\Ryhma.aspx.designer.vb">
+      <DependentUpon>Ryhma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\Ryhma.aspx.vb">
+      <DependentUpon>Ryhma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\Ryhmat.aspx.designer.vb">
+      <DependentUpon>Ryhmat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\Ryhmat.aspx.vb">
+      <DependentUpon>Ryhmat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\Kayttaja.aspx.designer.vb">
+      <DependentUpon>Kayttaja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\Kayttaja.aspx.vb">
+      <DependentUpon>Kayttaja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\Kayttajat.aspx.designer.vb">
+      <DependentUpon>Kayttajat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\Kayttajat.aspx.vb">
+      <DependentUpon>Kayttajat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\Rooli.aspx.designer.vb">
+      <DependentUpon>Rooli.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\Rooli.aspx.vb">
+      <DependentUpon>Rooli.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Yllapito\Roolit.aspx.designer.vb">
+      <DependentUpon>Roolit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Yllapito\Roolit.aspx.vb">
+      <DependentUpon>Roolit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Lista.vb" />
+    <Compile Include="App_Code\Varmistus.vb" />
+    <Compile Include="App_Code\Url.vb" />
+    <Compile Include="App_Start\BundleConfig.vb" />
+    <Compile Include="App_Start\AuthConfig.vb" />
+    <Compile Include="Kayttaja\Kirjautuminen.aspx.vb">
+      <DependentUpon>Kirjautuminen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kayttaja\Kirjautuminen.aspx.designer.vb">
+      <DependentUpon>Kirjautuminen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Haku.ascx.designer.vb">
+      <DependentUpon>Haku.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Haku.ascx.vb">
+      <DependentUpon>Haku.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Tyokalut.ascx.designer.vb">
+      <DependentUpon>Tyokalut.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Tyokalut.ascx.vb">
+      <DependentUpon>Tyokalut.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuaineisto.aspx.designer.vb">
+      <DependentUpon>Maksuaineisto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuaineisto.aspx.vb">
+      <DependentUpon>Maksuaineisto.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Maksuaineisto\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuajot.aspx.designer.vb">
+      <DependentUpon>Maksuajot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maksuaineisto\Maksuajot.aspx.vb">
+      <DependentUpon>Maksuajot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Ohjaustiedot.aspx.designer.vb">
+      <DependentUpon>Ohjaustiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Ohjaustiedot.aspx.vb">
+      <DependentUpon>Ohjaustiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Haku.aspx.designer.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Haku.aspx.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Etusivu.aspx.designer.vb">
+      <DependentUpon>Etusivu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Etusivu.aspx.vb">
+      <DependentUpon>Etusivu.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Kiinteisto\Haku.aspx.designer.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kiinteisto\Haku.aspx.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Kiinteisto\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kiinteisto\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Rivi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Rivi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Korvauslaskelma\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AsiakirjojenTarkenne\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AsiakirjojenTarkenne\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AsiakirjojenTarkenne\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AsiakirjojenTarkenne\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Asiakastyyppi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Asiakastyyppi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Asiakastyyppi\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Asiakastyyppi\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\ArkistonSijainti\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\ArkistonSijainti\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\ArkistonSijainti\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\ArkistonSijainti\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteettienYhteystapa\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteettienYhteystapa\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteettienYhteystapa\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteettienYhteystapa\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinStatus\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinStatus\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinStatus\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinStatus\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinLaji\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinLaji\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinLaji\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\AktiviteetinLaji\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonKategoria\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonKategoria\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonKategoria\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonKategoria\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonKustannuspaikka\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonKustannuspaikka\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonKustannuspaikka\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonKustannuspaikka\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\DFRooli\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\DFRooli\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\DFRooli\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\DFRooli\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonAlakategoria\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonAlakategoria\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonAlakategoria\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\HinnastonAlakategoria\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksityyppi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksityyppi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksityyppi\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Indeksityyppi\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Julkisuusaste\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Julkisuusaste\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Julkisuusaste\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Julkisuusaste\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonTili\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonTili\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonTili\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\KirjanpidonTili\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kunta\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kunta\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kunta\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kunta\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kyla\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kyla\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kyla\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Kyla\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\LiiketoiminnanTarve\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\LiiketoiminnanTarve\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\LiiketoiminnanTarve\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\LiiketoiminnanTarve\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maa\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maa\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maa\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maa\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maaraalatarkenne\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maaraalatarkenne\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maaraalatarkenne\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maaraalatarkenne\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\MaksunSuoritus\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\MaksunSuoritus\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\MaksunSuoritus\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\MaksunSuoritus\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Metsatyyppi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Metsatyyppi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Metsatyyppi\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Metsatyyppi\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PassivoinninSyy\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PassivoinninSyy\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PassivoinninSyy\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PassivoinninSyy\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Postitiedot\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Postitiedot\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Postitiedot\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Postitiedot\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Puustolaji\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Puustolaji\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Puustolaji\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Puustolaji\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonOmistajuus\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonOmistajuus\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonOmistajuus\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonOmistajuus\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonPoisto\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonPoisto\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonPoisto\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\PuustonPoisto\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Saanto\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Saanto\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Saanto\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Saanto\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Siirtooikeus\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Siirtooikeus\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Siirtooikeus\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Siirtooikeus\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenAlaluokka\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenAlaluokka\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenAlaluokka\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenAlaluokka\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenEhtoversio\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenEhtoversio\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenEhtoversio\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenEhtoversio\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenKesto\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenKesto\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenKesto\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\SopimuksenKesto\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Sopimusformaatti\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Sopimusformaatti\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Sopimusformaatti\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Sopimusformaatti\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Tunnisteyksikko\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Tunnisteyksikko\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Tunnisteyksikko\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Tunnisteyksikko\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maksualue\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maksualue\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maksualue\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Maksualue\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\TunnisteyksikonTyyppi\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\TunnisteyksikonTyyppi\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\TunnisteyksikonTyyppi\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\TunnisteyksikonTyyppi\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korvaushinnasto\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korvaushinnasto\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korvaushinnasto\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ohjaustiedot\Korvaushinnasto\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Suostumus\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Suostumus\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Suostumus\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Suostumus\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Valitse.aspx.designer.vb">
+      <DependentUpon>Valitse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Valitse.aspx.vb">
+      <DependentUpon>Valitse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\Haku.aspx.designer.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\Haku.aspx.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\JAS\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\JAS\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Henkilo\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Henkilo\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Henkilo\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Henkilo\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Haku.aspx.designer.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Haku.aspx.vb">
+      <DependentUpon>Haku.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Organisaatio\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Organisaatio\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\BaseControl.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Site.Master.designer.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.vb">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kiinteisto\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kiinteisto\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sopimus\JAS\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sopimus\JAS\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taho\Organisaatio\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Taho\Organisaatio\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Tunnisteyksikko\Muokkaa.aspx.designer.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tunnisteyksikko\Muokkaa.aspx.vb">
+      <DependentUpon>Muokkaa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tunnisteyksikko\Tiedot.aspx.designer.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tunnisteyksikko\Tiedot.aspx.vb">
+      <DependentUpon>Tiedot.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Kayttaja\Web.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Sopimus\JAS\Tulosta.ashx" />
+    <Content Include="Sopimus\Sopimus.ashx" />
+    <Content Include="Sopimus\Suostumus\Tulosta.ashx" />
+    <Content Include="Tiedosto\Tiedosto.ashx" />
+    <Content Include="Sopimus\Muuntamo\Tulosta.ashx" />
+    <Content Include="Tiedosto\IFRS.ashx" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Dokumentit\Excel\" />
+    <Folder Include="Dokumentit\Maksuaineisto\" />
+    <Folder Include="Dokumentit\PcsRaportit\" />
+    <Folder Include="Dokumentit\Sopimukset\" />
+    <Folder Include="Import\Excel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\KT.Utils\KT.Utils\KT.Utils.csproj">
+      <Project>{7fff279e-6aa1-4e11-8dfc-bd4ac33a31dc}</Project>
+      <Name>KT.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\slnSopimusrekisteriLuokat\Sopimusrekisteri.BLL_CF\Sopimusrekisteri.BLL_CF.csproj">
+      <Project>{c409af1e-1626-4ba7-abff-f45ea79da915}</Project>
+      <Name>Sopimusrekisteri.BLL_CF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\slnSopimusrekisteriLuokat\Sopimusrekisteri.DAL_CF\Sopimusrekisteri.DAL_CF.csproj">
+      <Project>{c596505e-3c1a-4b31-9adc-6e3971ef6e9b}</Project>
+      <Name>Sopimusrekisteri.DAL_CF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.BLL\appSopimusrekisteri.BLL.vbproj">
+      <Project>{2ef3a432-141b-44b8-bf35-00eba4409556}</Project>
+      <Name>appSopimusrekisteri.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.Common\appSopimusrekisteri.Common.vbproj">
+      <Project>{e24771a2-7ee7-40dd-8ecc-aa8d894ff86e}</Project>
+      <Name>appSopimusrekisteri.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.DTO\appSopimusrekisteri.DTO.vbproj">
+      <Project>{f987ddfa-25c8-4065-933b-34220e5f0182}</Project>
+      <Name>appSopimusrekisteri.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.Entities\appSopimusrekisteri.Entities.vbproj">
+      <Project>{5a19bda5-19df-4383-904e-2670ab4968d0}</Project>
+      <Name>appSopimusrekisteri.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sopimusrekisteri.Controls\Sopimusrekisteri.Controls.csproj">
+      <Project>{719510a4-9ae4-4137-84a8-5b94319560c4}</Project>
+      <Name>Sopimusrekisteri.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51579</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59986/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

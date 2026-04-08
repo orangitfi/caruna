@@ -1,0 +1,101 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site.master.vb" Inherits="appFortumMalli.Site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title>Kilta</title>
+    <script type="text/javascript" language="javascript">
+        function clickButton(e, buttonid) {
+            var evt = e ? e : window.event;
+
+            var bt = document.getElementById(buttonid);
+            var form = document.getElementById('form1')
+
+            form.setAttribute('onkeypress', '');
+
+            if (bt) {
+                if (evt.keyCode == 13) {
+                    bt.click();
+
+                    return false;
+                }
+            }
+        }
+
+  </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+  <form id="form1" runat="server">
+  <asp:ScriptManager ID="ScriptManager1" runat="server" EnableScriptGlobalization="true"
+    EnableScriptLocalization="true">
+  </asp:ScriptManager>
+  <div class="page">
+    <div id="header" runat="server">
+      <!--Ylätunniste -->
+      <div id="title">
+        <h2>Sopimusrekisteri</h2>
+      </div>
+      <div id="loginDisplay">
+        <table class="loginDisplay" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="border-right: 1px solid #3A3A3A;" class="tdPvmTanaan">
+              <asp:Label ID="lblDate" runat="server"></asp:Label>
+            </td>
+            <td style="border-left: 1px solid #8B8B8B; padding: 0px 0px 0px 15px;" class="tdUkko">
+              <asp:Image ID="imgUkko" ImageUrl="~/App_Themes/Default/Images/Ukko_2.png" AlternateText="Ukko"
+                runat="server" />
+            </td>
+            <td style="border-right: 1px solid #3A3A3A; padding: 2px 15px 2px 5px;" class="tdUsername">
+              <asp:Label ID="lblUsername" runat="server"></asp:Label>
+            </td>
+            <td style="border-left: 1px solid #8B8B8B;" class="tdKirjauduUlos">
+              <asp:HyperLink ID="hlLogout" NavigateUrl="kirjaudu_ulos.aspx" runat="server">Kirjaudu ulos</asp:HyperLink>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="menu" runat="server">
+      <!--Valikko -->
+      <div id="menubar">
+        <table id="tblMenu" class="menu" cellpadding="0" cellspacing="0" runat="server">
+        </table>
+      </div>
+      <!--Logaustiedot -->
+      <div id="temp">
+      </div>
+    </div>
+    <div id="sidebar">
+      <div id="logoCustomer">
+      </div>
+      <!--Sivutoiminnot -->
+      <div id="toolbar">
+        <asp:ContentPlaceHolder ID="cphToolbar" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+      <!--Haku -->
+      <div id="search">
+        <asp:ContentPlaceHolder ID="cphSearch" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+    </div>
+    <!--Sisältö -->
+    <div id="content">
+      <asp:ContentPlaceHolder ID="cphContent" runat="server">
+      </asp:ContentPlaceHolder>
+    </div>
+    <!--Alatunniste -->
+    <div id="footer">
+      <hr />
+      <a href="http://www.kehatieto.fi" target="_blank">© Kehätieto 2013</a> Versio 1.0
+    </div>
+  </div>
+  </form>
+</body>
+</html>

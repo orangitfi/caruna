@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 12px;
+      margin: 0px;
+    }
+
+    div.paaOtsikko {
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+      div.paaOtsikko h1 {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    div.sivu {
+      width: 720px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+      div.taulukko table {
+        width: 640px;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+      }
+
+        div.taulukko table td {
+          border-right: 1px solid gray;
+          border-bottom: 1px solid gray;
+          vertical-align: top;
+        }
+
+          div.taulukko table td.otsikkoVasenLyhyt {
+            width: 120px;
+          }
+
+          div.taulukko table td.otsikkoVasenPitka {
+            width: 240px;
+          }
+
+          div.taulukko table td.tekstiVasenLyhyt {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiVasenPitka {
+            width: 220px;
+          }
+
+          div.taulukko table td.otsikkoOikea {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiOikea {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiOikeaPuolikasVasen {
+            width: 60px;
+          }
+
+          div.taulukko table td.tekstiOikeaPuolikasOikea {
+            width: 100px;
+          }
+
+      div.taulukko span.vasen {
+        margin-right: 30px;
+      }
+
+    div.bullet {
+      width: 40px;
+      float: left;
+    }
+
+    div.teksti {
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    div.listaTeksti {
+      width: 680px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px;
+        margin-right: 100px;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px;
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px;
+          border: none;
+          color: #000000;
+          background-color: #000000;
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+    div.pvmVasen {
+      margin-left: 50px;
+      float: left;
+    }
+
+    div.pvmOikea {
+      margin-left: 250px;
+      display: inline-block;
+    }
+
+    span.paivat {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    span.paikka {
+      width: 100px;
+    }
+
+    span.nimi {
+      width: 200px;
+    }
+
+    ul.luettelo {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+      ul.luettelo li {
+        list-style-type: none;
+      }
+
+    div.liitteet {
+      clear: both;
+    }
+
+      div.liitteet div.otsikko {
+        width: auto;
+        margin-bottom: 20px;
+      }
+
+      div.liitteet div.teksti {
+        width: auto;
+      }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="sivu">
+    <div class="paaOtsikko">
+      <h1>MUUNTAMOALUESOPIMUS</h1>
+    </div>
+    <div class="viivakoodi">
+      <div class="koodi">
+        <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+      </div>
+      <div class="numero">[Sopimusnumero]</div>
+    </div>
+    <div class="taulukko">
+      <table>
+        <tr>
+          <td class="otsikkoVasenLyhyt">Kiinteistön nimi:</td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Nimi]</td>
+          <td class="otsikkoOikea">Sopimus no:</td>
+          <td class="tekstiOikea" colspan="2">[Sopimusnumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt">Kiinteistön osoite:</td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Osoite]</td>
+          <td class="otsikkoOikea">Muuntamo no:</td>
+          <td class="tekstiOikea" colspan="2">[Muuntamo.Tunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt"></td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Postiosoite]</td>
+          <td class="otsikkoOikea">Muuntamon osoite:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Osoite], [Kiinteisto.Postiosoite]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt"></td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Maa]</td>
+          <td class="otsikkoOikea">Kylä / Kaupunginosa:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Kyla]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2"></td>
+          <td class="tekstiVasenLyhyt"></td>
+          <td class="otsikkoOikea">Rnro / Kortteli, tontti:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Rekisterinumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2"></td>
+          <td class="tekstiVasenLyhyt"></td>
+          <td class="otsikkoOikea">Muuntamoalue:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.KokonaisPintaAla]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">Sopimuksen voimassaoloaika:</td>
+          <td class="tekstiVasenLyhyt">[Alkupvm] - [Loppupvm]</td>
+          <td class="otsikkoOikea">Karttaliite numero</td>
+          <td class="tekstiOikea" colspan="2">[Karttaliite]</td>
+        </tr>
+      </table>
+    </div>
+    <div class="teksti">
+      [MaanOmistaja.Nimi], jäljempänä Omistaja ja [JohdonOmistaja.Nimi], jäljempänä Verkonhaltija  ovat tehneet keskenään<br />
+      seuraavan sisältöisen sopimuksen Verkonhaltijalle luovutettavasta jakelumuuntamoalueen käyttöoikeudesta.
+    </div>
+    <div class="bullet">1.</div>
+    <div class="listaTeksti">
+      Omistaja luovuttaa Verkonhaltijalle käyttöoikeuden oheisen karttaliitteen (Liite 1) mukaiseen maa-alueeseen.<br />
+      Jos kiinteistö myydään niin, että muuntamoalue tulee uuden omistajan hallintaan, sitoutuu kiinteistön omista-<br />
+      ja sisällyttämään kauppakirjaan tai luovutussopimukseen tämän sopimuksen voimassa pitämistä koskevan<br />
+      ehdon. [Erityisehdot]
+    </div>
+    <div class="bullet">2.</div>
+    <div class="listaTeksti">
+      Tämä sopimus tulee voimaan kun molemmat sopijapuolet ovat sopimuksen allekirjoittaneet. Sopimus on<br />
+      voimassa yllämainittuun päivämäärään asti jatkuen sen jälkeen kymmenen vuotta kerrallaan, ellei jompikum-<br />
+      pi sopijapuoli irtisano sitä kirjallisesti viimeistään kahta vuotta ennen kulumassa olevan sopimuskauden päät-<br />
+      tymistä. 
+    </div>
+    <div class="bullet">3.</div>
+    <div class="listaTeksti">
+      Verkonhaltija rakentaa kustannuksellaan alueelle muuntamon ja hankkii kaikki tarvittavat luvat ja huolehtii<br />
+      siitä, että tarpeelliset katselmukset ja tarkastukset suoritetaan. Omistaja suostuu muuntamon rakentamiseen.<br />
+      Omistajaa ei täten enää tulla kuulemaan (ns. naapurilausunto) lupahakemuksen yhteydessä. Verkonhaltija<br />
+      suorittaa kustannuksellaan viranomaisten määrittelemät muuntamoaluetta koskevat mahdolliset ympäristön<br />
+      ehostustyöt.
+    </div>
+    <div class="bullet">4.</div>
+    <div class="listaTeksti">
+      Muuntamoalueen käyttöoikeus edellyttää, että Verkonhaltijalla on ilman eri korvausta oikeus:<br />
+      <ul class="luettelo">
+        <li>- kuljettaa ja asentaa muuntamo kojeineen ja laitteineen,</li>
+        <li>- kaivaa tarvittavat kaapeliojat ja asentaa muuntamoon kaapelit sekä</li>
+        <li>- suorittaa muuntamon käyttöön liittyvät valvonta ja kunnossapitotyöt</li>
+        <li>- liikkua alueella rakentamisen, valvonnan ja kunnossapidon takia.</li>
+      </ul>
+    </div>
+    <div class="bullet">5.</div>
+    <div class="listaTeksti">
+      Muuntamoalueelle ei saa varastoida tavaraa eikä muuntamoon pääsylle tai muuntajan kuljetusreitille saa<br />
+      asettaa esteitä. Jos Omistaja rakentaa aidan maalleen, tulee muuntamoalue jättää aitauksen ulkopuolelle tai<br />
+      Verkonhaltijalle tulee varata pääsy portin kautta muuntamolle kaikkina vuorokauden aikoina.
+    </div>
+    <div class="bullet">6.</div>
+    <div class="listaTeksti">
+      Jos muuntamoalue kaavamuutoksen tai muun pakottavan syyn takia otetaan muuhun käyttöön, sovitaan<br />
+      muuntamon mahdollisesta siirrosta erillisillä neuvotteluilla. Muuntamon siirtoon tulee varata vähintään kah-<br />
+      den vuoden aika. 
+    </div>
+    <div class="bullet">7.</div>
+    <div class="listaTeksti">
+      Verkonhaltijalla on oikeus siirtää tämä sopimus toiselle verkonhaltijalle.  Siirrosta ei suoriteta erikseen kor-<br />
+      vausta omistajalle. Omistajalle tulee mahdollisuuksien mukaan ilmoittaa uuden verkonhaltijan nimi ja osoite<br />
+      sekä sopimuksen voimassaoloaika.  Uutta verkonhaltijaa koskevat samat tässä sopimuksessa mainitut ehdot<br />
+      verkonhaltijan oikeuksista, vastuista ja velvoitteista.
+    </div>
+    <div class="bullet">8.</div>
+    <div class="listaTeksti">
+      Tätä sopimusta on tehty kaksi samansisältöistä kappaletta yksi kummallekin sopijapuolelle.
+    </div>
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus">
+        <span class="paikka">&nbsp;</span><span class="paivat">/</span>20
+      </div>
+      <div class="allekirjoitus">
+        <span class="paikka">&nbsp;</span><span class="paivat">/</span>20
+      </div>
+      <div class="allekirjoitus">
+        <hr />
+        [EkaMaanomistaja.Nimi]
+      </div>
+      <div class="allekirjoitus">
+        <h3>[JohdonOmistaja.Nimi]:n puolesta valtakirjalla</h3>
+        <hr />
+        [SopimuksenLaatija]
+      </div>
+      [Sivunvaihto]
+      <<{key="LoputMaanomistajat"}
+      <div class="allekirjoitus">
+        <hr />
+        [Nimi]
+      </div>
+      >>
+    </div>
+    <div class="liitteet">
+      <div class="otsikko">Liitteet</div>
+      <div class="teksti">
+        Liite 1 Kartta
+      </div>
+    </div>
+  </div>
+</body>
+</html>
