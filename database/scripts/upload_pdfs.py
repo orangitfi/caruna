@@ -12,9 +12,37 @@ import sys
 import os
 from datetime import datetime
 
-def bytes_to_hex_string(data):
-    """Convert bytes to SQL hex string (0x...)."""
-    return '0x' + data.hex().upper()
+def bytes_to_hex_string(data, chunk_size=10000):
+    """
+    Convert bytes to SQL hex string (0x...) with line breaks.
+    
+    SQL Server sqlcmd has line length limits, so we split the hex data
+    into chunks and concatenate them with + operator.
+    
+    chunk_size: number of bytes per chunk (results in 2x chars in hex)
+    Default is 10000 bytes = 20000 hex chars per line
+    """
+    hex_str = data.hex().upper()
+    
+    # Split into chunks for readability and sqlcmd compatibility
+    chunks = []
+    for i in range(0, len(hex_str), chunk_size * 2):  # *2 because hex is 2 chars per byte
+        chunk = hex_str[i:i + chunk_size * 2]
+        chunks.append(chunk)
+    
+    # Format as SQL concatenation if multiple chunks
+    if len(chunks) == 1:
+        return '0x' + chunks[0]
+    else:
+        # Return lines that can be concatenated with +
+        result = []
+        for i, chunk in enumerate(chunks):
+            if i == 0:
+                result.append('0x' + chunk)
+            else:
+                result.append('    + 0x' + chunk)
+        return '\n'.join(result)
+
 
 def main():
     """Generate SQL script from exported PDF files."""
@@ -132,7 +160,17 @@ def main():
             f.write(f") VALUES (\n")
             f.write(f"    {pdf['stl_id']},\n")
             f.write(f"    {pdf['sopimus_id']},\n")
-            f.write(f"    {pdf['hex_data']},\n")
+            
+            # Write hex data (may be multi-line with + concatenation)
+            hex_lines = pdf['hex_data'].split('\n')
+            if len(hex_lines) == 1:
+                f.write(f"    {hex_lines[0]},\n")
+            else:
+                f.write(f"    {hex_lines[0]}\n")
+                for line in hex_lines[1:-1]:
+                    f.write(f"    {line}\n")
+                f.write(f"    {hex_lines[-1]},\n")
+            
             f.write(f"    '{pdf['luoja']}',\n")
             f.write(f"    '{pdf['luotu']}',\n")
             f.write(f"    '{pdf['luoja']}',\n")
