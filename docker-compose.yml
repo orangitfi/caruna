@@ -1,0 +1,47 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: caruna-db
+    hostname: caruna-db
+    user: "0:0"  # Run as root to avoid macOS Docker volume permission issues
+    environment:
+      # Hyväksy EULA
+      - ACCEPT_EULA=Y
+      # SA-salasana (VAIN KEHITYSYMPÄRISTÖÖN!)
+      - SA_PASSWORD=DevPassword123!
+      # Developer Edition (ilmainen, ei tuotantokäyttöön)
+      - MSSQL_PID=Developer
+      # Suomalainen collation
+      - MSSQL_COLLATION=Finnish_Swedish_CI_AS
+    ports:
+      # Julkaise portti 1433 hostille
+      - "1433:1433"
+    volumes:
+      # Migration-skriptit (read-only)
+      - ./database/migrations:/migrations:ro
+      # Pysyvä data (Docker volume)
+      - sqldata:/var/opt/mssql/data
+      # Lokitiedostot
+      - sqllog:/var/opt/mssql/log
+    healthcheck:
+      # Tarkista että SQL Server vastaa
+      test: /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P "DevPassword123!" -C -Q "SELECT 1" || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - caruna-network
+    restart: unless-stopped
+
+networks:
+  caruna-network:
+    driver: bridge
+
+volumes:
+  # Pysyvä tietokantadata
+  sqldata:
+    driver: local
+  # SQL Server -lokit
+  sqllog:
+    driver: local

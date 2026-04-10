@@ -1024,3 +1024,7 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,windows,linux,visualstudio,visualstudiocode,jetbrains,vim,node,python,java,reasonml,nextjs,scala,terraform,ansible
+# Caruna Sopimusrekisteri - Database
+database/backup/
+database/data/
+*.bak
