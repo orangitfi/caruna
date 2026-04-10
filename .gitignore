@@ -34,6 +34,14 @@ replay_pid*
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
+# Rider solution-level .idea folders (generated per solution)
+slnSopimusrekisteri/.idea/
+slnSopimusrekisteriLuokat/.idea/
+slnIFSIntegraatio/.idea/
+slnSopimusarkistoSiirto/.idea/
+slnFortumMalli/.idea/
+KT.Utils/.idea/
+
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
