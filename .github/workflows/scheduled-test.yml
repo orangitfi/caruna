@@ -7,15 +7,17 @@
 # 3. Container image security scanning with full SBOM generation
 #
 # Triggers:
-# - Scheduled: Daily at 2 AM UTC
-# - Manual: Via workflow_dispatch (can specify branch, defaults to main)
+# - Manual only (scheduled trigger temporarily disabled)
+# - Via workflow_dispatch (can specify branch, defaults to main)
 
 name: Scheduled Test
 
 on:
-  schedule:
-    # Run every day at 2 AM UTC
-    - cron: "0 2 * * *"
+  # Temporarily disabled schedule trigger.
+  # Re-enable by restoring the `schedule` block below:
+  # schedule:
+  #   # Run every day at 2 AM UTC
+  #   - cron: "0 2 * * *"
   workflow_dispatch:
     inputs:
       branch:
