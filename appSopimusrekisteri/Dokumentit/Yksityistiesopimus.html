@@ -1,0 +1,464 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    h1.paaOtsikko {
+      font-size: 20px;
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+    div.viivakoodi div.koodi {
+      text-align: center;
+    }
+
+    div.viivakoodi div.numero {
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    div.sivu {
+      width: 700px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    div.taulukko table {
+      width: 100%;
+      border-spacing: 0px;
+      border-collapse: collapse;
+      border-top: 1px solid black;
+      border-left: 1px solid black;
+      border-right: 1px solid black;
+    }
+
+    div.taulukko td {
+      border-bottom: 1px solid black;
+      padding-bottom: 10px;
+      vertical-align: top;
+    }
+
+    div.taulukko td.otsikko {
+      width: 110px;
+    }
+
+    div.taulukko td.teksti {
+      width: 250px;
+    }
+
+    div.taulukko td.otsikko2 {
+      width: 160px;
+    }
+
+    div.taulukko tr.erotin td {
+      padding-bottom: 5px;
+    }
+
+    div.teksti {
+      margin-bottom: 10px;
+    }
+
+    div.teksti div.otsikko {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    ul.oikeudet {
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+    ul.oikeudet li {
+      list-style-type: none;
+      margin-bottom: 5px;
+      clear: both;
+    }
+
+    ul.oikeudet li.otsikko {
+      font-weight: normal;
+      text-decoration: underline;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    ul.oikeudet li div.bullet {
+      width: 40px;
+      float: left;
+    }
+
+    ul.oikeudet li div.teksti {
+      width: 680px;
+      display: inline-block;
+    }
+
+    div.korvaus {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    div.korvaus span.otsikko {
+      font-weight: bold;
+      margin-right: 20px;
+    }
+
+    div.korvaus span.summa {
+      font-weight: bold;
+    }
+
+    div.allekirjoitukset {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+    div.allekirjoitukset div.allekirjoitus {
+      width: 200px;
+      margin-right: 100px;
+      /*display: inline-block;*/
+      padding-bottom: 10px;
+    }
+
+    div.allekirjoitukset div.allekirjoitusRinnakkainen {
+      display: inline-block;
+    }
+
+    div.allekirjoitukset div.allekirjoitus h3 {
+      font-size: 14px;
+      margin-bottom: 0px;
+    }
+
+    div.allekirjoitukset div.allekirjoitus hr {
+      height: 1px;
+      border: none;
+      color: #000000;
+      background-color: #000000;
+      margin-bottom: 2px;
+      margin-top: 30px;
+    }
+
+    div.allekirjoitukset div.maanomistaja {
+      border-bottom: 1px solid;
+      padding-bottom: 30px;
+      width: 160px;
+      font-weight: bold;
+      float: left;
+      margin-right: 100px;
+    }
+
+    div.allekirjoitukset div.maanomistajanimi {
+      width: 160px;
+      float: left;
+      margin-right: 100px;
+    }
+
+    div.allekirjoitukset div.johdonomistaja {
+      border-bottom: 1px solid;
+      padding-bottom: 30px;
+      width: 160px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    div.allekirjoitukset div.johdonomistajanimi {
+      width: 160px;
+      display: inline-block;
+    }
+
+    div.liitteet {
+      clear: both;
+    }
+
+    div.liitteet div.otsikko {
+      font-weight: bold;
+      margin-right: 20px;
+      width: auto;
+      float: left;
+    }
+
+    div.liitteet div.teksti {
+      width: auto;
+      display: inline-block;
+    }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+  </style>
+
+  <title></title>
+</head>
+
+<body>
+  <div class="sivu sivunVaihto">
+    <h1 class="paaOtsikko">Sopimus sähköverkon sijoittamisesta yksityistien tiealueelle (YT1)</h1>
+    <div class="viivakoodi">
+      <div class="koodi">
+        <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+      </div>
+      <div class="numero">[Sopimusnumero]</div>
+    </div>
+    <h3>Verkonhaltija</h3>
+    <div class="taulukko">
+      <table>
+        <tr>
+          <td class="otsikko">Nimi</td>
+          <td class="teksti">[JohdonOmistaja.Nimi]</td>
+          <td class="otsikko">y-tunnus</td>
+          <td class="teksti">[JohdonOmistaja.YTunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Osoite</td>
+          <td colspan="3">[JohdonOmistaja.Osoite]</td>
+        </tr>
+        <tr>
+            <td class="otsikko">Urakoitsijan yhteyshenkilö</td>
+            <td class="teksti">[SopimuksenLaatija]</td>
+            <td class="otsikko">Puhelinnumero</td>
+            <td class="teksti">[JohdonOmistaja.Puhelin]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Sähköpostiosoite</td>
+          <td colspan="3">[JohdonOmistaja.Email]</td>
+        </tr>
+        <<{key="MuutLinjaOsat"}>>
+          <tr>
+            <td class="otsikko">Karttalehti</td>
+            <td class="teksti">[Karttalehti]</td>
+            <td class="otsikko">Työ n:ro</td>
+            <td>[PCSNumero]</td>
+          </tr>
+        <tr>
+          <td class="otsikko">Lisätietoja (projektinumero yms):</td>
+          <td colspan="3">[Projektinumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Carunan yhteyshenkilö:</td>
+          <td colspan="3">[Projektinvalvoja]</td>
+        </tr>
+      </table>
+    </div>
+    <h3>Tiekunta</h3>
+    <div class="taulukko">
+      <table>
+        <<{key="MaanOmistajat"} <tr>
+          <td class="otsikko">Tiekunnan nimi</td>
+          <td class="teksti">[Sukunimi]</td>
+          <td class="otsikko2">Y-tunnus</td>
+          <td>[YTunnus]</td>
+          </tr>
+          <tr>
+          <td class="otsikko">Yhteyshenkilö</td>
+          <td class="teksti">[Nimitarkenne]</td>
+          <td class="otsikko2">Puhelinnumero</td>
+          <td>[Puhelin]</td>
+          </tr>
+          <tr>
+            <td class="otsikko">Osoite</td>
+            <td class="teksti" colspan="3">[Postiosoite]</td>
+          </tr>
+          <tr>
+            <td class="otsikko">Postinumero</td>
+            <td class="teksti">[Postinumero]</td>
+            <td class="otsikko">Toimipaikka</td>
+            <td class="teksti">[Postitoimipaikka]</td>
+          </tr>
+          <tr class="erotin">
+            <td class="otsikko">Sähköpostiosoite</td>
+            <td colspan="3">[Email]</td>
+          </tr>
+          >>
+        <<{key="Kiinteistot"}
+        <tr>
+          <td class="otsikko">Tilan nimi</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">Rekisterinumero</td>
+          <td class="teksti">[Rekisterinumero]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Kunta</td>
+          <td class="teksti">[Kunta]</td>
+          <td class="otsikko2">Kylä</td>
+          <td class="teksti">[Kyla]</td>
+        </tr>
+        >>
+      </table>
+    </div>
+    [Sivunvaihto_1_{5,};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">1</div>
+      Tiekunta ja Verkonhaltija ovat tehneet seuraavan sopimuksen (jäljempänä ”Sopimus”) yhdyskuntaa tai kiinteistöä 
+      palvelevien 0,4kV-20 kV:n sähköjohtojen, maakaapeleiden, Verkonhaltijan ja/tai kolmansien tahojen käyttöön tulevien 
+      telekaapeleiden, muuntamoiden ja jakokaappien (”Verkko”) sijoittamisesta tiekunnan hallitsemien yksityisteiden 
+      alueelle. Sopimuksen kohteena oleva alue, Verkon sijainti ja suunnitellut tien alitukset on kuvattu tämän sopimuksen 
+      liitteenä olevassa liitekartassa (Liite 1).
+    </div>
+    [Sivunvaihto_1_{4,4};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">2</div>
+      Verkko sijoitetaan tarkoituksenmukaiseen sijaintipaikkaan ja standardien mukaiseen syvyyteen. Lisäksi Verkonhaltija 
+      huolehtii asianmukaisista suojauksista standardien niin edellyttäessä. Verkon sijoittamisessa huomioidaan soveltuvin 
+      toteutustapa ja yksityiskohtainen sijoituspaikka siten, että tierakenteet, leveydet ja tiealueen ulkoluiskien olosuhteet 
+      otetaan tiekohtaisesti huomioon. Verkko sijoitetaan Verkonhaltijan suunnitte-luohjeen mukaisesti siten, että siitä ei 
+      aiheudu tarpeetonta haittaa normaalille tienpidolle.
+    </div>
+    [Sivunvaihto_2_{3,3};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">3</div>
+      Verkonhaltijalla on oikeus liikkua ja käyttää Tiekunnan hallinnoimalla yksityistiellä moottorikäyttöisiä ajoneuvoja, 
+      jos Verkonhaltija tekee tiealueella tai sen välittömässä läheisyydessä Verkon suunnittelua, merkitsemistä, rakentamista, 
+      kunnossapitoa ja käyttötoimenpiteitä.
+    </div>
+    [Sivunvaihto_2_{2,2};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Verkonhaltija on Verkon sijoittamisen aikana vastuussa liikenteen ohjauksesta sekä työmaan turvallisuudesta. Verkonhaltija 
+      muun muassa huolehtii kaivantojen suojauksesta ja kaivuumassojen läjityksestä ajoradan ulkopuolelle. Verkonhaltijan 
+      Urakoitsija ja Tiekunta voivat tarvittaessa sopia aloitus- ja loppukatselmuksen järjestämisestä. Kumpikin osapuoli vastaa 
+      omista katselmuksen aiheuttamista kustannuksista.
+    </div>
+    <div class="teksti">
+      <div class="otsikko">4</div>
+      Kun Verkkoa sijoitetaan tai rakennetaan tiealueelle tai sen välittömässä läheisyydessä, Verkonhaltijalla on oikeus poistaa 
+      tiealueelta puut, pensaat ja oksat. Kaikki puut, pensaat ja oksat, jotka kaadetaan tiealueelta rakentamis-töiden aikana, 
+      jäävät tiekunnan omaisuudeksi ja tiekunnan paikalta poistettavaksi jollei toisin erikseen sovita.
+    </div>
+    [Sivunvaihto_2_{1,1};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">5</div>
+      Jotta alueen sähkönjakelu ei tarpeettomasti häiriinny, Verkonhaltijan tulee saada etukäteen tieto tiealueella suoritettavista 
+      kunnossapito-, kaivu- tai muista töistä, jotka toteutetaan Verkon läheisyydessä tai joista johtuen Verkko saattaa olla vaarassa 
+      vahingoittua. Verkonhaltija osoittaa tarvittaessa korvauksetta Verkon sijainnin sekä antaa Verkon suojelemista ja työn 
+      toteuttamista koskevia ohjeita.
+    </div>
+    <div class="teksti">
+      Jos Verkon rakenteiden läheisyydessä suoritetaan esimerkiksi kaivu- tai räjäytystöitä, Verkon rakenteille ei saa aiheutua vahinkoa 
+      ja töiden toteuttamisessa on syytä käyttää urakoitsijoita, jotka tuntevat sähkö- ja työturvalli-suusmääräykset. Verkonhaltija 
+      katkaisee pyynnöstä sähkövirran sellaisesta kaapelista, jonka läheisyydessä on tarkoitus suorittaa kaivuutöitä. Verkonhaltija 
+      suorittaa vähäiset Verkon suojaamistoimenpiteet omalla kustannuk-sellaan. 
+    </div>
+    [Sivunvaihto_3_{9,};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">6</div>
+      Verkonhaltija on velvollinen ennallistamaan kustannuksellaan kaikki Verkon sijoittamisen yhteydessä tielle aiheutuneet vauriot. 
+      Jos vaurioiden korjaamisessa ilmenee huomautettavaa, Tiekunnan tulee olla yhteydessä Verkonhaltijaan. Jos tien korjaaminen ei ole 
+      mahdollista tai tarkoituksenmukaista, Verkonhaltija korvaa Tiekunnalle Verkon sijoittamisen yhteydessä aiheutuneet välittömät vahingot. 
+      Korjaustöiden toteuttamisesta ja korvausten maksamisesta sovitaan Verkonhaltijan ja Tiekunnan kesken erikseen.
+    </div>
+    [Sivunvaihto_3_{8,8};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">7</div>
+      Verkonhaltija suorittaa Tiekunnalle liitteenä olevassa korvauslaskelmassa tarkemmin eritellyt sijoittamista koskevat korvaukset 
+      kertakorvauksena. Sijoittamista koskeva korvaus kattaa korvauksen sijoittamisesta aiheutuvasta haitasta ja vahingosta sekä 
+      tienkäyttömaksut. Korvaukset maksetaan kertasuorituksena kahden (2) kuukauden kuluessa rakennustöiden aloittamisesta. 
+    </div>
+    [Sivunvaihto_3_{7,7};</div><div class="sivu sivunVaihto">]
+    <div class="korvaus">
+      <br />
+      <span class="otsikko">Korvaus yhteensä</span>
+      <span class="summa">[KorvausYht] euroa</span>
+        <br />
+    </div>
+    <div class="teksti">
+      Mikäli korvausta ei suoriteta määräajassa, maksaa Verkonhaltija ylimenevältä ajalta korkolain mukaisen viivästyskoron.
+    </div>
+    <div class="teksti">
+      Verkonhaltija sopii suoraan kolmansien tahojen kanssa heille aiheutuneiden vahinkojen korvaamisesta.
+    </div>
+    [Sivunvaihto_3_{6,6};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">8</div>
+      Tämä sopimus tulee voimaan heti, kun se on allekirjoitettu ja se on voimassa siihen saakka, kunnes Tiekunnan alueella 
+      sijaitsevan Verkon rakenteet poistetaan lopullisesti käytöstä. Jos kaikkea Verkkoa ei poisteta käytöstä kerralla, 
+      Sopimus on voimassa siltä osin kuin Verkkoa jää Tiekunnan alueelle.
+    </div>
+    [Sivunvaihto_3_{5,5};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">9</div>
+      Verkonhaltija saa siirtää tähän Sopimukseen perustuvat oikeudet ja velvollisuudet eteenpäin, jolloin sen tulee 
+      ilmoittaa siirrosta Maanomistajalle.
+    </div>
+    [Sivunvaihto_3_{4,4};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">10</div>
+      Tämä Sopimus raukeaa, ellei rakentamista ole aloitettu kahden (2) vuoden kuluessa siitä, kun Sopimus on solmittu. Mikäli 
+      rakennustöiden aloittaminen viivästyy jostakin erityisestä, Verkonhaltijasta riippumattomasta syystä, Verkonhaltija voi 
+      pidentää Sopimuksen voimassaoloaika enintään yhdellä (1) vuodella. Verkonhaltija tulee tällöin ilmoittaa pidennyksestä 
+      hyvissä ajoin Tiekunnalle, kuitenkin viimeistään kahta (2) viikkoa ennen sopimuskauden päättymistä.
+    </div>
+    [Sivunvaihto_3_{3,3};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">11</div>
+      Sopimusta on tehty kaksi samansanaista kappaletta, yksi kummallekin osapuolelle. 
+    </div>
+    <div class="teksti">
+      <br />
+      Edellä olevan Sopimuksen hyväksymme:
+    </div>
+    <div class="teksti">
+      ________ päivänä ____________kuuta 20 ____
+    </div>
+    [Sivunvaihto_3_{2,2};</div><div class="sivu sivunVaihto">]
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>Tiekunta</h3>
+        <hr />
+        [MaanOmistaja.Nimi]<br />
+        &nbsp;
+      </div>
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>Verkonhaltija</h3>
+        <hr />
+        [JohdonOmistaja.Nimi] puolesta<br />
+        [SopimuksenLaatija]<br />
+        &nbsp;
+      </div>
+      <<{key="SeuraavatMaanOmistajat"} <div class="allekirjoitus">
+        <h3>Tiekunta</h3>
+        <hr />
+        [Nimi]
+    </div>
+    >>
+    <<{key="LoputMaanOmistajat"} <div class="allekirjoitus">
+      <h3>Tiekunta</h3>
+      <hr />
+      [Nimi]
+  </div>
+  >>
+  </div>
+  <div class="liitteet">
+    <div class="otsikko">Liitteenä:</div>
+    <div class="teksti">
+      Karttaliite (Liite 1)<br />
+      Aloituskatselmus pöytäkirja (Liite 2) (yliviivataan tarvittaessa)<br />
+      Loppukatselmus pöytäkirja (Liite 3) (yliviivataan tarvittaessa)
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

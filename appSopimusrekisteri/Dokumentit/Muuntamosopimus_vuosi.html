@@ -1,0 +1,343 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 12px;
+      margin: 0px;
+    }
+
+    div.paaOtsikko {
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+      div.paaOtsikko h1 {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    div.sivu {
+      width: 720px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+      div.taulukko table {
+        width: 640px;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+      }
+
+        div.taulukko table td {
+          border-right: 1px solid gray;
+          border-bottom: 1px solid gray;
+          vertical-align: top;
+        }
+
+          div.taulukko table td.otsikkoVasenLyhyt {
+            width: 120px;
+          }
+
+          div.taulukko table td.otsikkoVasenPitka {
+            width: 240px;
+          }
+
+          div.taulukko table td.tekstiVasenLyhyt {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiVasenPitka {
+            width: 220px;
+          }
+
+          div.taulukko table td.otsikkoOikea {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiOikea {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiOikeaPuolikasVasen {
+            width: 60px;
+          }
+
+          div.taulukko table td.tekstiOikeaPuolikasOikea {
+            width: 100px;
+          }
+
+      div.taulukko span.vasen {
+        margin-right: 30px;
+      }
+
+    div.bullet {
+      width: 40px;
+      float: left;
+    }
+
+    div.teksti {
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    div.listaTeksti {
+      width: 680px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px;
+        margin-right: 100px;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px;
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px;
+          border: none;
+          color: #000000;
+          background-color: #000000;
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+    div.pvmVasen {
+      margin-left: 50px;
+      float: left;
+    }
+
+    div.pvmOikea {
+      margin-left: 250px;
+      display: inline-block;
+    }
+
+    span.paivat {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    span.paikka {
+      width: 100px;
+    }
+
+    span.nimi {
+      width: 200px;
+    }
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="sivu">
+    <div class="paaOtsikko">
+      <h1>
+        MUUNTAMOTILAN VUOKRASOPIMUS<br />
+        vuokra vuosittain
+      </h1>
+    </div>
+    <div class="viivakoodi">
+      <div class="koodi">
+        <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+      </div>
+      <div class="numero">[Sopimusnumero]</div>
+    </div>
+    <div class="taulukko">
+      <table>
+        <tr>
+          <td class="otsikkoVasenLyhyt">Kiinteistön nimi:</td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Nimi]</td>
+          <td class="otsikkoOikea">Sopimus no:</td>
+          <td class="tekstiOikea" colspan="2">[Sopimusnumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt">Kiinteistön osoite:</td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Osoite]</td>
+          <td class="otsikkoOikea">Muuntamo no:</td>
+          <td class="tekstiOikea" colspan="2">[Muuntamo.Tunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt"></td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Postiosoite]</td>
+          <td class="otsikkoOikea">Muuntamon osoite:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Osoite], [Kiinteisto.Postiosoite]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt"></td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Maa]</td>
+          <td class="otsikkoOikea">Kylä / Kaupunginosa:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Kyla]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">Sopimuksen voimassaoloaika:</td>
+          <td class="tekstiVasenLyhyt">[Alkupvm] - [Loppupvm]</td>
+          <td class="otsikkoOikea">Kortteli, tontti:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Rekisterinumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">Tili, jolle korvaus maksetaan:</td>
+          <td class="tekstiVasenLyhyt">[MaanOmistaja.Tilinumero]</td>
+          <td class="otsikkoOikea">Muuntamon pinta-ala:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.KokonaisPintaAla]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">&nbsp;</td>
+          <td class="tekstiVasenLyhyt">&nbsp;</td>
+          <td class="otsikkoOikea">Perusvuokra:</td>
+          <td class="tekstiOikea" colspan="2">[Korvaus.Perusvuokra]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" rowspan="2" colspan="2">
+            Onko Kiinteistön omistaja kor-<br />
+            vauksen osalta arvonlisäverovel-<br />
+            vollinen
+          </td>
+          <td class="tekstiVasenLyhyt" rowspan="2">[Korvaus.AlvVelvollinen]</td>
+          <td class="otsikkoOikea">Vuosivuokra:</td>
+          <td class="tekstiOikeaPuolikasVasen">[Korvaus.Vuosivuokra]</td>
+          <td class="tekstiOikeaPuolikasOikea">(alv 0%):</td>
+        </tr>
+        <tr>
+          <td class="otsikkoOikea">Vuosivuokra:</td>
+          <td class="teksti">[Korvaus.VuosivuokraAlv]</td>
+          <td class="teksti">(sis. alv 24%):</td>
+        </tr>
+      </table>
+    </div>
+    <div class="teksti">
+      [MaanOmistaja.Nimi], jäljempänä kiinteistön Omistaja ja [JohdonOmistaja.Nimi], jäljempänä Verkonhaltija, ovat tehneet<br />
+      keskenään seuraavan sisältöisen sopimuksen Verkonhaltijan jakelumuuntamon sijoittamiseksi kiinteistön Omista-<br />
+      jan kiinteistöön.
+    </div>
+    <div class="bullet">1.</div>
+    <div class="listaTeksti">
+      Kiinteistön Omistaja luovuttaa sopimuksen tarkoittaman muuntamotilan, joka on lämmittämätöntä huoneti-<br />
+      laa, yllä mainittua vuosivuokraa vastaan Verkonhaltijan muuntamoa varten. Kiinteistön tai sen osan siirtyessä<br />
+      pois kiinteistön Omistajan hallinnasta sitoutuu kiinteistön Omistaja sisällyttämään kauppakirjaan tai luovutus-<br />
+      sopimukseen tämän muuntamotilasopimuksen voimassa pitämistä koskevan ehdon. [Erityisehdot]
+    </div>
+    <div class="bullet">2.</div>
+    <div class="listaTeksti">
+      Tämä sopimus on voimassa yllä mainitun ajan sekä sen jälkeen viisi vuotta kerrallaan, ellei jompikumpi sopi-<br />
+      japuoli irtisano sitä kirjallisesti viimeistään kahta vuotta ennen kulumassa olevan sopimuskauden päättymis-<br />
+      tä. Jos Omistaja aikoo purkaa rakennuksen, tulee siitä ilmoittaa Verkonhaltijalle vähintään kaksi vuotta ennen<br />
+      purkamistoimenpiteiden alkamista. Verkonhaltijalla on oikeus purkaa sopimus ennen voimassaoloajan päät-<br />
+      tymistä mikäli olosuhteiden muuttuessa muuntamotila jää verkonhaltijalle tarpeettomaksi.
+    </div>
+    <div class="bullet">3.</div>
+    <div class="listaTeksti">
+      Verkonhaltija maksaa Omistajalle yllämainitun vuosivuokran, joka on sidottu valtion Tilastokeskuksen laske-<br />
+      maan elinkustannusindeksiin (lokakuu 1951 = 100) siten, että yllä mainitut perus- ja vuosivuokra vastaavat<br />
+      indeksin arvoa [Korvaus.Indeksi]. Vuosivuokra lasketaan kulloinkin kulumassa olevan kesäkuun indeksin perusteella ja<br />
+      maksetaan saman vuoden joulukuun loppuun mennessä. Vuokra maksetaan täysiltä kuukausilta.<br />
+      Verkonhaltija pitää muuntamotilan ja sen ilmastoinnin kunnossa kustannuksellaan.<br />
+      Jatkosopimuskauden vuokra määritetään niin, että se vastaa aikaisemman kauden vuokran tasoa.
+    </div>
+    <div class="bullet">4.</div>
+    <div class="listaTeksti">
+      Verkonhaltija jakaa tarvittaessa tältä jakelumuuntamolta sähköä, paitsi samaan kiinteistöön, myös lähiympä-<br />
+      ristöön.
+    </div>
+    <div class="bullet">5.</div>
+    <div class="listaTeksti">
+      Verkonhaltijalla on oikeus ilman erilliskorvausta tehdä jakeluverkon muutos-, korjaus-, ja kytkentätöitä<br />
+      muuntamotilassa ja johtoreiteillä (ko. tontti, kiinteistö), rakentaa muuntamotilaan tarvittavat lisärakenteet<br />
+      sekä kuljettaa tarpeelliset kojeet ja laitteet. Töiden jälkeen Verkonhaltija on velvollinen saattamaan tontin<br />
+      toimenpiteitä edeltäneeseen kuntoon. Verkonhaltija vastaa siitä, että muuntamo on aina turvallisuusmääräys-<br />
+      ten edellyttämässä kunnossa.
+    </div>
+    <div class="bullet">6.</div>
+    <div class="listaTeksti">
+      Verkonhaltijan henkilökunnalla tulee olla esteetön pääsy muuntamotilaan asennus-, hoito- ja käyttötoimenpi-<br />
+      teitä varten kaikkina vuorokauden aikoina. Omistaja on velvollinen omalta osaltaan huolehtimaan siitä, ettei-<br />
+      vät muut henkilöt pääse muuntamoon ilman Verkonhaltijan lupaa. Kulkureitille ja muuntajan kuljetusreitille ei<br />
+      saa varastoida tavaraa tai asettaa muita esteitä.
+    </div>
+    <div class="bullet">7.</div>
+    <div class="listaTeksti">
+      Jos Verkonhaltija luopuu muuntamotilan käytöstä, on se velvollinen poistamaan kustannuksellaan ne laitteet,<br />
+      joita ei tarvita sähkön toimittamiseen ao. kiinteistöön. 
+    </div>
+    <div class="bullet">8.</div>
+    <div class="listaTeksti">
+      Verkonhaltijalla on oikeus siirtää tämä sopimus toiselle verkonhaltijalle. Siirrosta ei suoriteta erikseen kor-<br />
+      vausta kiinteistönomistajalle. Kiinteistönomistajalle tulee mahdollisuuksien mukaan ilmoittaa uuden verkon-<br />
+      haltijan nimi ja osoite sekä sopimuksen voimassaoloaika. Uutta verkonhaltijaa koskevat samat tässä sopi-<br />
+      muksessa mainitut ehdot verkonhaltijan oikeuksista, vastuista ja velvoitteista.
+    </div>
+    <div class="bullet">9.</div>
+    <div class="listaTeksti">
+      Tätä sopimusta on tehty kaksi samansisältöistä kappaletta yksi kummallekin sopijapuolelle.
+    </div>
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus">
+        <span class="paikka">&nbsp;</span><span class="paivat">/</span>20
+      </div>
+      <div class="allekirjoitus">
+        <span class="paikka">&nbsp;</span><span class="paivat">/</span>20
+      </div>
+      <div class="allekirjoitus">
+        <hr />
+        [EkaMaanomistaja.Nimi]
+      </div>
+      <div class="allekirjoitus">
+        <h3>[JohdonOmistaja.Nimi]:n puolesta valtakirjalla</h3>
+        <hr />
+        [SopimuksenLaatija]
+      </div>
+      [Sivunvaihto]
+      <<{key="LoputMaanomistajat"}
+      <div class="allekirjoitus">
+        <hr />
+        [Nimi]
+      </div>
+      >>
+    </div>
+  </div>
+</body>
+</html>

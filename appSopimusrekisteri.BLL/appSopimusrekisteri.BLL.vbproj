@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EF3A432-141B-44B8-BF35-00EBA4409556}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>appSopimusrekisteri.BLL</RootNamespace>
+    <AssemblyName>appSopimusrekisteri.BLL</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>appSopimusrekisteri.BLL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>appSopimusrekisteri.BLL.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.5.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.5.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.5.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.5.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="evohtmltopdf">
+      <HintPath>..\packages\EvoPdf\evohtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="KT.Utils">
+      <HintPath>..\packages\KT.Utils\KT.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=10.0.0.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.10.0.6\lib\net462\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aktiviteetti.vb" />
+    <Compile Include="Dokumentit\ExcelHelper.vb" />
+    <Compile Include="Dokumentit\ITemplateContext.vb" />
+    <Compile Include="Dokumentit\ITemplateEntity.vb" />
+    <Compile Include="Dokumentit\KTExcel.vb" />
+    <Compile Include="Dokumentit\PdfTemplateHelper.vb" />
+    <Compile Include="Dokumentit\RegionReplaceInfo.vb" />
+    <Compile Include="Dokumentit\TemplateEntityBase.vb" />
+    <Compile Include="Dokumentit\TemplateHandler.vb" />
+    <Compile Include="Dokumentit\TemplateRegionInfo.vb" />
+    <Compile Include="Dokumentit\Templatet\Kiinteisto\KiinteistoTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Korvaus\KorvausTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Suostumus\SuostumusJohdonOmistajaTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Suostumus\SuostumusMaanomistajaTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Suostumus\SuostumusContext.vb" />
+    <Compile Include="Dokumentit\Templatet\Suostumus\SuostumusTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Suostumus\SuostumusTemplateHelpers.vb" />
+    <Compile Include="Dokumentit\Templatet\Taho\TahoPariTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Taho\TahoTemplate.vb" />
+    <Compile Include="Dokumentit\Templatet\Tunnisteyksikko\TunnisteyksikkoTemplate.vb" />
+    <Compile Include="Dokumentit\WordTemplateHelper.vb" />
+    <Compile Include="Haku\Poiminta\Poiminta.vb" />
+    <Compile Include="Kayttajienhallinta\Kayttajienhallinta.vb" />
+    <Compile Include="Kirjanpidonaineisto\GLData.vb" />
+    <Compile Include="Kirjanpidonaineisto\GLDataRow.vb" />
+    <Compile Include="Kirjanpidonaineisto\GLDataRowAttribute.vb" />
+    <Compile Include="Liittymat\SopimusarkistoLoki.vb" />
+    <Compile Include="Maksu.vb" />
+    <Compile Include="Maksuaineisto.vb" />
+    <Compile Include="Maksutarkistus.vb" />
+    <Compile Include="Maksut\MaksuaineistonKustomoija.vb" />
+    <Compile Include="Ohjaustiedot\Alv.vb" />
+    <Compile Include="Ohjaustiedot\Asiakirjatarkenne.vb" />
+    <Compile Include="Ohjaustiedot\Asiakastyyppi.vb" />
+    <Compile Include="Ohjaustiedot\ArkistonSijainti.vb" />
+    <Compile Include="Ohjaustiedot\AktiviteettiYhteystapa.vb" />
+    <Compile Include="Ohjaustiedot\AktiviteetinStatus.vb" />
+    <Compile Include="Ohjaustiedot\AktiviteetinLaji.vb" />
+    <Compile Include="Ohjaustiedot\BicKoodi.vb" />
+    <Compile Include="Ohjaustiedot\Indeksi.vb" />
+    <Compile Include="Ohjaustiedot\Infopallura.vb" />
+    <Compile Include="Ohjaustiedot\Kieli.vb" />
+    <Compile Include="Ohjaustiedot\Local1.vb" />
+    <Compile Include="Ohjaustiedot\Lupataho.vb" />
+    <Compile Include="Ohjaustiedot\Maksuehdot.vb" />
+    <Compile Include="Ohjaustiedot\Purpose.vb" />
+    <Compile Include="Ohjaustiedot\Regulation.vb" />
+    <Compile Include="Ohjaustiedot\InvCost.vb" />
+    <Compile Include="Ohjaustiedot\HinnastoKategoria.vb" />
+    <Compile Include="Ohjaustiedot\KirjanpidonKustannuspaikka.vb" />
+    <Compile Include="Ohjaustiedot\DFRooli.vb" />
+    <Compile Include="Ohjaustiedot\HinnastoAlakategoria.vb" />
+    <Compile Include="Ohjaustiedot\Indeksityyppi.vb" />
+    <Compile Include="Ohjaustiedot\Julkisuusaste.vb" />
+    <Compile Include="Ohjaustiedot\KirjanpidonTili.vb" />
+    <Compile Include="Ohjaustiedot\Kunta.vb" />
+    <Compile Include="Ohjaustiedot\Kyla.vb" />
+    <Compile Include="Ohjaustiedot\LiiketoiminnanTarve.vb" />
+    <Compile Include="Ohjaustiedot\Maa.vb" />
+    <Compile Include="Ohjaustiedot\MaaraalaTarkenne.vb" />
+    <Compile Include="Ohjaustiedot\MaksunSuoritus.vb" />
+    <Compile Include="Ohjaustiedot\Metsatyyppi.vb" />
+    <Compile Include="Ohjaustiedot\PassivoinninSyy.vb" />
+    <Compile Include="Ohjaustiedot\Postitiedot.vb" />
+    <Compile Include="Ohjaustiedot\Puustolaji.vb" />
+    <Compile Include="Ohjaustiedot\PuustonOmistajuus.vb" />
+    <Compile Include="Ohjaustiedot\PuustonPoisto.vb" />
+    <Compile Include="Ohjaustiedot\Saanto.vb" />
+    <Compile Include="Ohjaustiedot\Siirtooikeus.vb" />
+    <Compile Include="Ohjaustiedot\SopimuksenAlaluokka.vb" />
+    <Compile Include="Ohjaustiedot\SopimuksenEhtoversio.vb" />
+    <Compile Include="Ohjaustiedot\SopimuksenKesto.vb" />
+    <Compile Include="Ohjaustiedot\Sopimusformaatti.vb" />
+    <Compile Include="Ohjaustiedot\Maksualue.vb" />
+    <Compile Include="Ohjaustiedot\TunnisteyksikonTyyppi.vb" />
+    <Compile Include="Korvauslaskelma.vb" />
+    <Compile Include="Maksut\CorporatePaymentsStatusV02.vb" />
+    <Compile Include="Maksut\CorporatePaymentsStatusV02Parser.vb" />
+    <Compile Include="Maksut\CorporatePaymentsV02.vb" />
+    <Compile Include="Maksut\CorporatePaymentsV02Factory.vb" />
+    <Compile Include="Ohjaustiedot\Korvaushinnasto.vb" />
+    <Compile Include="Ohjaustiedot\Yksikko.vb" />
+    <Compile Include="Tiedosto.vb" />
+    <Compile Include="Tunnisteyksikko.vb" />
+    <Compile Include="Haku\Hakuarvot\Hakuarvot.vb" />
+    <Compile Include="Haku\HakuPoikkeavista.vb" />
+    <Compile Include="Haku\HakuAputauluista.vb" />
+    <Compile Include="Sopimus.vb" />
+    <Compile Include="Haku\Haku.vb" />
+    <Compile Include="Henkilo.vb" />
+    <Compile Include="Viivakoodi\Barcode.vb" />
+    <Compile Include="Yritys.vb" />
+    <Compile Include="Kiinteisto.vb" />
+    <Compile Include="Taho.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\appSopimusrekisteri.Common\appSopimusrekisteri.Common.vbproj">
+      <Project>{e24771a2-7ee7-40dd-8ecc-aa8d894ff86e}</Project>
+      <Name>appSopimusrekisteri.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.DAL\appSopimusrekisteri.DAL.vbproj">
+      <Project>{56c6f0b1-93a5-4b05-bf50-182bcafbf76f}</Project>
+      <Name>appSopimusrekisteri.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.DTO\appSopimusrekisteri.DTO.vbproj">
+      <Project>{f987ddfa-25c8-4065-933b-34220e5f0182}</Project>
+      <Name>appSopimusrekisteri.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\appSopimusrekisteri.Entities\appSopimusrekisteri.Entities.vbproj">
+      <Project>{5a19bda5-19df-4383-904e-2670ab4968d0}</Project>
+      <Name>appSopimusrekisteri.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

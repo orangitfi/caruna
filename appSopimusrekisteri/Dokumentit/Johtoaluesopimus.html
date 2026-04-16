@@ -1,0 +1,590 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    h1.paaOtsikko {
+      font-size: 20px;
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    div.sivu {
+      width: 700px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+      div.taulukko table {
+        width: 100%;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      div.taulukko td {
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        vertical-align: top;
+      }
+
+      div.taulukko td.otsikko {
+        width: 110px;
+      }
+
+      div.taulukko td.teksti {
+        width: 250px;
+      }
+
+      div.taulukko td.otsikko2 {
+        width: 160px;
+      }
+
+      div.taulukko tr.erotin td {
+        padding-bottom: 5px;
+      }
+
+    div.teksti {
+      margin-bottom: 10px;
+    }
+
+      div.teksti div.otsikko {
+        font-weight: bold;
+        text-align: center;
+      }
+
+    ul.oikeudet {
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+      ul.oikeudet li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        clear: both;
+      }
+
+        ul.oikeudet li.otsikko {
+          font-weight: normal;
+          text-decoration: underline;
+          font-style: italic;
+          margin-bottom: 10px;
+        }
+
+        ul.oikeudet li div.bullet {
+          width: 40px;
+          float: left;
+        }
+
+        ul.oikeudet li div.teksti {
+          width: 680px;
+          display: inline-block;
+        }
+
+    div.korvaus {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+      div.korvaus span.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      div.korvaus span.summa {
+        font-weight: bold;
+      }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px; 
+        margin-right: 100px; 
+        /*display: inline-block;*/ 
+        padding-bottom: 10px;
+      }
+
+      div.allekirjoitukset div.allekirjoitusRinnakkainen {
+        display: inline-block; 
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px; 
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px; 
+          border: none; 
+          color: #000000; 
+          background-color: #000000; 
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+      div.allekirjoitukset div.maanomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        float: left;
+        margin-right: 100px;
+      }
+      div.allekirjoitukset div.maanomistajanimi {
+        width: 160px;
+        float:left;
+        margin-right:100px;
+      }
+
+      div.allekirjoitukset div.johdonomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      div.allekirjoitukset div.johdonomistajanimi {
+        width: 160px;
+        display:inline-block;
+      }
+
+    div.liitteet {
+      clear: both;
+    }
+
+      div.liitteet div.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+        width: auto;
+        float: left;
+      }
+
+      div.liitteet div.teksti {
+        width: auto;
+        display: inline-block;
+      }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+    <div class="sivu sivunVaihto">
+        <h1 class="paaOtsikko">JOHTOALUEEN KÄYTTÖOIKEUSSOPIMUS (MAAKAAPELI JA ILMAJOHDOT)</h1>
+        <div class="viivakoodi">
+            <div class="koodi">
+                <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+            </div>
+            <div class="numero">[Sopimusnumero]</div>
+        </div>
+        <h3>Verkonhaltija</h3>
+        <div class="taulukko">
+            <table>
+                <tr>
+                    <td class="otsikko">Nimi</td>
+                    <td class="teksti">[JohdonOmistaja.Nimi]</td>
+                    <td class="otsikko">y-tunnus</td>
+                    <td class="teksti">[JohdonOmistaja.YTunnus]</td>
+                </tr>
+                <tr>
+                    <td class="otsikko">Osoite</td>
+                    <td colspan="3">[JohdonOmistaja.Osoite]</td>
+                </tr>
+                <tr>
+                    <td class="otsikko">Linjaosa</td>
+                    <td colspan="3">[LinjaOsa.Nimi]</td>
+                </tr>
+                <<{key="MuutLinjaOsat"}
+        <tr>
+          <td class="otsikko"></td>
+          <td colspan="3">[Nimi]</td>
+        </tr>
+        >>
+        <tr>
+          <td class="otsikko">Karttalehti</td>
+          <td class="teksti">[Karttalehti]</td>
+          <td class="otsikko">Työ n:ro</td>
+          <td>[PCSNumero]</td>
+        </tr>
+            </table>
+        </div>
+        <h3>Maanomistaja</h3>
+        <div class="taulukko">
+            <table>
+                <<{key="MaanOmistajat"}
+        <tr>
+          <td class="otsikko">Nimi</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">syntymäaika / y-tunnus</td>
+          <td>[Syntymaaika][YTunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Osoite</td>
+          <td colspan="3">[Osoite]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Tilinumero</td>
+          <td colspan="3">[Tilinumero]</td>
+        </tr>
+        >>
+        <<{key="Kiinteistot"}
+        <tr>
+          <td class="otsikko">Tilan nimi</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">Rekisterinumero</td>
+          <td>[Rekisterinumero]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Kunta</td>
+          <td class="teksti">[Kunta]</td>
+          <td class="otsikko2">Kylä</td>
+          <td>[Kyla]</td>
+        </tr>
+        >>
+            </table>
+        </div>
+        <h3>Vuokralainen</h3>
+        <div class="taulukko">
+            <table>
+                <<{key="Vuokralaiset"}
+                <tr>
+                <td class="otsikko">Nimi</td>
+                <td class="teksti" colspan="3">[Nimi]</td>
+                </tr>
+                <tr>
+                <td class="otsikko">Osoite</td>
+                <td colspan="3">[Osoite]</td>
+                </tr>
+                <tr class="erotin">
+                <td class="otsikko">Puhelinnumero</td>
+                <td colspan="3">[Puhelin]</td>
+                </tr>
+                >>
+            </table>
+        </div>
+        [Sivunvaihto_1_{9,}]
+        <div class="teksti">
+            Maanomistaja ja Verkonhaltija ovat keskenään tehneet seuraavansisältöisen sopimuksen (jäljempänä ”Sopimus”)<br />
+            Verkonhaltijalle luovutettavasta johtoalueen pysyvästä käyttöoikeudesta ja siitä maksettavasta korvauksesta<br />
+            verkon rakentamista ja pitämistä varten yllä mainituilla yhdellä tai useammalla kiinteistöllä. Sopimus perustuu<br />
+            maankäyttö- ja rakennuslain 161 §:ään.
+        </div>
+        [Sivunvaihto_1_{8,8}]
+        <div class="teksti">
+            Johdon sijoittamiselle varattava alue (”Johtoalue”) on kuvattu tämän sopimuksen liitteenä olevassa liitekartassa<br />
+            (Liite 1). Johtoalueen pinta-ala on määritelty kuvioittain tämän sopimuksen liitteenä olevassa korvauslaskelmassa<br />
+            (Liite 2) tai liitekartassa.
+        </div>
+        [Sivunvaihto_1_{7,7}]
+        <div class="teksti">
+            <div class="otsikko">1</div>
+            Verkonhaltijalla on Maanomistajan toivomukset mahdollisuuksien mukaan huomioon ottaen oikeus
+        </div>
+        [Sivunvaihto_1_{6,6}]
+        <ul class="oikeudet">
+            <li>
+                <div class="bullet">a)</div>
+                <div class="teksti">
+                    rakentaa ja pitää edellä mainitulla kiinteistöllä oheisessa korvauslaskelmassa ja / tai liitekartalla esitetyt<br />
+                    keskijänniteverkon maakaapelit ja ilmajohdot, tiedonsiirtoon tarkoitetut kaapelit, putkitukset ja mahdolliset<br />
+                    merkintälaitteet, jako- ja haaroituskaapit sekä muut vastaavat verkon osat (jäljempänä ”Verkko”). Muunto-<br />
+                    ja kytkinasemien sijoittamisesta sovitaan erillisellä sopimuksella.
+                </div>
+            </li>
+            [Sivunvaihto_1_{5,5}]
+            <li>
+                <div class="bullet">b)</div>
+                <div class="teksti">
+                    tehdä edellä mainittuja johtoja, asemia ja rakenteita sijoitettaessa suunniteltuihin reitteihin tai paikkoihin<br />
+                    nähden pieniä tarkastusmittausten mahdollisesti vaatimia muutoksia
+                </div>
+            </li>
+            [Sivunvaihto_1_{4,4}]
+            <li>
+                <div class="bullet">c)</div>
+                <div class="teksti">
+                    poistaa tarvittaessa Verkon rakentamisen yhteydessä rakennustyön edellyttämältä alueelta puut, pensaat<br />
+                    ja oksat. Pihapiiriin istutettuja puita tai pensaita on mahdollisuuksien mukaan suojeltava
+                </div>
+            </li>
+            [Sivunvaihto_1_{3,3}]
+            <li>
+                <div class="bullet">d)</div>
+                <div class="teksti">
+                    suorittaa myöhemmin johdon huollon kannalta välttämättömiä kunnossapitotöitä, pitää Verkon<br />
+                    maanpäällisten rakenteiden (mm. jakokaapit, muunto- ja kytkinasemat) lähiympäristö käyttövarmuuden ja<br />
+                    sähköturvallisuusmääräysten edellyttämällä tavalla vapaana puista ja muusta kasvillisuudesta.
+                </div>
+            </li>
+            [Sivunvaihto_1_{2,2}]
+            <li>
+                <div class="bullet">e)</div>
+                <div class="teksti">
+                    liikkua ja käyttää moottorikäyttöisiä ajoneuvoja kiinteistöllä Verkon suunnittelua, merkitsemistä,<br />
+                    rakentamista, kunnossapitoa ja käyttötoimenpiteitä suorittaessaan.
+                </div>
+            </li>
+            [Sivunvaihto_1_{1,1}]
+            <li>
+                Verkonhaltijalla on lisäksi ilmajohtojen osalta oikeus
+            </li>
+            <li>
+                <div class="bullet">f)</div>
+                <div class="teksti">
+                    lisätä olemassa oleviin pylväisiin uusia johtoja ja muita rakenteita, mikäli Maanomistajalle aiheutuva haitta<br />
+                    ei lisäänny
+                </div>
+            </li>
+            [Sivunvaihto_2_{11,};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li>
+                <div class="bullet">g)</div>
+                <div class="teksti">
+                    pitää Johtoalueet johtojen käyttövarmuuden ja sähköturvallisuusmääräysten edellyttämällä tavalla<br />
+                    vapaana puista, ja tarvittaessa pensaista ja oksista koko Johtoalueella sekä poistaa häiriötilanteissa Joh-<br />
+                    toalueen ulkopuolelta johtojen päälle kaatuneet, taipuneet tai muut sähkönjakelua vaarantavat puut
+                </div>
+            </li>
+            [Sivunvaihto_2_{10,};</ul></div><div class="sivu sivunVaihto"><ul class="oikeudet">]
+            <li>
+                <div class="bullet">h)</div>
+                <div class="teksti">
+                    poistaa Johtoalueen ulkopuolelta sellaisia pienilatvaisiksi ja riukumaisiksi kehittyneitä tai muita yksittäisiä<br />
+                    puita, jotka saattavat esimerkiksi voimakkaalla tuulella tai raskaan lumikuorman vuoksi aiheuttaa vahin-<br />
+                    koa johdolle. Tämän edellytyksenä on, että Verkonhaltija tiedottaa Maanomistajalle hyvissä ajoin etukä-<br />
+                    teen kirjallisesti tai muulla tarkoituksenmukaisella tavalla raivauksista ja pyytää Maanomistajaa ottamaan<br />
+                    yhteyttä, mikäli Maanomistaja haluaa etukäteen sopia puiden poistamiseen liittyvistä yksityiskohdista.<br />
+                    Tästä Maanomistajalle aiheutuvasta vahingosta on sovittava erikseen kohdan 5 mukaan
+                </div>
+            </li>
+    </ul>
+    [Sivunvaihto_2_{10,10};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+        <div class="otsikko">2</div>
+        Kaikki puut, oksat ja pensaat, jotka kaadetaan Johtoalueelta tämän Sopimuksen perusteella ja sen voimassaolo-<br />
+        aikana, jäävät Maanomistajan omaisuudeksi ja Maanomistajan paikalta poistettavaksi, jollei toisin erikseen sovita.
+    </div>
+    <div class="teksti">
+        <div class="otsikko">3</div>
+        Maanomistajalla on oikeus hyödyntää maakaapelille varattua Johtoaluetta. Hyödyntäessään Johtoaluetta<br />
+        Maanomistajan on noudatettava voimassaolevia sähköturvallisuutta koskevia määräyksiä.
+    </div>
+    [Sivunvaihto_2_{8,9};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+        Maa- ja metsätalouden harjoittamista, rakennustoimintaa sekä avovarastojen ja laitteiden pitämistä Johtoalueella<br />
+        ja sen läheisyydessä rajoittavat maankäyttö- ja rakennuslain säännökset ja Carunan sekä viranomaisten sen<br />
+        perusteella antamat sähköturvallisuusmääräykset. Tarkempia ohjeita menettelystä em. tapauksissa antavat<br />
+        viranomaiset ja Verkonhaltija.
+    </div>
+    [Sivunvaihto_2_{7,7};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+        Verkon rakenteiden suojelemiseksi Maanomistajan tulee ilmoittaa Verkonhaltijalle hyvissä ajoin, kuitenkin<br />
+        viimeistään yhtä (1) viikkoa aikaisemmin sellaisista kiinteistöllä suoritettavista metsänhakkuu-, räjäytys-, ojitus- ja<br />
+        muista niihin verrattavista töistä, joista johtuen Verkko saattaa olla vaarassa vahingoittua. Verkonhaltija on<br />
+        velvollinen Maanomistajan pyynnöstä korvauksetta näyttämään maakaapelin tarkan sijainnin maastossa,<br />
+        antamaan Verkon maanpäällisten osien läheisyydessä puunkaatoapua sekä antamaan Verkon suojelemista<br />
+        koskevia ohjeita. Verkonhaltija suorittaa vähäiset Verkon suojaamistoimenpiteet omalla kustannuksellaan.
+    </div>
+    [Sivunvaihto_2_{6,6};
+    </div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Suorittaessaan Verkon rakenteiden läheisyydessä edellä mainittuja töitä Maanomistajan on meneteltävä siten,<br />
+      ettei Verkon rakenteille aiheudu vahinkoa. Jos Maanomistaja laiminlyö velvollisuutensa noudattaa tässä kohdassa<br />
+      lueteltuja ehtoja, Maanomistaja on velvollinen korvaamaan Verkonhaltijalle laiminlyönnin vuoksi Verkolle<br />
+      aiheutuneet välittömät vahingot.
+    </div>
+    [Sivunvaihto_2_{4,5};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">4</div>
+      Verkonhaltija suorittaa Maanomistajalle liitteenä olevassa korvauslaskelmassa tarkemmin eritellyt sijoittamista<br />
+      koskevat korvaukset kertakorvauksena. Sijoittamista koskeva korvaus kattaa korvauksen sijoittamisesta<br />
+      aiheutuvasta haitasta ja vahingosta. Korvaukset maksetaan kertasuorituksena kahden (2) kuukauden kuluessa<br />
+      rakennustöiden aloittamisesta. 
+    </div>
+    <div class="korvaus">
+      <span class="otsikko">Korvaus yhteensä</span>
+      <span class="summa">[KorvausYht] euroa</span>
+    </div>
+    [Sivunvaihto_2_{3,3};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Mikäli korvausta ei suoriteta määräajassa, maksaa Verkonhaltija ylimenevältä ajalta korkolain mukaisen<br />
+      viivästyskoron.
+    </div>
+    [Sivunvaihto_2_{1,2};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">5</div>
+      Sijoittamiskorvauksen lisäksi Verkonhaltija on velvollinen ennallistamaan Verkon rakentamisen tai kunnossapito-<br />
+      tai käyttötoimenpiteiden yhteydessä aiheutuneet vauriot ja osana ennallistamista huolehtimaan rakentamistöiden<br />
+      aikana maan pinnalle nousseiden suurikokoisten kivien poisviemisestä. Jos ennallistaminen ei ole mahdollista,<br />
+      Verkonhaltija korvaa Maanomistajalle maakaapelin sijoittamisen yhteydessä aiheutuneet välittömät vahingot<br />
+      (esim. maaston, teiden tai puuston vauriot). Ennallistamistöiden toteuttamisesta ja korvausten maksamisesta<br />
+      sovitaan Verkonhaltijan ja Maanomistajan kesken erikseen.
+    </div>
+    [Sivunvaihto_3_{10,};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      Jos Maanomistaja katsoo, että Verkonhaltijan suorittamat korvaukset eivät ole kattaneet kaikkia maankäyttö- ja<br />
+      rakennuslain 161 §:ssä tarkoitettua haittaa ja vahinkoa, Maanomistaja voi saattaa korvauskysymyksen<br />
+      ratkaistavaksi lunastuslain mukaiseen menettelyyn.
+    </div>
+    <div class="teksti">
+      Verkonhaltija sopii suoraan kolmansien tahojen kanssa heille aiheutuneiden vahinkojen korvaamisesta.
+    </div>
+    [Sivunvaihto_3_{9,9};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">6</div>
+      Maanomistaja voi omalla kustannuksellaan siirrättää Verkon rakenteita Verkonhaltijan hyväksymään uuteen<br />
+      paikkaan. Siirron suorittaa Verkonhaltija. 
+    </div>
+    <div class="teksti">
+      Siirtokustannukset määräytyvät siirrettävän verkon iän mukaan. Siirrettävälle verkolle lasketaan ikähyvitys, joka<br />
+      vähennetään uuden rakennettavan verkon kustannuksista. Siirrettävästä verkosta annettava ikähyvitys<br />
+      muodostuu jälleenhankinta-arvosta, joka kerrotaan verkon iän mukaan määräytyvän ikähyvitysprosentin<br />
+      perusteella (Liite 3).
+    </div>
+    [Sivunvaihto_3_{8,8};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">7</div>
+      Maanomistaja on velvollinen ilmoittamaan tämän Sopimuksen sisällöstä kolmansille tahoille, joilla on kiinteistön<br />
+      käyttöön liittyvä käyttö- tai muu oikeus, johon tällä Sopimuksella voi olla vaikutusta. 
+    </div>
+    <div class="teksti">
+      Tämä Sopimus ja maksetut korvaukset sitovat kiinteistön myöhempää omistajaa tai kiinteistöön liittyvän oikeuden<br />
+      haltijaa. Luovuttaessaan kiinteistön omistus tai muun oikeutensa eteenpäin Maanomistaja sitoutuu ilmoittamaan<br />
+      uudelle omistajalle tai muun oikeuden vastaanottajalle tähän Sopimukseen perustuvista Verkonhaltijan<br />
+      oikeuksista ja Maanomistajan velvollisuuksista sekä merkityttämään ne luovutuskirjaan, vuokrasopimukseen tai<br />
+      muuhun siirtoasiakirjaan. 
+    </div>
+    <div class="teksti">
+      Maanomistaja on pyydettäessä velvollinen ilmoittamaan Verkonhaltijalle maanvuokraoikeuden haltijan yhteystie-<br />
+      dot ja niissä myöhemmin tapahtuvat muutokset. 
+    </div>
+    [Sivunvaihto_3_{7,7};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">8</div>
+      Verkonhaltijan tarve sähköpylväille voi poistua maakaapeloinnin seurauksena, jolloin Verkonhaltija saattaa<br />
+      luovuttaa yhteiskäyttöpylväiden omistusoikeuden ja hallinnan kolmannelle osapuolelle. Tällöin aikaisemman<br />
+      ilmajohtosopimuksen mukaiset oikeudet ja velvollisuudet siirtyvät pylväiden uudelle omistajalle. Verkonhaltija<br />
+      poistaa omistamansa johtimet ja muut Verkkoon liittyvät rakenteet sähköpylväistä ennen luovutusta. Luovutukses-<br />
+      ta ei suoriteta erikseen korvausta Maanomistajalle.
+    </div>
+    <div class="teksti">
+      Mikäli Maanomistajalla on yhteiseen Verkonhaltijan kanssa laadittuun sopimukseen tai suulliseen tietoon<br />
+      perustuen sijoitettuna mittauspisteen takaisia (esim. asiakkaan omia) johtoja, Verkonhaltija voi myöntää<br />
+      sähköpylväisiin käyttöoikeuden erillisellä käyttöoikeussopimuksella. Käyttöoikeussopimuksessa on määritelty<br />
+      menettelytavat ja ehdot, joilla käyttöoikeuden myöntäminen voidaan toteuttaa.
+    </div>
+    [Sivunvaihto_3_{6,6};</div><div class="sivu sivunVaihto">] 
+    <div class="teksti">
+      <div class="otsikko">9</div>
+      Jos Verkonhaltija siirtää tähän Sopimukseen perustuvat oikeudet ja velvollisuudet eteenpäin, sen tulee ilmoittaa<br />
+      siirrosta Maanomistajalle.
+    </div>
+    [Sivunvaihto_3_{4,5};</div><div class="sivu sivunVaihto">] 
+    <div class="teksti">
+      <div class="otsikko">10</div>
+      Tämä sopimus tulee voimaan heti, kun se on allekirjoitettu ja se on voimassa siihen saakka, kunnes kiinteistöjen<br />
+      alueella sijaitsevan Verkon rakenteet poistetaan lopullisesti käytöstä. Jos kaikkea Verkkoa ei poisteta käytöstä<br />
+      kerralla, Sopimus on voimassa siltä osin kuin Verkkoa jää kiinteistöjen alueelle.
+    </div>
+    <div class="teksti">
+      Jos Verkon rakenteet poistetaan, Verkonhaltija saattaa Johtoalueen poistetun Verkon osalta entiseen käyttöta-<br />
+      paan soveltuvaan kuntoon. Ilmoitus Verkon poistamisesta toimitetaan Maanomistajalle mahdollisuuksien mukaan.
+    </div>
+    [Sivunvaihto_3_{1,3};</div><div class="sivu">] 
+    <div class="teksti">
+      <div class="otsikko">11</div>
+      Tämä Sopimus raukeaa, ellei rakentamista ole aloitettu kahden (2) vuoden kuluessa siitä, kun sopimus on<br />
+      solmittu. Mikäli rakennustöiden aloittaminen viivästyy jostakin erityisestä, Verkonhaltijasta riippumattomasta<br />
+      syystä, Verkonhaltija voi pidentää Sopimuksen voimassaoloaika enintään yhdellä (1) vuodella. Verkonhaltija tulee<br />
+      tällöin ilmoittaa pidennyksestä hyvissä ajoin Maanomistajalle, kuitenkin viimeistään kahta (2) viikkoa ennen<br />
+      sopimuskauden päättymistä.
+    </div>
+    [Sivunvaihto_4_{9,};</div><div class="sivu">]
+    <div class="teksti">
+      <div class="otsikko">12</div>
+      Sopimusta on tehty kaksi samansanaista kappaletta, yksi kummallekin osapuolelle. 
+    </div>
+    <div class="teksti">Edellä olevan Sopimuksen ja laskelman hyväksymme:</div>
+    <div class="teksti">__________ päivänä _______kuuta  20</div>
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>Maanomistaja</h3>
+        <hr />
+        [MaanOmistaja.Nimi]<br />
+        &nbsp;
+      </div>
+      <div class="allekirjoitus allekirjoitusRinnakkainen">
+        <h3>Verkonhaltija</h3>
+        <hr />
+        [JohdonOmistaja.Nimi] puolesta<br />
+        [SopimuksenLaatija]
+      </div>
+      [Sivunvaihto_4_{7,8};</div></div><div class="sivu"><div class="allekirjoitukset">]
+      <<{key="SeuraavatMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>Maanomistaja</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+    <<{key="LoputMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>Maanomistaja</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+  </div>
+  <div class="liitteet">
+    <div class="otsikko">Liitteenä:</div>
+    <div class="teksti">
+      Karttaliite (Liite 1)<br />
+      Korvauslaskelma (Liite 2)<br />
+      Ikähyvitystaulukko (Liite 3)
+    </div>
+  </div>
+</div>
+</body>
+</html>

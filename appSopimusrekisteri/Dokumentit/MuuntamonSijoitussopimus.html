@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    h1.paaOtsikko {
+      font-size: 20px;
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    div.sivu {
+      width: 720px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+        div.taulukko {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+
+      div.taulukko table {
+        width: 100%;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+      }
+
+      div.taulukko td {
+        border-bottom: 1px solid black;
+        padding-bottom: 10px;
+        vertical-align: top;
+      }
+
+      div.taulukko td.otsikko {
+        width: 110px;
+      }
+
+      div.taulukko td.teksti {
+        width: 250px;
+      }
+
+      div.taulukko td.otsikko2 {
+        width: 160px;
+      }
+
+      div.taulukko tr.erotin td {
+        padding-bottom: 5px;
+      }
+
+    div.teksti {
+      margin-bottom: 10px;
+    }
+
+      div.teksti div.otsikko {
+        font-weight: bold;
+        text-align: center;
+      }
+
+    ul.oikeudet {
+      margin-left: 0px;
+      padding-left: 0px;
+    }
+
+      ul.oikeudet li {
+        list-style-type: none;
+        margin-bottom: 5px;
+        clear: both;
+      }
+
+        ul.oikeudet li.otsikko {
+          font-weight: normal;
+          text-decoration: underline;
+          font-style: italic;
+          margin-bottom: 10px;
+        }
+
+        ul.oikeudet li div.bullet {
+          width: 40px;
+          float: left;
+        }
+
+        ul.oikeudet li div.teksti {
+          width: 680px;
+          display: inline-block;
+        }
+
+    div.korvaus {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+      div.korvaus span.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      div.korvaus span.summa {
+        font-weight: bold;
+      }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px; 
+        margin-right: 100px; 
+        /*display: inline-block;*/ 
+        padding-bottom: 10px;
+      }
+
+      div.allekirjoitukset div.allekirjoitusRinnakkainen {
+        display: inline-block; 
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px; 
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px; 
+          border: none; 
+          color: #000000; 
+          background-color: #000000; 
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+      div.allekirjoitukset div.maanomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        float: left;
+        margin-right: 100px;
+      }
+      div.allekirjoitukset div.maanomistajanimi {
+        width: 160px;
+        float:left;
+        margin-right:100px;
+      }
+
+      div.allekirjoitukset div.johdonomistaja {
+        border-bottom: 1px solid;
+        padding-bottom: 30px;
+        width: 160px;
+        font-weight: bold;
+        display: inline-block;
+      }
+      div.allekirjoitukset div.johdonomistajanimi {
+        width: 160px;
+        display:inline-block;
+      }
+
+    div.liitteet {
+      clear: both;
+    }
+
+      div.liitteet div.otsikko {
+        font-weight: bold;
+        margin-right: 20px;
+        width: auto;
+        float: left;
+      }
+
+      div.liitteet div.teksti {
+        width: auto;
+        display: inline-block;
+      }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="sivu sivunVaihto">
+    <h1 class="paaOtsikko">MUUNTAMON SIJOITUSSOPIMUS</h1>
+    <div class="viivakoodi">
+      <div class="koodi">
+        <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+      </div>
+      <div class="numero">[Sopimusnumero]</div>
+    </div>
+    <h3>Verkonhaltija</h3>
+    <div class="taulukko">
+      <table>
+        <tr>
+          <td class="otsikko">Nimi</td>
+          <td class="teksti">[JohdonOmistaja.Nimi]</td>
+          <td class="otsikko">y-tunnus</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="otsikko">Osoite</td>
+          <td colspan="3">[JohdonOmistaja.Osoite]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Linjaosa</td>
+          <td colspan="3">[LinjaOsa.Nimi]</td>
+        </tr>
+        <<{key="MuutLinjaOsat"}
+        <tr>
+          <td class="otsikko"></td>
+          <td colspan="3">[Nimi]</td>
+        </tr>
+        >>
+        <tr>
+          <td class="otsikko">Karttalehti</td>
+          <td class="teksti">[Karttalehti]</td>
+          <td class="otsikko">Työ n:ro</td>
+          <td>[PCSNumero]</td>
+        </tr>
+      </table>
+    </div>
+    <h3>Maanomistaja</h3>
+    <div class="taulukko">
+      <table>
+        <<{key="MaanOmistajat"}
+        <tr>
+          <td class="otsikko">Nimi</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">syntymäaika / y-tunnus</td>
+          <td>[Syntymaaika][YTunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikko">Osoite</td>
+          <td colspan="3">[Osoite]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Tilinumero</td>
+          <td colspan="3">[Tilinumero]</td>
+        </tr>
+        >>
+        <<{key="Kiinteistot"}
+        <tr>
+          <td class="otsikko">Tilan nimi</td>
+          <td class="teksti">[Nimi]</td>
+          <td class="otsikko2">Rekisterinumero</td>
+          <td>[Rekisterinumero]</td>
+        </tr>
+        <tr class="erotin">
+          <td class="otsikko">Kunta</td>
+          <td class="teksti">[Kunta]</td>
+          <td class="otsikko2">Kylä</td>
+          <td>[Kyla]</td>
+        </tr>
+        >>
+      </table>
+    </div>
+    <div class="teksti">
+      Maanomistaja ja Verkonhaltija ovat keskenään tehneet seuraavansisältöisen sopimuksen (jäljempänä ”Sopimus”)<br />
+      Verkonhaltijalle luovutettavasta muuntamoalueen pysyvästä käyttöoikeudesta. Sopimuksessa sovitaan yllä<br />
+      mainittujen kiinteistöjen osalta kiinteistöön kohdistuvasta pysyvästä käyttöoikeuden supistamisesta ja siitä<br />
+      maksettavasta korvauksesta muuntamon rakentamista ja pitämistä varten. Sopimus perustuu maankäyttö- ja<br />
+      rakennuslain 161 §:ään.
+    </div>
+    [Sivunvaihto_1_{10,}]
+    <div class="teksti">
+      Muuntamon sijoittamiselle varattava alue (”Muuntamoalue”) on kuvattu tämän sopimuksen liitteenä olevassa<br />
+      liitekartassa (Liite 1). Muuntamoalueen pinta-ala on määritelty kuvioittain tämän sopimuksen liitteenä olevassa<br />
+      korvauslaskelmassa (Liite 2) tai liitekartassa.
+    </div>
+    [Sivunvaihto_1_{7,9}]
+    <div class="teksti">
+      <div class="otsikko">1</div>
+      Verkonhaltijalla on Maanomistajan toivomukset mahdollisuuksien mukaan huomioon ottaen oikeus 
+    </div>
+    <ul class="oikeudet">
+      <li>
+        <div class="bullet">a)</div>
+        <div class="teksti">
+          rakentaa ja pitää edellä mainitulla kiinteistöllä oheisessa korvauslaskelmassa ja / tai liitekartalla esitetyt<br />
+          muunto- ja kytkinasemat sekä niihin liitetyt rakenteet (jäljempänä ”Muuntamo”). Sopimus voi koskea yh-<br />
+          den tai useamman Muuntamon sijoittamista. Verkonhaltija hankkii kaikki tarvittavat luvat kustannuksel-<br />
+          laan ja huolehtii siitä, että tarpeelliset katselmukset ja tarkastukset suoritetaan vaaditusti.
+        </div>
+      </li>
+      <li>
+        <div class="bullet">b)</div>
+        <div class="teksti">
+          tehdä edellä mainittuja rakenteita sijoitettaessa suunniteltuihin paikkoihin nähden pieniä tarkastusmittaus-<br />
+          ten mahdollisesti vaatimia muutoksia.
+        </div>
+      </li>
+      [Sivunvaihto_1_{5,6};</ul><ul class="oikeudet">]
+      <li>
+        <div class="bullet">c)</div>
+        <div class="teksti">
+          poistaa tarvittaessa Muuntamon rakentamisen yhteydessä rakennustyön edellyttämältä alueelta puut,<br />
+          pensaat ja oksat. Pihapiiriin istutettuja puita tai pensaita on mahdollisuuksien mukaan suojeltava.
+        </div>
+      </li>
+      <li>
+        <div class="bullet">d)</div>
+        <div class="teksti">
+          suorittaa myöhemmin Muuntamon huollon kannalta välttämättömiä kunnossapitotöitä, kuten pitää<br />
+          Muunto- ja kytkinaseman lähiympäristö käyttövarmuuden ja sähköturvallisuusmääräysten edellyttämällä<br />
+          tavalla vapaana puista ja muusta kasvillisuudesta.
+        </div>
+      </li>
+      [Sivunvaihto_1_{4,4};</ul><ul class="oikeudet">]
+      <li>
+        <div class="bullet">e)</div>
+        <div class="teksti">
+          liikkua ja käyttää moottorikäyttöisiä ajoneuvoja kiinteistöllä Muuntamon suunnittelua, merkitsemistä,<br />
+          rakentamista, kunnossapitoa ja käyttötoimenpiteitä suorittaessaan.
+        </div>
+      </li>
+      [Sivunvaihto_1_{3,3};</ul><ul class="oikeudet">]
+      <li>
+        <div class="bullet">f)</div>
+        <div class="teksti">
+          Maanomistaja hyväksyy tämän Sopimuksen allekirjoittaessaan Muuntamon rakentamisen (ns.<br />
+          naapurilausunto), eikä häneltä erikseen pyydetä rakentamiselle lupaa rakennus- tai toimenpidelupaha-<br />
+          kemuksen yhteydessä.
+        </div>
+      </li>
+    </ul>
+    <div class="teksti">
+      <div class="otsikko">2</div>
+      Kaikki puut, oksat ja pensaat, jotka kaadetaan Muuntamoalueelta rakentamistöiden aikana, jäävät Maanomistajan<br />
+      omaisuudeksi ja Maanomistajan paikalta poistettavaksi, jollei toisin erikseen sovita.
+    </div>
+    [Sivunvaihto_1_{2,2}]
+    <div class="teksti">
+      <div class="otsikko">3</div>
+      Maanomistajalla on rajoitettu oikeus hyödyntää Muuntamoalueen lähiympäristöä. Hyödyntäessään Muuntamoalu-<br />
+      een lähiympäristöä Maanomistajan on noudatettava voimassaolevia sähköturvallisuutta koskevia määräyksiä.
+    </div>    
+    [Sivunvaihto_1_{0,1}]
+    <div class="teksti">
+      Rakennustoimintaa sekä avovarastojen ja laitteiden pitämistä Muuntamoalueella ja sen läheisyydessä rajoittavat<br />
+      maankäyttö- ja rakennuslain säännökset ja Carunan sekä viranomaisten sen perusteella antamat sähköturvalli-<br />
+      suusmääräykset. Tarkempia ohjeita menettelystä em. tapauksissa antavat viranomaiset ja Verkonhaltija.
+    </div>    
+    <div class="teksti">
+      Muuntamoalueelle ei saa varastoida tavaraa eikä Muuntamoon pääsylle tai sille johtavalle kuljetusreitille saa<br />
+      asettaa esteitä. Jos Maanomistaja rakentaa aidan maalleen, tulee Muuntamoalue jättää aitauksen ulkopuolelle tai<br />
+      Verkonhaltijalle tulee varata pääsy portin kautta Muuntamolle kaikkina vuorokauden aikoina.
+    </div>
+    <div class="teksti">
+      Maanomistajan tulee ilmoittaa Verkonhaltijalle hyvissä ajoin, kuitenkin viimeistään yhtä (1) viikkoa aikaisemmin<br />
+      sellaisista kiinteistöllä suoritettavista metsänhakkuu-, räjäytys-, ojitus- ja muista niihin verrattavista töistä, joista<br />
+      johtuen Muuntamo saattaa olla vaarassa vahingoittua. Verkonhaltija on velvollinen Maanomistajan pyynnöstä<br />
+      korvauksetta näyttämään maakaapelin tarkan sijainnin maastossa, antamaan Muuntamoon johtavan sähköver-<br />
+      kon maanpäällisten osien läheisyydessä puunkaatoapua sekä antamaan sähköverkon suojelemista koskevia<br />
+      ohjeita. Verkonhaltija suorittaa vähäiset Muuntamon ja sähköverkon suojaamistoimenpiteet omalla kustannuksel-<br />
+      laan.
+    </div>
+    <div class="teksti">
+      Suorittaessaan Muuntamon läheisyydessä edellä mainittuja töitä Maanomistajan on meneteltävä siten, ettei<br />
+      Muuntamolle aiheudu vahinkoa. Jos Maanomistaja laiminlyö velvollisuutensa noudattaa tässä kohdassa lueteltuja<br />
+      ehtoja, Maanomistaja on velvollinen korvaamaan Verkonhaltijalle laiminlyönnin vuoksi Muuntamolle aiheutuneet<br />
+      välittömät vahingot.
+    </div>
+    <div class="teksti">
+      <div class="otsikko">4</div>
+      Verkonhaltija suorittaa Maanomistajalle liitteenä olevassa korvauslaskelmassa tarkemmin eritellyt sijoittamista<br />
+      koskevat korvaukset kertakorvauksena. Sijoittamista koskeva korvaus kattaa korvauksen sijoittamisesta<br />
+      aiheutuvasta haitasta ja vahingosta. Korvaukset maksetaan kertasuorituksena kahden (2) kuukauden kuluessa<br />
+      rakennustöiden aloittamisesta. 
+    </div>
+    <div class="korvaus">
+      <span class="otsikko">Korvaus yhteensä</span>
+      <span class="summa">[KorvausYht] euroa</span>
+    </div>
+    <div class="teksti">
+      Mikäli korvausta ei suoriteta määräajassa, maksaa Verkonhaltija ylimenevältä ajalta korkolain mukaisen<br />
+      viivästyskoron.
+    </div>
+    [Sivunvaihto_2_{7,};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">5</div>
+      Sijoittamiskorvauksen lisäksi Verkonhaltija on velvollinen ennallistamaan Muuntamon rakentamisen tai<br />
+      kunnossapito- tai käyttötoimenpiteiden yhteydessä aiheutuneet vauriot. Jos ennallistaminen ei ole mahdollista,<br />
+      Verkonhaltija korvaa Maanomistajalle Muuntamon sijoittamisen yhteydessä aiheutuneet välittömät vahingot (esim.<br />
+      maaston, teiden tai puuston vauriot). Ennallistamistöiden toteuttamisesta ja korvausten maksamisesta sovitaan<br />
+      Verkonhaltijan ja Maanomistajan kesken erikseen.
+    </div>
+    <div class="teksti">
+      Jos Maanomistaja katsoo, että Verkonhaltijan suorittamat korvaukset eivät ole kattaneet kaikkia maankäyttö- ja<br />
+      rakennuslain 161 §:ssä tarkoitettua haittaa ja vahinkoa, Maanomistaja voi saattaa korvauskysymyksen<br />
+      ratkaistavaksi lunastuslain mukaiseen menettelyyn.
+    </div>
+    <div class="teksti">
+      Verkonhaltija sopii suoraan kolmansien tahojen kanssa heille aiheutuneiden vahinkojen korvaamisesta.
+    </div>
+    [Sivunvaihto_2_{5,6};</div><div class="sivu sivunVaihto">]
+    <div class="teksti">
+      <div class="otsikko">6</div>
+      Maanomistaja voi omalla kustannuksellaan siirrättää Muuntamon Verkonhaltijan hyväksymään uuteen paikkaan.<br />
+      Siirron suorittaa Verkonhaltija. 
+    </div>
+    <div class="teksti">
+      Siirtokustannukset määräytyvät siirrettävän Muuntamon iän mukaan. Siirrettävälle Muuntamolle lasketaan<br />
+      ikähyvitys, joka vähennetään uuden rakennettavan Muuntamon kustannuksista. Siirrettävästä Muuntamosta<br />
+      annettava ikähyvitys muodostuu jälleenhankinta-arvosta, joka kerrotaan verkon iän mukaan määräytyvän<br />
+      ikähyvitysprosentin perusteella (Liite 3).
+    </div>
+    [Sivunvaihto_2_{3,4};</div><div class="sivu">]
+    <div class="teksti">
+      <div class="otsikko">7</div>
+      Maanomistaja on velvollinen ilmoittamaan tämän Sopimuksen sisällöstä kolmansille tahoille, joilla on kiinteistön<br />
+      käyttöön liittyvä käyttö- tai muu oikeus, johon tällä Sopimuksella voi olla vaikutusta. 
+    </div>
+    <div class="teksti">
+      Tämä Sopimus ja maksetut korvaukset sitovat kiinteistön myöhempää omistajaa tai kiinteistöön liittyvän oikeuden<br />
+      haltijaa. Luovuttaessaan kiinteistön omistus tai muun oikeutensa eteenpäin Maanomistaja sitoutuu ilmoittamaan<br />
+      uudelle omistajalle tai muun oikeuden vastaanottajalle tähän Sopimukseen perustuvista Verkonhaltijan<br />
+      oikeuksista ja Maanomistajan velvollisuuksista sekä merkityttämään ne luovutuskirjaan, vuokrasopimukseen tai<br />
+      muuhun siirtoasiakirjaan. 
+    </div>
+    [Sivunvaihto_2_{2,2};</div><div class="sivu">]
+  <div class="teksti">
+    Maanomistaja on pyydettäessä velvollinen ilmoittamaan Verkonhaltijalle maanvuokraoikeuden haltijan yhteystie-<br />
+    dot ja niissä myöhemmin tapahtuvat muutokset.
+  </div>
+  [Sivunvaihto_2_{1,1};</div><div class="sivu">]
+  <div class="teksti">
+    <div class="otsikko">8</div>
+    Jos Verkonhaltija siirtää tähän Sopimukseen perustuvat oikeudet ja velvollisuudet eteenpäin, sen tulee ilmoittaa<br />
+    siirrosta Maanomistajalle.
+  </div>
+  [Sivunvaihto_2_{0,0};</div><div class="sivu">]
+  <div class="teksti">
+    <div class="otsikko">9</div>
+    Tämä Sopimus tulee voimaan heti, kun se on allekirjoitettu ja se on voimassa siihen saakka, kunnes kiinteistöjen<br />
+    alueella sijaitseva Muuntamo poistetaan lopullisesti käytöstä. Jos Sopimuksen kohteena on useampia Muunta-<br />
+    moita ja yksi tai useampi niistä poistetaan käytöstä, Sopimus on voimassa niiden Muuntamoiden osalta, jotka<br />
+    jäävät käyttöön. Jos kaikkia Muuntamoon liittyviä osia ei poisteta käytöstä kerralla, Sopimus on voimassa siltä<br />
+    osin kuin Muuntamoon liittyviä laitteita jää kiinteistöjen alueelle.
+  </div>
+  <div class="teksti">
+    Jos Muuntamo poistetaan, Verkonhaltija saattaa Muuntamoalueen niiltä osin entiseen käyttötapaan soveltuvaan<br />
+    kuntoon. Ilmoitus Muuntamon poistamisesta toimitetaan Maanomistajalle mahdollisuuksien mukaan.
+  </div>
+  <div class="teksti">
+    <div class="otsikko">10</div>
+    Tämä Sopimus raukeaa niiden Muuntamoiden osalta, joiden rakentamista ei ole aloitettu kahden (2) vuoden<br />
+    kuluessa siitä, kun Sopimus on solmittu. Mikäli rakennustöiden aloittaminen viivästyy jostakin erityisestä,<br />
+    Verkonhaltijasta riippumattomasta syystä, Verkonhaltija voi pidentää Sopimuksen voimassaoloaika enintään<br />
+    yhdellä (1) vuodella. Verkonhaltija tulee tällöin ilmoittaa pidennyksestä hyvissä ajoin Maanomistajalle, kuitenkin<br />
+    viimeistään kahta (2) viikkoa ennen sopimuskauden päättymistä.
+  </div>
+  <div class="teksti">
+    <div class="otsikko">11</div>
+    Sopimusta on tehty kaksi samansanaista kappaletta, yksi kummallekin osapuolelle.
+  </div>
+  <div class="teksti">Edellä olevan Sopimuksen ja laskelman hyväksymme:</div>
+  <div class="teksti">__________ päivänä _______kuuta  20</div>
+  <div class="allekirjoitukset">
+    <div class="allekirjoitus allekirjoitusRinnakkainen">
+      <h3>Maanomistaja</h3>
+      <hr />
+      [MaanOmistaja.Nimi]<br />
+      &nbsp;
+    </div>
+    <div class="allekirjoitus allekirjoitusRinnakkainen">
+      <h3>Verkonhaltija</h3>
+      <hr />
+      [JohdonOmistaja.Nimi] puolesta<br />
+      [SopimuksenLaatija]
+    </div>
+    [Sivunvaihto_3_{7,};</div></div><div class="sivu"><div class="allekirjoitukset">]
+      <<{key="SeuraavatMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>Maanomistaja</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+     [Sivunvaihto_3_{5,6};</div></div><div class="sivu"><div class="allekirjoitukset">]
+    <<{key="LoputMaanOmistajat"}
+      <div class="allekirjoitus">
+        <h3>Maanomistaja</h3>
+        <hr />
+        [Nimi]
+      </div>
+      >>
+  </div>
+  <div class="liitteet">
+    <div class="otsikko">Liitteenä:</div>
+    <div class="teksti">
+      Karttaliite (Liite 1)<br />
+      Korvauslaskelma (Liite 2)<br />
+      Ikähyvitystaulukko (Liite 3)
+    </div>
+  </div>
+</div>
+</body>
+</html>

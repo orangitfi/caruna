@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FFF279E-6AA1-4E11-8DFC-BD4AC33A31DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KT.Utils</RootNamespace>
+    <AssemblyName>KT.Utils</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\Kissaliitto_Kilta\Main\Source\slnKissaliitto\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\Kissaliitto_Kilta\Main\Source\slnKissaliitto\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\Kissaliitto_Kilta\Main\Source\slnKissaliitto\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BankUtils.cs" />
+    <Compile Include="CollectionColumn.cs" />
+    <Compile Include="CollectionUtils.cs" />
+    <Compile Include="DataUtils.cs" />
+    <Compile Include="DateUtils.cs" />
+    <Compile Include="DbUtils.cs" />
+    <Compile Include="ExpressionUtils.cs" />
+    <Compile Include="FileRecords\DataField.cs" />
+    <Compile Include="FileRecords\DataFormatFunction.cs" />
+    <Compile Include="FileRecords\FieldSeparationMode.cs" />
+    <Compile Include="FileRecords\RecordItemTemplate.cs" />
+    <Compile Include="FileRecords\TextRecordCreator.cs" />
+    <Compile Include="IOUtils.cs" />
+    <Compile Include="KeyObjectValuePair.cs" />
+    <Compile Include="Mapping\ClassMapping.cs" />
+    <Compile Include="Mapping\ColumnBinding.cs" />
+    <Compile Include="Mapping\ColumnBindingMapper.cs" />
+    <Compile Include="Mapping\DataColumnMapping.cs" />
+    <Compile Include="Mapping\DataTableMapper.cs" />
+    <Compile Include="Mapping\EntityReference.cs" />
+    <Compile Include="Mapping\FieldMapping.cs" />
+    <Compile Include="Mapping\FieldMappingCollection.cs" />
+    <Compile Include="Mapping\FieldMappingInfo.cs" />
+    <Compile Include="Mapping\FormMapper.cs" />
+    <Compile Include="Mapping\GenericPropertyAccessor.cs" />
+    <Compile Include="Mapping\MappingDirection.cs" />
+    <Compile Include="Mapping\MappingKeyPair.cs" />
+    <Compile Include="Mapping\ObjectMapper.cs" />
+    <Compile Include="Mapping\ObjectToObjectMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="TypeCache.cs" />
+    <Compile Include="WebUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

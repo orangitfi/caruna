@@ -1,0 +1,53 @@
+﻿Imports System.ComponentModel
+
+Public Class Saanto
+
+#Region "Hakumetodit"
+
+    <DataObjectMethodAttribute(DataObjectMethodType.Select, True)>
+    Public Function Hae() As List(Of Entities.hlp_Saanto)
+
+        Dim tietokanta = New DAL.Saanto()
+        Return tietokanta.Hae()
+
+    End Function
+
+    <DataObjectMethodAttribute(DataObjectMethodType.Select, False)>
+    Public Function Hae(id As Integer) As Entities.hlp_Saanto
+
+        Dim tietokanta = New DAL.Saanto()
+        Return tietokanta.Hae(id)
+
+    End Function
+
+#End Region
+
+#Region "Muokkausmetodit"
+
+    <DataObjectMethodAttribute(DataObjectMethodType.Insert, True)>
+    Public Function Lisaa(tunnisteyksikonTyyppi As Entities.hlp_Saanto) As Entities.hlp_Saanto
+
+        Dim tietokanta = New DAL.Saanto()
+        Return tietokanta.Lisaa(tunnisteyksikonTyyppi)
+
+    End Function
+
+    <DataObjectMethodAttribute(DataObjectMethodType.Update, True)>
+    Public Function Muokkaa(muokattava As Entities.hlp_Saanto) As Entities.hlp_Saanto
+
+        Dim tietokanta = New DAL.Saanto()
+        Return tietokanta.Muokkaa(muokattava)
+
+    End Function
+
+    <DataObjectMethodAttribute(DataObjectMethodType.Delete, True)>
+    Public Function Poista(SAAId As Integer) As Entities.hlp_Saanto
+
+        Dim tietokanta = New DAL.Saanto()
+        Return tietokanta.Poista(SAAId)
+
+    End Function
+
+#End Region
+
+End Class

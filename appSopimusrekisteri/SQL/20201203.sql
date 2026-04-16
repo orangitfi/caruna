@@ -1,0 +1,115 @@
+﻿DECLARE @guid AS UNIQUEIDENTIFIER =  NEWID()
+
+INSERT INTO aspnet_Roles (ApplicationId, RoleId, RoleName, LoweredRoleName)
+VALUES ('5D1B778A-B9AA-4C82-ABFB-38B7C33E6000', @guid, 'IFRS', 'ifrs')
+INSERT INTO aspnet_RolesInGroups (GroupId, RoleId)
+VALUES ('390FA531-F627-48F7-B146-E04F5C96395E', @guid)
+GO
+
+CREATE TABLE IFRS_Historia (
+	IFRSId INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+	IFRSPvm DATETIME NOT NULL,
+	IFRSSopimusId INT NOT NULL FOREIGN KEY REFERENCES Sopimus(SOPId),
+	IFRSSopimusAlkaa DATETIME NULL,
+	IFRSSopimusPaattyy DATETIME NULL,
+	IFRSSopimusJuridinenYhtioId INT NULL FOREIGN KEY REFERENCES Taho(TAHTahoId),
+	IFRSSopimusJuridinenYhtio VARCHAR(600) NULL,
+	IFRSSopimusVuokratyyppiId INT NULL FOREIGN KEY REFERENCES hlp_Vuokratyyppi(VTId),
+	IFRSSopimusIFRS BIT NOT NULL DEFAULT(0),
+	IFRSSopimusKorkoprosentti DECIMAL(19, 4) NULL,
+	IFRSKorvauslaskelmaId INT NULL FOREIGN KEY REFERENCES Korvauslaskelma(KORId),
+	IFRSKorvauslaskelmaTahoId INT NULL FOREIGN KEY REFERENCES Taho(TAHTahoId),
+	IFRSKorvauslaskelmaTaho VARCHAR(600) NULL,
+	IFRSKorvauslaskelmaViimeisinMaksu MONEY NULL,
+	IFRSNykyarvoVanha MONEY NULL,
+	IFRSNykyarvoUusi MONEY NULL,
+	IFRSGroupKorko MONEY NULL,
+	IFRSGroupPoisto MONEY NULL,
+	IFRSAssets MONEY NULL,
+	IFRSLuotu DATETIME NOT NULL,
+	IFRSLuoja VARCHAR(300) NOT NULL
+)
+GO
+
+
+CREATE TABLE IFRS_Historia_Excel (
+	EId INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+	EPvm DATETIME NOT NULL,
+	ENimi VARCHAR(300) NOT NULL,
+	ESisalto VARBINARY(MAX) NOT NULL,
+	ELuotu DATETIME NOT NULL,
+	ELuoja VARCHAR(300) NOT NULL
+)
+GO
+
+
+DELETE FROM hlp_Korkoprosentti
+GO
+
+ALTER TABLE hlp_Korkoprosentti ALTER COLUMN KPProsentti DECIMAL(18, 6) NULL
+GO
+
+ALTER TABLE IFRS_Historia ALTER COLUMN IFRSSopimusKorkoprosentti DECIMAL(18, 6) NULL
+GO
+
+ALTER TABLE Sopimus ALTER COLUMN SOPKorkoprosentti DECIMAL(18, 6) NULL
+GO
+
+INSERT INTO hlp_Korkoprosentti (KPVuodet, KPProsentti, KPLuoja, KPLuotu) VALUES
+(0,0.6912, 'admin', GETDATE()),
+(1,0.6912, 'admin', GETDATE()),
+(2,0.6912, 'admin', GETDATE()),
+(3,0.6912, 'admin', GETDATE()),
+(4,0.6912, 'admin', GETDATE()),
+(5,0.858, 'admin', GETDATE()),
+(6,1.0248, 'admin', GETDATE()),
+(7,1.1916, 'admin', GETDATE()),
+(8,1.3584, 'admin', GETDATE()),
+(9,1.5252, 'admin', GETDATE()),
+(10,1.692, 'admin', GETDATE()),
+(11,1.7982, 'admin', GETDATE()),
+(12,1.9044, 'admin', GETDATE()),
+(13,2.0106, 'admin', GETDATE()),
+(14,2.1168, 'admin', GETDATE()),
+(15,2.223, 'admin', GETDATE()),
+(16,2.3012, 'admin', GETDATE()),
+(17,2.3794, 'admin', GETDATE()),
+(18,2.4576, 'admin', GETDATE()),
+(19,2.5358, 'admin', GETDATE()),
+(20,2.614, 'admin', GETDATE()),
+(21,2.66766666666667, 'admin', GETDATE()),
+(22,2.72133333333333, 'admin', GETDATE()),
+(23,2.775, 'admin', GETDATE()),
+(24,2.82866666666667, 'admin', GETDATE()),
+(25,2.88233333333333, 'admin', GETDATE()),
+(26,2.91066666666667, 'admin', GETDATE()),
+(27,2.939, 'admin', GETDATE()),
+(28,2.96733333333333, 'admin', GETDATE()),
+(29,2.99566666666667, 'admin', GETDATE()),
+(30,3.024, 'admin', GETDATE()),
+(31,3.07075111111111, 'admin', GETDATE()),
+(32,3.11750222222222, 'admin', GETDATE()),
+(33,3.16425333333333, 'admin', GETDATE()),
+(34,3.21100444444444, 'admin', GETDATE()),
+(35,3.25775555555555, 'admin', GETDATE()),
+(36,3.29550984126984, 'admin', GETDATE()),
+(37,3.33326412698413, 'admin', GETDATE()),
+(38,3.37101841269841, 'admin', GETDATE()),
+(39,3.4087726984127, 'admin', GETDATE()),
+(40,3.44652698412699, 'admin', GETDATE()),
+(41,3.48358126984127, 'admin', GETDATE()),
+(42,3.52063555555556, 'admin', GETDATE()),
+(43,3.55768984126984, 'admin', GETDATE()),
+(44,3.59474412698413, 'admin', GETDATE()),
+(45,3.63179841269841, 'admin', GETDATE()),
+(46,3.6688526984127, 'admin', GETDATE()),
+(47,3.70590698412698, 'admin', GETDATE()),
+(48,3.74296126984127, 'admin', GETDATE()),
+(49,3.78001555555556, 'admin', GETDATE()),
+(50,3.81706984126984, 'admin', GETDATE())
+GO
+
+-- Ei näitä tarvitsekkaan
+ALTER TABLE IFRS_Historia 
+DROP COLUMN IFRSNykyarvoVanha,IFRSNykyarvoUusi,IFRSGroupKorko,IFRSGroupPoisto,IFRSAssets
+GO

@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 14px;
+      margin: 0px;
+    }
+
+    h1.paaOtsikko {
+      font-size: 20px;
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+      margin-left: 5px;
+    }
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    div.sivu {
+      width: 690px;
+      margin-left: 55px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    table.lomake {
+      border-top: 1px solid black;
+      border-left: 1px solid black;
+      margin-left: 0px;
+      border-spacing: 0px;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+      table.lomake td {
+        border-bottom: 1px solid black;
+        border-right: 1px solid black;
+        margin: 0px;
+        padding-bottom: 10px;
+        vertical-align: top;
+      }
+
+        table.lomake td h2 {
+          margin-top: 0px;
+          margin-left: 5px;
+          font-size: 20px;
+          margin-bottom: 0px;
+        }
+
+        table.lomake td h3 {
+          margin-top: 0px;
+          margin-left: 5px;
+          font-weight: normal;
+          font-size: 16px;
+          float: left;
+          width: 100px;
+        }
+
+          table.lomake td h3.pitka {
+            width: auto;
+            margin-right: 20px;
+          }
+
+          table.lomake td h3.kokoPitka {
+            width: auto;
+            float: none;
+          }
+
+        table.lomake td p {
+          display: inline;
+        }
+
+        table.lomake td.vali {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+
+        table.lomake td.puolikas {
+          width: 50%;
+        }
+
+        table.lomake td p.leipateksti {
+          margin-top: 0px;
+          margin-left: 5px;
+          display: block;
+        }
+
+        table.lomake td p.paivamaara {
+          display: block;
+          clear: both;
+          margin-left: 5px;
+        }
+
+          table.lomake td p.paivamaara span.pvm {
+            margin-left: 15px;
+            margin-right: 15px;
+          }
+
+        table.lomake td.allekirjoitus {
+          border-bottom: none;
+        }
+
+        table.lomake td hr {
+          margin-left: 5px;
+          margin-right: 5px;
+          border: none;
+          height: 1px;
+          color: black;
+          background-color: black;
+        }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="sivu">
+    <h1 class="paaOtsikko">SAMTYCKE</h1>
+    <div class="viivakoodi">
+      <div class="koodi">
+        <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+      </div>
+      <div class="numero">[Sopimusnumero]</div>
+    </div>
+    <table class="lomake">
+      <tr>
+        <td colspan="2">
+          <h2>LEDNINGSÄGARE</h2>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h3>Bolagets namn</h3>
+          <p>[JohdonOmistaja.Nimi]</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h3>Adress</h3>
+          <p>[JohdonOmistaja.Osoite]</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <h3>Ledningsdel</h3>
+          <p>[LinjaOsa.Nimi]</p>
+        </td>
+      </tr>
+      <<{key="MuutLinjaOsat"}
+        <tr>
+          <td colspan="2">
+            <h3>Ledningsdel</h3>
+            <p>[Nimi]</p>
+          </td>
+        </tr>
+        >>
+        <tr>
+          <td colspan="2">
+            <h3>Kartblad</h3>
+            <p>[Karttalehti]</p>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h3>Arbetsnummer</h3>
+            <p>[PCSNumero]</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="vali" colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <h2>MARKÄGARE</h2>
+          </td>
+        </tr>
+        <<{key="MaanOmistajat"}
+          <tr>
+            <td colspan="2">
+              <h3>Namn </h3>
+              <p>[Nimi]</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <h3>Adress</h3>
+              <p>[Osoite]</p>
+            </td>
+          </tr>
+          >>
+          <tr>
+            <td colspan="2">
+              <h3 class="kokoPitka">Lägenhetens namn, fastighetsnummer, kommun och by</h3>
+              <p class="leipateksti">
+                <<{key="Kiinteistot";d="<br />"}
+                 [Nimi] [Rekisterinumero], [Kunta] [Kyla]
+                 >>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <p class="leipateksti">
+                Jag ger mitt samtycke till att ledningsägaren planerar och bygger samt underhåller för permanent <br />
+                nyttjandebehov den jordkabel som framgår av kartdelen.
+              </p>
+              <p class="leipateksti">
+                Ledningsägaren har rätt att överlåta nyttjanderätten till ledningsområdet till en annan ledningsägare. <br />
+                Markägaren ska i mån av möjlighet informeras om den nya nyttjanderättsinnehavarens namn och <br />
+                adress och om hur länge nyttjanderätten gäller. Den ledningsägare till vilken nyttjanderätten har <br />
+                överlåtits har rätt att röra sig på markägarens mark för att utföra planerings-, bygg- och <br />
+                underhållsarbeten.
+              </p>
+              <p class="leipateksti">
+                Detta samtycke har upprättats i två likalydande exemplar, det ena för markägaren och det andra för <br />
+                ledningsägaren.
+              </p>
+            </td>
+          </tr>
+          [Sivunvaihto]
+          <tr>
+            <td class="puolikas">
+              <h3 class="pitka">Ort och datum</h3>
+              <p class="paivamaara"><span class="pvm">/</span>20</p>
+            </td>
+            <td class="puolikas">
+              <h3 class="pitka">Ort och datum</h3>
+              <p class="paivamaara"><span class="pvm">/</span>20</p>
+            </td>
+          </tr>
+          <tr>
+            <td class="puolikas allekirjoitus">
+              <h3 class="pitka">Markägarens underskrift och namnförtydligande</h3>
+            </td>
+            <td class="puolikas allekirjoitus">
+              <h3 class="pitka">[JohdonOmistaja.Nimi]:s företrädares underskrift</h3>
+            </td>
+          </tr>
+          <tr>
+            <td class="puolikas">
+              <hr />
+              <h3 class="pitka">Namnförtydligande</h3><p>[Maanomistaja.Nimi]</p>
+            </td>
+            <td class="puolikas">
+              <hr />
+              <h3 class="pitka">Namnförtydligande</h3><p>[SopimuksenLaatija]</p>
+            </td>
+          </tr>
+          <<{key="LoputMaanOmistajatPareittain"}
+            <tr>
+              <td class="puolikas allekirjoitus">
+                <h3 class="pitka">Markägarens underskrift</h3>
+              </td>
+              <td class="puolikas allekirjoitus">
+                <h3 class="pitka">[MaanomistajaAllekirjoitusOtsikko2Ruotsi]</h3>
+              </td>
+            </tr>
+            <tr>
+              <td class="puolikas">
+                <hr />
+                <h3 class="pitka">Namnförtydligande</h3><p>[Item1.Nimi]</p>
+              </td>
+              <td class="puolikas">
+                [Allekirjoitus2]
+                <h3 class="pitka">[NimenSelvennosOtsikko2Ruotsi]</h3><p>[Item2.Nimi]</p>
+              </td>
+            </tr>
+            >>
+    </table>
+  </div>
+</body>
+</html>

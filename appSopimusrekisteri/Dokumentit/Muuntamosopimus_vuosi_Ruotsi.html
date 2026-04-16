@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+  <style type="text/css">
+    body {
+      font-family: Arial;
+      font-size: 12px;
+      margin: 0px;
+    }
+
+    div.paaOtsikko {
+      width: 450px;
+      float: left;
+      margin-right: 30px;
+    }
+
+      div.paaOtsikko h1 {
+        font-size: 16px;
+        font-weight: normal;
+      }
+
+    div.viivakoodi {
+      width: 200px;
+      display: inline-block;
+    }
+
+      div.viivakoodi div.koodi {
+        text-align: center;
+      }
+
+      div.viivakoodi div.numero {
+        text-align: center;
+      }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    div.sivu {
+      width: 720px;
+      margin-left: 60px;
+      margin-top: 60px;
+      margin-right: 20px;
+    }
+
+    div.taulukko {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+      div.taulukko table {
+        width: 640px;
+        border-spacing: 0px;
+        border-collapse: collapse;
+        border-top: 1px solid gray;
+        border-left: 1px solid gray;
+      }
+
+        div.taulukko table td {
+          border-right: 1px solid gray;
+          border-bottom: 1px solid gray;
+          vertical-align: top;
+        }
+
+          div.taulukko table td.otsikkoVasenLyhyt {
+            width: 120px;
+          }
+
+          div.taulukko table td.otsikkoVasenPitka {
+            width: 240px;
+          }
+
+          div.taulukko table td.tekstiVasenLyhyt {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiVasenPitka {
+            width: 220px;
+          }
+
+          div.taulukko table td.otsikkoOikea {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiOikea {
+            width: 140px;
+          }
+
+          div.taulukko table td.tekstiOikeaPuolikasVasen {
+            width: 60px;
+          }
+
+          div.taulukko table td.tekstiOikeaPuolikasOikea {
+            width: 100px;
+          }
+
+      div.taulukko span.vasen {
+        margin-right: 30px;
+      }
+
+    div.bullet {
+      width: 40px;
+      float: left;
+    }
+
+    div.teksti {
+      width: auto;
+      margin-bottom: 10px;
+    }
+
+    div.listaTeksti {
+      width: 680px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    div.allekirjoitukset {
+      margin-bottom: 45px;
+      margin-top: 10px;
+      width: 620px;
+      display: block;
+    }
+
+      div.allekirjoitukset div.allekirjoitus {
+        width: 200px;
+        margin-right: 100px;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+        div.allekirjoitukset div.allekirjoitus h3 {
+          font-size: 14px;
+          margin-bottom: 0px;
+        }
+
+        div.allekirjoitukset div.allekirjoitus hr {
+          height: 1px;
+          border: none;
+          color: #000000;
+          background-color: #000000;
+          margin-bottom: 2px;
+          margin-top: 30px;
+        }
+
+    .sivunVaihto {
+      page-break-after: always;
+    }
+
+    div.pvmVasen {
+      margin-left: 50px;
+      float: left;
+    }
+
+    div.pvmOikea {
+      margin-left: 250px;
+      display: inline-block;
+    }
+
+    span.paivat {
+      margin-left: 30px;
+      margin-right: 30px;
+    }
+
+    span.paikka {
+      width: 100px;
+    }
+
+    span.nimi {
+      width: 200px;
+    }
+  </style>
+
+  <title></title>
+</head>
+<body>
+  <div class="sivu">
+    <div class="paaOtsikko">
+      <h1>
+        HYRESAVTAL FÖR TRANSFORMATORRUM, års-hyra
+      </h1>
+    </div>
+    <div class="viivakoodi">
+      <div class="koodi">
+        <img src="Viivakoodi/barcode.aspx?code=[ViivakoodiSopimusnumero]&height=40&thickness=2" />
+      </div>
+      <div class="numero">[Sopimusnumero]</div>
+    </div>
+    <div class="taulukko">
+      <table>
+        <tr>
+          <td class="otsikkoVasenLyhyt">Fastighet:</td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Nimi]</td>
+          <td class="otsikkoOikea">Avtalsnummer:</td>
+          <td class="tekstiOikea" colspan="2">[Sopimusnumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt">Fastighetens adress:</td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Osoite]</td>
+          <td class="otsikkoOikea">Transformator nummer:</td>
+          <td class="tekstiOikea" colspan="2">[Muuntamo.Tunnus]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt"></td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Postiosoite]</td>
+          <td class="otsikkoOikea">Transformatorns adress:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Osoite], [Kiinteisto.Postiosoite]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenLyhyt"></td>
+          <td class="tekstiVasenPitka" colspan="2">[Kiinteisto.Maa]</td>
+          <td class="otsikkoOikea">By / Stadsdel:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Kyla]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">Avtalets giltighetstid:</td>
+          <td class="tekstiVasenLyhyt">[Alkupvm] - [Loppupvm]</td>
+          <td class="otsikkoOikea">Kvarter, tomt:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.Rekisterinumero]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">Konto, till vilket ersättningen inbetalas:</td>
+          <td class="tekstiVasenLyhyt">[MaanOmistaja.Tilinumero]</td>
+          <td class="otsikkoOikea">Transformatorns yta:</td>
+          <td class="tekstiOikea" colspan="2">[Kiinteisto.KokonaisPintaAla]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" colspan="2">&nbsp;</td>
+          <td class="tekstiVasenLyhyt">&nbsp;</td>
+          <td class="otsikkoOikea">Grundhyra:</td>
+          <td class="tekstiOikea" colspan="2">[Korvaus.Perusvuokra]</td>
+        </tr>
+        <tr>
+          <td class="otsikkoVasenPitka" rowspan="2" colspan="2">
+            Är Fastighetsägaren mervär-<br />
+            deskatt-skyldig för ersättningen
+          </td>
+          <td class="tekstiVasenLyhyt" rowspan="2">[Korvaus.AlvVelvollinen]</td>
+          <td class="otsikkoOikea">Årshyra :</td>
+          <td class="tekstiOikeaPuolikasVasen">[Korvaus.Vuosivuokra]</td>
+          <td class="tekstiOikeaPuolikasOikea">(moms 0%):</td>
+        </tr>
+        <tr>
+          <td class="otsikkoOikea">Årshyra :</td>
+          <td class="teksti">[Korvaus.VuosivuokraAlv]</td>
+          <td class="teksti">(inkl. moms 24%):</td>
+        </tr>
+      </table>
+    </div>
+    <div class="teksti">
+      [MaanOmistaja.Nimi], nedan omnämnd som Fastighetsägaren, och [JohdonOmistaja.Nimi], nedan omnämnd som Nätinnehavaren,<br />
+      har ingått ett avtal med följande innehåll beträffande placeringen av Nätin-nehavarens distributionstransformator<br />
+      i Fastighetsägarens fastighet.
+    </div>
+    <div class="bullet">1.</div>
+    <div class="listaTeksti">
+      Fastighetsägaren överlåter det i avtalet avsedda transformatorrummet, som är ett ouppvärmt utrymme för Nät-<br />
+      innehavarens transformator mot ovannämnda årshyra. Fastighetsägaren förbinder sig, ifall innehavet av fastig-<br />
+      heten eller en del av den överförs, att i köpebrevet eller överlåtelseavtalet infoga ett villkor beträffande giltigheten<br />
+      av detta avtal för transformatorrum. [Erityisehdot]
+    </div>
+    <div class="bullet">2.</div>
+    <div class="listaTeksti">
+      Detta avtal är giltigt under ovanstående tid och därefter med fem år åt gången, såvida ingendera av avtalspar-<br />
+      terna säger upp avtalet skriftligen senast två år före innevarande avtalsperiod löper ut. Ifall Fastighetsägaren<br />
+      tänker riva fastigheten, bör han meddela Nätinnehavaren därom senast två år före rivningsåtgärderna påbörjas
+    </div>
+    <div class="bullet">3.</div>
+    <div class="listaTeksti">
+      Nätinnehavaren betalar den ovanstående årshyran till Ägaren. Årshyran är bunden till levnadkostnadsindex (oktober<br />
+      1951 = 100) uträknat av Statistikcentralen så att ovanstående grund- och årshyra motsvarar indexets värde [Korvaus.Indeksi].<br />
+      Årshyran beräknas på basen av indexet för juni månad och betalas före sista december samma år. Hyran beta-<br />
+      las för hela månader. Nätinnehavaren sköter underhållet av transformatorrummet och dess ventilation på egen<br />
+      bekostnad. Hyran för en förlängd tid fastställs så att den motsvarar hyresnivån för den tidigare hyresperioden.
+    </div>
+    <div class="bullet">4.</div>
+    <div class="listaTeksti">
+      Nätinnehavaren överför vid behov elektricitet från transformatorn, förutom till samma fastighet, även till näromgivningen
+    </div>
+    <div class="bullet">5.</div>
+    <div class="listaTeksti">
+      Nätinnehavaren har rätt att utan någon separat ersättning utföra ändrings-, reparations- och kopplingsarbeten i<br />
+      transformatorrummet och på ledningsrutterna (ifrågavarande tomt, fastighet), bygga nödvändiga tilläggskon-<br />
+      struktioner i transformatorrummet samt att transportera nödvändig utrustning och anläggningar. Efter avslutat<br />
+      arbete är Nätinnehavaren skyldig att återställa tomten i ursprungligt skick. Nätinnehavaren ansvarar för att transformatorn<br />
+      alltid är i sådant skick att den uppfyller säkerhetsbestämmelserna
+    </div>
+    <div class="bullet">6.</div>
+    <div class="listaTeksti">
+      Nätinnehavarens personal bör under dygnets alla tider ha obehindrat tillträde till transformatorrummet för installerings-,<br />
+      underhålls- och driftåtgärder. Fastighetsägaren är för egen del skyldig att se till att övriga personer inte<br />
+      har tillträde till transformatorn utan nätinnehavarens tillstånd. Saker får inte förvaras eller andra hinder placeras<br />
+      på rutten eller på transportrutten till transformatorn
+    </div>
+    <div class="bullet">7.</div>
+    <div class="listaTeksti">
+      Ifall nätinnehavaren upphör att använda transformatorrummet, är nätinnehavaren skyldig att på egen bekostnad<br />
+      avlägsna de anläggningar som inte behövs för att överföra elektricitet till ovanstående fastighet
+    </div>
+    <div class="bullet">8.</div>
+    <div class="listaTeksti">
+      Nätinnehavaren har rätt att överlåta detta avtal på en annan nätinnehavare. För överlåtelsen erläggs fastighets-<br />
+      ägaren ingen särskild ersättning. Om möjligt skall den nya nätinnehavarens namn och adress samt avtalets gil-<br />
+      tighetstid anmälas för fastighetägaren. De i detta avtal nämnda nätinnehavarens rättigheter, ansvar och skyldigheter<br />
+      gäller även den nya nätinnehavaren
+    </div>
+    <div class="bullet">9.</div>
+    <div class="listaTeksti">
+      Det finns två kopior av detta avtal med samma innehåll, ett till vardera avtalsparten.
+    </div>
+    <div class="allekirjoitukset">
+      <div class="allekirjoitus">
+        <span class="paikka">&nbsp;</span><span class="paivat">/</span>20
+      </div>
+      <div class="allekirjoitus">
+        <span class="paikka">&nbsp;</span><span class="paivat">/</span>20
+      </div>
+      <div class="allekirjoitus">
+        <hr />
+        [EkaMaanomistaja.Nimi]
+      </div>
+      <div class="allekirjoitus">
+        <h3>[JohdonOmistaja.Nimi]:n puolesta valtakirjalla</h3>
+        <hr />
+        [SopimuksenLaatija]
+      </div>
+      [Sivunvaihto]
+      <<{key="LoputMaanomistajat"}
+      <div class="allekirjoitus">
+        <hr />
+        [Nimi]
+      </div>
+      >>
+    </div>
+  </div>
+</body>
+</html>
